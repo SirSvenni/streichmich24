@@ -1,0 +1,21 @@
+CSS REPAIR - Header + Skyline Integration für Firefox/Chrome-Kompatibilität
+
+PROBLEM: Z-Index-Stapelung zwischen header und Hero-Bereich kollidiert.
+
+LÖSUNG A (Header über everything):
+.header { z-index: 10; position: relative !important; }
+.hero-overlay-header::before { z-index: 5; opacity: var(--skies-opacity); backdrop-filter: blur(6px) brightness(var(--hero-brightness)); transition: all .9s cubic-bezier(.2,.8,4,.3); animation: skylineRevealVar .7s alternate-step-out-ease both infinite; }
+@keyframes skylineRevealVar { 0%{opacity:.5} 100%{opacity:var(--skies-opacity)} }
+
+LÖSUNG B (Header unter Hero, Skyline als Overlay):
+.hero-overlay-header::before { z-index: -1; position:absolute !important; left:-999em;top:-2px;width:calc(100vw + 35%);height:var(--hero-max-height)*.7;background-image:url(/skies/mars.jpg)/cover;background-size:contain;color:white;text-align:center;font-weight:bold;margin-top:.8rem;padding-bottom:clamp(var(--hero-min-margin),-2em,4*calc(10vh - 6px));filter:brightness(.5) blur(calc(#{$blur}px)) contrast(#{$contrast}) saturate(...);animation:sunrise .9s alternate-step-out-ease both infinite;clip-path:polygon(
+ var(--skyline-paths), inset(calc(var(--hero-min-margin)+clamp(-2rem,-10%,calc((var(--max-height)-35px)*.7)))) calc(#{$blur}px)  ); }
+
+CSS STACK REPAIR: 
+.hero-section{z-index:-9;position:relative;display:block;}
+.header-main{z-index:8}
+.header-title{text-align:center;margin-bottom:.4rem;color:#1a2630;font-family:var(--font-serif),serif;padding-top:(clamp(1em,calc((var(--hero-max-height)-75px)*.9)));}
+
+@media (min-width: 800px) { header-overlay{z-index:-9;transition:.4s ease-in-out;} }
+@keyframes skylineRevealVar { 
+      0% {opacity:.2} 17% {opacity:var(--skies-opacity);height:clamp(3em,calc(var(--hero-max-height)*.5),6vh)} 
