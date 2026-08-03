@@ -76,7 +76,7 @@
             background: var(--bg-color);
         }
 
-        .main-bl Blumen-flex {
+        .hero-flex {
             position: relative;
             width: 100%;
             max-width: 1400px;
@@ -251,7 +251,61 @@
         }
 
         @media (max-width: 768px) {
-            .hero-container { padding: 0; }
+            .top-banner {
+                height: auto;
+                display: block;
+                position: relative;
+                background: #ffffff;
+                border-bottom: none;
+            }
+
+            .banner-image {
+                position: relative;
+                width: 100%;
+                height: auto;
+                display: block;
+                object-fit: contain;
+                object-position: right center;
+            }
+
+            .brand-slogan {
+                position: absolute;
+                top: 38%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 92%;
+                font-size: clamp(0.85rem, 3.8vw, 1.2rem);
+                color: #1a1a1a;
+                text-shadow: 0 1px 8px rgba(255, 255, 255, 0.9);
+            }
+
+            .hero-container {
+                min-height: auto;
+                padding: 0;
+                margin: 0;
+            }
+
+            .hero-flex {
+                padding: 0;
+                margin: 0;
+                max-width: none;
+            }
+
+            .blumen-foto {
+                max-height: none;
+                display: block;
+                width: 100%;
+            }
+
+            .overlay-text {
+                top: 28%;
+                width: 90%;
+            }
+
+            .btn-container {
+                bottom: 8%;
+            }
+
             h1 { font-size: 2.5rem !important; }
             .grid { grid-template-columns: 1fr; }
         }
@@ -261,7 +315,10 @@
 
     <!-- Header -->
     <header class="top-banner">
-        <img src="./images/Sky.jpg" alt="Skyline Köln" class="banner-image">
+        <picture>
+            <source media="(max-width: 768px)" srcset="./images/handy.jpg">
+            <img src="./images/Sky.jpg" alt="Skyline Köln" class="banner-image">
+        </picture>
         <h1 class="brand-slogan">Haus & Struktur - Grabau<br>streichmich24.de</h3>
     </header>
 
