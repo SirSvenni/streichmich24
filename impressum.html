@@ -172,43 +172,9 @@
             box-shadow: 0 12px 36px rgba(197,160,89,0.45);
         }
 
-        /* ── TRUST BAR ── */
-        .trust {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0;
-            background: var(--bg-soft);
-            border-top: 1px solid rgba(197,160,89,0.15);
-            border-bottom: 1px solid rgba(197,160,89,0.15);
-        }
-
-        .trust__item {
-            padding: 1.25rem 0.75rem;
-            text-align: center;
-            border-right: 1px solid rgba(255,255,255,0.04);
-        }
-
-        .trust__item:last-child { border-right: none; }
-
-        .trust__number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.4rem, 4.5vw, 2rem);
-            font-weight: 700;
-            color: var(--gold);
-            line-height: 1;
-        }
-
-        .trust__label {
-            font-size: clamp(0.6rem, 2vw, 0.72rem);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-top: 0.35rem;
-        }
-
         /* ── SECTIONS ── */
         .section {
-            padding: 4rem 1.5rem;
+            padding: 8rem 1.5rem;
         }
 
         .section--dark { background: var(--bg); }
@@ -226,6 +192,8 @@
             color: var(--gold);
             text-align: center;
             margin-bottom: 0.75rem;
+            margin-top: 2rem;
+            text-shadow: none;
         }
 
         .section__lead {
@@ -286,7 +254,7 @@
 
         .about__text p {
             margin-bottom: 1rem;
-            color: rgba(245,245,245,0.88);
+            color: rgba(245,245,2530,0.88);
             font-size: clamp(0.92rem, 2.5vw, 1.05rem);
         }
 
@@ -306,49 +274,6 @@
             font-weight: 700;
             color: var(--white);
         }
-
-        /* ── CONTACT ── */
-        .contact-form {
-            max-width: 28rem;
-            margin: 0 auto;
-        }
-
-        .form-group { margin-bottom: 1rem; }
-
-        .form-group label {
-            display: block;
-            font-size: 0.8rem;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 0.4rem;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.9rem 1rem;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/sven.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 0.5rem;
-            color: var(--white);
-            font-family: inherit;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--gold);
-        }
-
-        .form-group textarea { resize: vertical; min-height: 7rem; }
 
         /* ── FOOTER ── */
         .footer {
@@ -495,116 +420,65 @@
 
     <!-- Hero: Galerie-Foto -->
     <section class="hero">
-        <img src="images/hero-blumen.jpg" alt="Meisterhafte Malerarbeiten – Galerie-Qualität" class="hero__photo">
+        <img src="images/placeholder.jpg" alt="" class="hero__photo">
         <div class="hero__overlay">
-            <h1 class="hero__title">Handwerk,<br>das Räume berührt.</h1>
-            <p class="hero__subtitle">Tapezieren, Lackieren und Streichen – mit der Erfahrung von streichmich24 und dem Anspruch auf Meisterniveau</p>
+            
         </div>
         <div class="hero__cta">
-            <a href="#kontakt" class="btn">Kostenlose Beratung anfragen</a>
+            
         </div>
     </section>
 
-    <!-- Vertrauen -->
-    <div class="trust">
-        <div class="trust__item">
-            <div class="trust__number">2006</div>
-            <div class="trust__label">Gründung</div>
-        </div>
-        <div class="trust__item">
-            <div class="trust__number">20+</div>
-            <div class="trust__label">Jahre Erfahrung</div>
-        </div>
-        <div class="trust__item">
-            <div class="trust__number">2026</div>
-            <div class="trust__label">Umstrukturierung</div>
-        </div>
-    </div>
-
-    <!-- Leistungen -->
-    <section id="leistungen" class="section section--dark">
+    <!-- Content Area -->
+    <section class="section section--dark">
         <div class="section__inner">
-            <h2 class="section__title">Unsere Leistungen</h2>
-            <p class="section__lead">Vom klassischen Anstrich bis zur anspruchsvollen Wandgestaltung – präzise, sauber und termingerecht.</p>
-            <div class="services">
-                <article class="service">
-                    <div class="service__icon">🎨</div>
-                    <h3 class="service__name">Streichen &amp; Anstreichen</h3>
-                    <p class="service__desc">Innen- und Außenanstriche mit hochwertigen Materialien. Saubere Kanten, gleichmäßige Oberflächen und langlebige Ergebnisse für Ihr Zuhause.</p>
-                </article>
-                <article class="service">
-                    <div class="service__icon">✨</div>
-                    <h3 class="service__name">Lackieren</h3>
-                    <p class="service__desc">Türen, Fenster, Heizkörper und Holzarbeiten – professionell lackiert mit der Sorgfalt, die jedes Detail verdient.</p>
-                </article>
-                <article class="service">
-                    <div class="service__icon">📐</div>
-                    <h3 class="service__name">Tapezieren</h3>
-                    <p class="service__desc">Vliestapeten, Mustertapeten und Raufaser – fachgerecht tapeziert, passgenau geschnitten und nahtlos verarbeitet.</p>
-                </article>
-            </div>
+            
+            <h2 class="section__title">Impressum</h2>
+                <div class="content-block">
+                    <p style="text-align: center; margin-bottom: 4rem; color: var(--text-muted);">
+                        Die folgenden Angaben sind gemäß den gesetzlichen Anforderungen für die Bereitstellung von Informationen über den Anbieter des Webauftritts aufgeführt.
+                    </p>
+
+                    <div class="info-grid">
+                        <div>
+                            <span class="info-label">Angabepflichtige Angaben</span>
+                            <div class="info-value">Sven Grabau</div>
+                            <div class="info-value">Malerfachbetrieb Grabau (streichmich24)</div>
+                            <p style="margin-top: 1rem; font-size: 0.9rem;">
+                                <span class="info-label" style="margin-bottom: 0;">Anschrift</span><br>
+                                Freimersdorfer Weg 4<br>
+                                50226 Frechen
+                            </p>
+                        </div>
+                        <div>
+                            <span class="info-label">Kontakt</span>
+                            <div class="info-value">Mobil: 0174 - 860 859 6</div>
+                            <div class="info-value">E-Mail: info@streichmich24.de</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 5rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px;">
+                        <h3 class="section__title" style="font-size: 2rem; margin-bottom: 2rem;">Registereintragungen</h3>
+                        <div class="info-grid">
+                            <div>
+                                <span class="info-label">Handwerkskammer</span>
+                                <div class="info-value"><em style="color: var(--text-muted);">[Hier Eintrag ergänzen, sobald vorhanden]</em></div>
+                            </div>
+                            <div>
+                                <span class="info-label">Umsatzsteuer-Identifikationsnummer</span>
+                                <div class="info-value"><em style="color: var(--text-muted);">[Hier USt-IdNr. ergänzen, falls vorhanden]</em></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
         </div>
-    </section>
-
-    <!-- Über mich -->
-    <section id="ueber-uns" class="section section--soft">
-        <div class="section__inner">
-            <h2 class="section__title">Tradition trifft Neubeginn</h2>
-            <div class="about">
-                <div class="about__text">
-                    <p class="about__highlight">„Jede Wand erzählt eine eigene Geschichte – ich sorge durch handwerkliche Präzision und Liebe zum Detail dafür, dass sie perfekt wird.“</p>
-                    <p>Mein Name ist <span class="about__name">Sven Grabau</span>. Von 2006 bis 2020 war ich als Raumausstatter mit <strong>streichmich24</strong> selbstständig tätig und habe unzählige Wohn- und Geschäftsräume in Köln und Umgebung gestaltet.</p>
-                    <p>2026 starte ich als Malerfachbetrieb neu durch – mit dem gleichen Anspruch an Qualität, der streichmich24 über Jahre bekannt gemacht hat.</p>
-                    <p>Der Kölner Dom war schon immer mein Wiedererkennungszeichen. Er steht für Beständigkeit, Handwerk und Heimat – Werte, die ich in jedes Projekt einbringe.</p>
-                </div>
-                <div class="about__text">
-                    <p>Ob Tapezieren, Lackieren oder Streichen: Ich berate Sie persönlich, arbeite sauber und hinterlasse Räume, in denen Sie sich wohlfühlen.</p>
-                    <p>Meine Arbeiten sprechen für sich – präzise und robust für den Alltag. Vertrauen entsteht durch Ergebnisse, und genau darauf bauen wir.</p>
-                    <p><strong>Überzeugen Sie sich selbst – ich freue mich auf Ihr Projekt.</strong></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Kontakt -->
-    <section id="kontakt" class="section section--dark">
-        <div class="section__inner">
-            <h2 class="section__title">Jetzt unverbindlich anfragen</h2>
-            <p class="section__lead">Gerne berate ich Sie persönlich vor Ort. Schreiben Sie mir – ich melde mich zeitnah bei Ihnen.</p>
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <label for="name">Ihr Name</label>
-                    <input type="text" id="name" name="name" placeholder="Max Mustermann" required data-fs-field />
-                </div>
-                <div class="form-group">
-                    <label for="email">E-Mail</label>
-                    <input type="email" id="email" name="email" placeholder="ihre@email.de" required data-fs-field />
-                </div>
-                <div class="form-group">
-                    <label for="service">Gewünschte Leistung</label>
-                    <select id="service" name="service" data-fs-field>
-                        <option value="">Bitte wählen …</option>
-                        <option>Streichen &amp; Anstreichen</option>
-                        <option>Lackieren</option>
-                        <option>Tapezieren</option>
-                        <option>Beratung / Sonstiges</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Ihre Nachricht</label>
-                    <textarea id="message" name="message" placeholder="Beschreiben Sie kurz Ihr Projekt …" required data-fs-field></textarea>
-                </div>
-                <div data-fs-success>Vielen Dank! Wir haben Ihre Anfrage erhalten und melden uns in Kürze bei Ihnen.</div>
-
-                    <button type="submit" data-fs-submit-btn class="btn">Anfrage absenden</button>
-                    </form>
-
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <p class="footer__brand">streichmich24 · Malerfachbetrieb Grabau</p>
-        <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: 0174 - 860 859 6</p>
+        <p style="color: var(--gold); font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: 0174 - 860 859 6</p>
         <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
         <nav class="footer__links">
             <a href="impressum.html">Impressum</a>
@@ -614,17 +488,7 @@
 
     <!-- Mobile Sticky Button -->
     <div class="sticky-cta" id="stickyCta">
-        <a href="#kontakt" class="btn">Beratung anfragen</a>
+        
     </div>
-
-    <script>
-        // Formspree AJAX Integration
-        window.formspree = window.formspree || function () { (formspree.q = formspree.q = []).push(arguments); };
-        formspree('initForm', { 
-            formElement: '#contactForm', 
-            formId: 'mqpzkqde' 
-        });
-    </script>
-    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
