@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Datenschutzerklärung - streichmich24 Malerfachbereich Grabau">
+    <title>Datenschutz | streichmich24 – Malerfachbereich Grabau</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0c0d0e;
+            --bg-soft: #141618;
+            --bg-card: #1a1c1f;
+            --gold: #c5a059;
+            --gold-light: #d4b87a;
+            --text: #f5f5f5;
+            --text-muted: #9a9a9a;
+            --white: #ffffff;
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        img { display: block; max-width: 100%; }
+
+        /* --- Header --- */
+        .header {
+            position: relative;
+            background: var(--white);
+        }
+
+        .header__skyline {
+            width: 100%;
+            height: auto;
+        }
+
+        .header__brand {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 1.25rem;
+            pointer-events: none;
+        }
+
+        .header__logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.95rem, 7.15vw, 3.64rem);
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: #1a1a1a;
+            text-shadow: 0 1px 12px rgba(255,255,255,0.85);
+            line-height: 1.25;
+        }
+
+        .header__tagline {
+            font-size: clamp(0.65rem, 2.2vw, 0.85rem);
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: #444;
+            margin-top: 0.4rem;
+            text-shadow: 0 1px 8px rgba(255,255,255,0.8);
+        }
+
+        /* --- Content Area --- */
+        .section {
+            padding: 8rem 1.5rem;
+        }
+
+        .section--dark { background: var(--bg); }
+
+        .section__inner {
+            max-width: 68rem;
+            margin: 0 auto;
+        }
+
+        .section__title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.8rem, 5.5vw, 2.8rem);
+            font-weight: 700;
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .section__lead {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 36rem;
+            margin: 0 auto 2.5rem;
+            font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--white);
+            margin: 3rem 0 1.5rem;
+            text-align: center;
+        }
+
+        .muted {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- Footer Area --- */
+        .footer {
+            padding: 2.5rem 1.5rem 6rem;
+            text-align: center;
+            background: #080809;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .footer__brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer__copy {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .footer__links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer__links a {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        @media (min-width: 769px) {
+            .header {
+                height: 35vh;
+                background: linear-gradient(to bottom, rgba(12,13,14,0.3), var(--bg));
+            }
+            .header__skyline {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: brightness(0.55);
+            }
+            .header__logo { color: var(--white); text-shadow: 0 3px 20px rgba(0,0,0,0.8); }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <picture>
+            <source media="(max-width: 768px)" srcset="images/handy.jpg">
+            <img src="images/Sky.jpg" alt="Kölner Dom – Skyline Köln" class="header__skyline">
+        </picture>
+        <div class="header__brand">
+            <p class="header__logo">streichmich24</p>
+            <p class="header__tagline">Malerfachbereich · Grabau · Köln</p>
+        </div>
+    </header>
+
+    <section class="section section--dark">
+        <div class="section__inner">
+            <h1 class="section__title">Datenschutzerklärung</h1>
+            <p class="section__lead">Wir schätzen Ihr Vertrauen. Diese Seite informiert Sie darüber, wie wir mit Ihren Daten umgehen und welche Maßnahmen wir zum Schutz Ihrer Privatsphäre ergreifen.</p>
+
+            <h2 style="text-align: center;">1. Erhebung von Logdaten</h2>
+            <p>Beim Besuch unserer Website werden automatisch Informationen über Ihre Internetverbindung zu Ihrem Gerät übertragen (z. B. IP-Adresse, Browsertyp und Datum). Diese Daten werden ausschließlich verwendet, um die Funktionalität und Sicherheit der Seite zu gewährleisten.</p>
+
+            <h2 style="text-align: center;">2. Nutzung des Kontaktformulars</h2>
+            <p>Wenn Sie uns kontaktieren, verarbeiten wir Ihre Angaben (Name, E-Mail, Anliegen), um Ihnen antworten zu können. Technisch wird für den Ablauf das Portal <strong style="color: var(--gold);">Formspree</strong> genutzt, welches Ihre Daten sicher an uns weiterleitet.</p>
+
+            <h2 style="text-align: center;">3. Externe Inhalte (Google Fonts)</h2>
+            <p>Wir verwenden Google Fonts für unsere Webtypografie. Da diese von externen Servern geladen werden, kann dies zu einer IP-Übermittlung an diesen Drittanbieter führen. Sie können die Darstellung über Ihre Browser-Einstellungenerfordern.</p>
+
+            <h2 style="text-align: center;">4. Datensicherung &amp; Rechte</h2>
+            <p>Sie haben das Recht auf Auskunft, Berichtigung oder Löschung Ihrer Daten. Wir setzen angemessene technische und organisatorische Maßnahmen ein, um Ihre personenbezogenen Daten vor unbefugtem Zugriff zu schützen.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p class="footer__brand">streichmich24 · Malerfachbereich Grabau</p>
+        <p style="color: var(--gold); font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: 0174 - 860 859 6</p>
+        <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
+        <nav class="footer__links">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+        </nav>
+    </footer>
+
+</body>
+</html>
