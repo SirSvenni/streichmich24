@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="streichmich24 – Malerfachbetrieb Grabau. Tapezieren, Lackieren, Streichen mit Handwerkstradition seit 2006. Kostenlose Beratung in Köln und Umgebung.">
+    <title>streichmich24 – Malerfachbereich Graz | Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0c0d0e;
+            --bg-soft: #141618;
+            --bg-card: #1a1c1f;
+            --gold: #c5a059;
+            --gold-light: #d4b87a;
+            --text: #f5f5f5;
+            --text-muted: #9a9a9a;
+            --white: #ffffff;
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        img { display: block; max-width: 100%; }
+
+        /* --- HEADER / SKYLINE --- */
+        .header {
+            position: relative;
+            background: var(--white);
+        }
+
+        .header__skyline {
+            width: 100%;
+            height: auto;
+        }
+
+        .header__brand {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 1.25rem;
+            pointer-events: none;
+        }
+
+        .header__logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.95rem, 7.15vw, 3.64rem);
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: #1a1a1a;
+            text-shadow: 0 1px 12px rgba(255,255,255,0.85);
+            line-height: 1.25;
+        }
+
+        .header__tagline {
+            font-size: clamp(0.65rem, 2.2vw, 0.85rem);
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: #444;
+            margin-top: 0.4rem;
+            text-shadow: 0 1px 8px rgba(255,255,255,0.8);
+        }
+
+        /* --- GALLERY STYLES --- */
+        .gallery_section {
+            padding: 4rem 1.5rem;
+        }
+
+        .title_wrapper {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .gallery_title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 8vw, 3.5rem);
+            color: var(--gold);
+        }
+
+        .gallery_subtitle {
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+
+        /* Mosaic Grid */
+        .mosaic_grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-auto-rows: 300px;
+            gap: 15px;
+            padding: 10px;
+        }
+
+        .mosaic_item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.05);
+            cursor: pointer;
+            transition: transform 0.6s var(--ease), border-color 0.4s var(--ease);
+        }
+
+        .mosaic_item:hover {
+            transform: scale(1.02);
+            border-color: var(--gold);
+            z-index: 2;
+        }
+
+        .mosaic_item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s var(--ease);
+        }
+
+        .mosaic_item:hover img {
+            transform: scale(1.05);
+        }
+
+        .mosaic_item.tall { grid-row: span 2; }
+        .mosaic_item.wide { grid-column: span 2; }
+
+        /* Lightbox */
+        #lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.95);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            cursor: zoom-out;
+        }
+
+        #lightbox.active {
+            display: flex;
+        }
+
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 90vh;
+            box-shadow: 0 0 40px rgba(197,160,89,0.2);
+        }
+
+        /* Footer Design */
+        footer {
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            background: #080809;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .footer__brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer_contact {
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer__copy {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .footer__links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer__links a {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+        }
+
+        .footer__links a:hover { color: var(--gold); }
+
+        @media (max-width: 768px) {
+            .mosaic_item.wide { grid-column: span 1; }
+            .mosaic_grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+        }
+
+        @media (min-width: 769px) {
+            .header {
+                height: 35vh;
+                min-height: 220px;
+                max-height: 340px;
+                overflow: hidden;
+                background: linear-gradient(to bottom, rgba(12,13,14,0.3), var(--bg));
+            }
+            .header__skyline {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center 70%;
+                filter: brightness(0.55);
+            }
+            .header__brand { justify-content: center; }
+            .header__logo { color: var(--white); text-shadow: 0 3px 20px rgba(0,0,0,0.8); }
+            .header__tagline { color: rgba(255,255,255,0.75); text-shadow: 0 2px 12px rgba(0,0,0,0.7); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Aus leer.html übernommen) -->
+    <header class="header">
+        <picture>
+            <source media="(max-width: 768px)" srcset="images/handy.jpg">
+            <img src="images/Sky.jpg" alt="Kölner Dom – Skyline Köln" class="header__skyline">
+        </picture>
+        <div class="header__brand">
+            <p class="header__logo">streichmich24</p>
+            <p class="header__tagline">Malerfachbetrieb · Grabau · Köln</p>
+        </div>
+    </header>
+
+    <!-- Content aus gallerie_tape.html eingefügt -->
+    <main class="gallery_section">
+        <div class="title_wrapper">
+            <h1 class="gallery_title">Streichen & Anstreichen</h1>
+                        <p class="gallery_subtitle">Innen- und Außenanstriche mit hochwertigen Materialien. Saubere Kanten, gleichmäßige Oberflächen und langlebige Ergebnisse für Ihr Zuhause.</p>
+        </div>
+
+        <div class="mosaic_grid">
+            <div class="mosaic_item tall"><img src="images/arbeiten/streicharbeiten/1.JPG" alt="Tapezierarbeit"></div>
+                        <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/2.JPG" alt="Dekorative Wand"></div>
+                        <div class="mosaic_item wide"><img src="images/arbeiten/streicharbeiten/3.JPG" alt="Präzise Ausführung"></div>
+                        <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/4.JPG" alt="Struktur-Tapete"></div>
+                        <div class="mosaic_item tall"><img src="images/arbeiten/streicharbeiten/5.JPG" alt="Detailarbeit"></div>
+                        <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/6.JPG" alt="Wohnraumgestaltung"></div>
+                        <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/7.JPG" alt="Kreative Tapete"></div>
+                        <div class="mosaic_item wide"><img src="images/arbeiten/streicharbeiten/12.jpg" alt="Exklusive Oberflächen"></div>
+                        <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/8.JPG" alt="Farbspiel"></div>
+                        <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/9.JPG" alt="Nuanciert"></div>
+                        <div class="mosaic_item tall"><img src="images/arbeiten/streicharbeiten/10.JPG" alt="Design-Tapete"></div>
+                        <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/15.jpg" alt="Handarbeit"></div>
+                        <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/16.JPG" alt="Wohnraumgestaltung"></div>
+                        <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/11.JPG" alt="Detailarbeit"></div>
+                        <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/13.JPG" alt="Handwerk"></div>
+                        <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/14.JPG" alt="Struktur-Tapete"></div>
+                        <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/17.JPG" alt="Kreative Tapete"></div>
+                        <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/18.JPG" alt="Detailarbeit"></div>
+                        <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/19.JPG" alt="Nuanciert"></div>
+                        <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/22.JPG" alt="Exklusive Oberflächen"></div>
+                        <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/23.JPG" alt="Handwerk"></div>
+        </div>
+    </main>
+
+    <!-- Footer (Inklusive Details aus gallerie_tape.html) -->
+    <footer class="footer">
+        <p class="footer__brand">streichmich24 · Malerfachbetrieb Grabau</p>
+                <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: <a href="tel:+491748608596" style="text-decoration: none; color: #c5a059;">0174 - 860 859 6</a></p>
+                <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
+                <nav class="footer__links">
+                    <a href="index.html">Startseite</a>
+                    <a href="galerie_streich.html">Streichen</a>
+                    <a href="galerie_lack.html">Lackieren</a>
+                    <a href="galerie_tape.html">Tapezieren</a>
+                    <a href="galerie_struk.html">Struktur</a>
+                    <a href="impressum.html">Impressum</a>
+                    <a href="#datenschutz">Datenschutz</a>
+                </nav>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox">
+        <img src="" alt="Vergrößertes Bild">
+    </div>
+
+    <script>
+        const items = document.querySelectorAll('.mosaic_item img');
+        const lightbox = document.getElementById('lightbox');
+        const lbImg = lightbox.querySelector('img');
+
+        items.forEach(img => {
+            img.addEventListener('click', () => {
+                lbImg.src = img.src;
+                lightbox.classList.add('active');
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
