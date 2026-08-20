@@ -30,21 +30,46 @@
         @font-face {
             font-family: 'Inter';
             src: url('fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
-            font-weight: 100 900;
-            font-style: normal;
-        }
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel=" stylesheet">
+            <style>
+                @font-face {
+                    font-family: 'Cormorant Garamond';
+                    src: url('fonts/CormorantGaramond-Regular.ttf') format('truetype');
+                    font-weight: normal;
+                    font-style: normal;
+                }
+                @font-face {
+                    font-family: 'Cormorant Garamond';
+                    src: url('fonts/CormorantGaramond-Bold.ttf') format('truetype');
+                    font-weight: bold;
+                    font-style: normal;
+                }
+                @font-face {
+                    font-family: 'Cormorant Garamond';
+                    src: url('fonts/CormorantGaramond-Italic.ttf') format('truetype');
+                    font-weight: normal;
+                    font-style: italic;
+                }
+                @font-face {
+                    font-family: 'Inter';
+                    src: url('fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+                    font-weight: 100 900;
+                    font-style: normal;
+                }
     
-        :root {
-            --bg: #0c0d0e;
-            --bg-soft: #141618;
-            --bg-card: #1a1c1f;
-            --gold: #c5a059;
-            --gold-light: #d4b87a;
-            --text: #f5f5f5;
-            --text-muted: #9a9a9a;
-            --white: #ffffff;
-            --ease: cubic-bezier(0.16, 1, 0.3, 1);
-        }
+                :root {
+                    --bg: #0c0d0e;
+                    --bg-soft: #141618;
+                    --bg-card: #1a1c1f;
+                    --gold: #c5a059;
+                    --gold-light: #d4b87a;
+                    --text: #f5f5f5;
+                    --text-muted: #9a9a9a;
+                    --white: #ffffff;
+                    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+                }
 
         *, *::before, *::after {
             margin: 0;
