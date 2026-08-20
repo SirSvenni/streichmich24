@@ -7,8 +7,33 @@
     <title>Datenschutz | streichmich24 – Malerfachbereich Grabau</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel=" stylesheet">
     <style>
+        @font-face {
+            font-family: 'Cormorant Garamond';
+            src: url('../fonts/CormorantGaramond-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Cormorant Garamond';
+            src: url('../fonts/CormorantGaramond-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Cormorant Garamond';
+            src: url('../fonts/CormorantGaramond-Italic.ttf') format('truetype');
+            font-weight: normal;
+            font-style: italic;
+        }
+        @font-face {
+            font-family: 'Inter';
+            src: url('../fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+            font-weight: 100 900;
+            font-style: normal;
+        }
+    
         :root {
             --bg: #0c0d0e;
             --bg-soft: #141618;
@@ -20,6 +45,7 @@
             --white: #ffffff;
             --ease: cubic-bezier(0.16, 1, 0.3, 1);
         }
+    ...
 
         *, *::before, *::after {
             margin: 0;
@@ -72,14 +98,14 @@
             line-height: 1.25;
         }
 
-                .header__tagline {
-                    font-size: clamp(0.65rem, 2.2vw, 0.85rem);
-                    letter-spacing: 0.35em;
-                    text-transform: uppercase;
-                    color: #1a1a1a;
-                    margin-top: 0.4rem;
-                    text-shadow: 0 2px 12px rgba(0,0,0,0.7);
-                }
+        .header__tagline {
+            font-size: clamp(0.65rem, 2.2vw, 0.85rem);
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: #1a1a1a;
+            margin-top: 0.4rem;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+        }
 
         /* --- Content Area --- */
         .section {
@@ -196,35 +222,61 @@
             <h1 class="section__title">Datenschutzerklärung</h1>
             <p class="section__lead">Wir schätzen Ihr Vertrauen. Diese Seite informiert Sie darüber, wie wir mit Ihren Daten umgehen und welche Maßnahmen wir zum Schutz Ihrer Privatsphäre ergreifen.</p>
 
-            <h2 style="text-align: center;">1. Erhebung von Logdaten</h2>
-            <p>Beim Besuch unserer Website werden automatisch Informationen über Ihre Internetverbindung zu Ihrem Gerät übertragen (z. B. IP-Adresse, Browsertyp und Datum). Diese Daten werden ausschließlich verwendet, um die Funktionalität und Sicherheit der Seite zu gewährleisten.</p>
+            <h2 style="text-align: center;">1. Verantwortlicher und Kontakt</h2>
+            <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
+            <p>
+                <strong>streichmich24</strong><br>
+                Sven Grabau<br>
+                Freimersdorfer Weg 4<br>
+                50226 Frechen<br>
+                E-Mail: <a href="mailto:info@streichmich24.de" style="color: var(--gold); text-decoration: none;">info@streichmich24.de</a><br>
+                Telefon: <a href="tel:+491748608596" style="color: var(--gold); text-decoration: none;">0174 - 860 859 6</a><br>
+                <a href="impressum.html" style="color: var(--gold); text-decoration: underline;">Link zum Impressum</a>
+            </p>
 
-            <h2 style="text-align: center;">2. Nutzung des Kontaktformulars</h2>
-            <p>Wenn Sie uns kontaktieren, verarbeiten wir Ihre Angaben (Name, E-Mail, Anliegen), um Ihnen antworten zu können. Technisch wird für den Ablauf das Portal <strong style="color: var(--gold);">Formspree</strong> genutzt, welches Ihre Daten sicher an uns weiterleitet.</p>
+            <h2 style="text-align: center;">2. Ihre Betroffenenrechte</h2>
+                        <p>Im Rahmen der DSGVO stehen Ihnen folgende Rechte zu:</p>
+                        <ul style="list-style: none; padding: 0; max-width: 50rem; margin: 0 auto; text-align: left; display: inline-block;">
+                            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--gold);">Auskunft:</strong> Sie können erfahren, welche Daten über Sie gespeichert werden (Art. 15 DSGVO).</li>
+                            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--gold);">Berichtigung:</strong> Sie können fehlerhafte Daten korrigieren lassen (Art. 16 DSGVO).</li>
+                            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--gold);">Löschung:</strong> Sie können die Löschung Ihrer Daten veranlassen (Art. 17 DSGVO).</li>
+                            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--gold);">Einschränkung:</strong> Sie können die Verarbeitung Ihrer Daten einschränken lassen (Art. 18 DSGVO).</li>
+                            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--gold);">Übertragbarkeit:</strong> Sie können Ihre Daten in einem gängigen Format erhalten (Art. 20 DSGVO).</li>
+                            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--gold);">Widerspruch:</strong> Sie können der Verarbeitung Ihrer Daten widersprechen (Art. 21 DSGVO).</li>
+                            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--gold);">Widerruf:</strong> Sie können erteilte Einwilligungen jederzeit mit Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3 DSGVO).</li>
+                        </ul>
+                        <p class="muted" style="text-align: center; margin-top: 20px;">Sie haben zudem das Recht, eine Beschwerde bei der zuständigen Aufsichtsbehörde einzureichen:</p>
+                        <p class="muted" style="text-align: center;">Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW)<br>Kavalleriestr. 2-4, 40213 Düsseldorf<br>E-Mail: poststelle@ldi.nrw.de</p>
 
-            <h2 style="text-align: center;">3. Externe Inhalte (Google Fonts)</h2>
-            <p>Wir verwenden Google Fonts für unsere Webtypografie. Da diese von externen Servern geladen werden, kann dies zu einer IP-Übermittlung an diesen Drittanbieter führen. Sie können die Darstellung über Ihre Browser-Einstellungenerfordern.</p>
+            <h2 style="text-align: center;">3. Webhosting und Infrastruktur (GitHub &amp; Strato)</h2>
+                        <p>Unsere Website wird auf GitHub Pages gehostet, einem Dienst der GitHub Inc. (88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA). Wenn Sie unsere Website aufrufen, erhebt und speichert GitHub automatisch Informationen in sogenannten Server-Logfiles, die Ihr Browser an uns übermittelt (z. B. IP-Adresse, Datum und Uhrzeit des Abrufs, Browsertyp und Betriebssystem). Die Datenverarbeitung erfolgt auf Grundlage unseres berechtigten Interesses an einem sicheren, schnellen und zuverlässigen Betrieb unserer Website (Art. 6 Abs. 1 lit. f DSGVO). Da GitHub in den USA ansässig ist, werden Daten dorthin übertragen. GitHub Inc. ist unter dem EU-US Data Privacy Framework zertifiziert und bietet damit ein angemessenes Datenschutzniveau. Die Logfiles werden nach den Sicherheitsrichtlinien von GitHub verarbeitet und automatisch gelöscht. Für die Bereitstellung der Webadresse (Domain-Registrierung und DNS-Verwaltung) nutzen wir zudem Dienste der STRATO AG (Otto-Ostrowski-Straße 7, 10249 Berlin). Mit der Strato AG wurde ein Vertrag zur Auftragsverarbeitung (AVV) geschlossen.</p>
 
-            <h2 style="text-align: center;">4. Datensicherung &amp; Rechte</h2>
-            <p>Sie haben das Recht auf Auskunft, Berichtigung oder Löschung Ihrer Daten. Wir setzen angemessene technische und organisatorische Maßnahmen ein, um Ihre personenbezogenen Daten vor unbefugtem Zugriff zu schützen.</p>
+            <h2 style="text-align: center;">4. Nutzung des Kontaktformulars</h2>
+                        <p>Wenn Sie uns über das Kontaktformular kontaktieren, verarbeiten wir Ihre Angaben (Name, E-Mail-Adresse, Inhalt der Nachricht), um Ihre Anfrage zu beantworten. Diese Verarbeitung erfolgt zur Durchführung vorvertraglicher Maßnahmen oder zur Vertragserfüllung im Rahmen unserer Maler- und Handwerksdienstleistungen (Art. 6 Abs. 1 lit. b DSGVO).</p>
+                        <p>Technisch wird für die Weiterleitung das Portal Formspree genutzt (Formspree Inc., 21750 Hardy Oak Blvd, Ste 104, San Antonio, TX 78258, USA). Da Formspree in den USA ansässig ist, findet eine Datenübermittung in ein Drittland statt. Wir gewährleisten ein angemessenes Datenschutzniveau durch den Abschluss von EU-Standardvertragsklauseln sowie die Zertifizierung des Anbieters unter dem EU-US Data Privacy Framework. Ihre Daten werden gelöscht, sobald Ihre Anfrage abschließend beantwortet wurde und keine gesetzlichen Aufbewahrungspflichten (z. B. steuerrechtliche Aufbewahrung bei Aufträgen) entgegenstehen.</p>
+
+            <h2 style="text-align: center;">5. Schrifttypen (Fonts)</h2>
+            <p>Wir verwenden für die Gestaltung der Website spezielle Schriftarten. Diese werden auf unserem Server bereitgestellt, um eine konsistente und hochwertige Darstellung zu gewährleisten. Da die Schriften lokal eingebunden sind, erfolgt keine Datenübermittlung an Drittanbieter für die Darstellung der Schriftarten.</p>
+
+            <h2 style="text-align: center;">6. Datensicherung &amp; Sicherheitsmaßnahmen</h2>
+            <p>Wir setzen angemessene technische und organisatorische Maßnahmen ein, um Ihre personenbezogenen Daten vor unbefugtem Zugriff zu schützen.</p>
         </div>
     </section>
 
     <footer class="footer">
         <p class="footer__brand">streichmich24 · Malerfachbetrieb Grabau</p>
-                <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: <a href="tel:+491748608596" style="text-decoration: none; color: #c5a059;">0174 - 860 859 6</a></p>
-                <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
-                <nav class="footer__links">
-                    <a href="index.html">Startseite</a>
-                    <a href="galerie_streich.html">Streichen</a>
-                    <a href="galerie_lack.html">Lackieren</a>
-                    <a href="galerie_tape.html">Tapezieren</a>
-                    <a href="galerie_struk.html">Strukturen</a>
-                                        <a href="bewertungen.html">Bewertungen</a>
-                                        <a href="impressum.html">Impressum</a>
-                                        <a href="#datenschutz">Datenschutz</a>
-
-                </nav>
+        <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: <a href="tel:+491748608596" style="text-decoration: none; color: #c5a059;">0174 - 860 859 6</a></p>
+        <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
+        <nav class="footer__links">
+            <a href="index.html">Startseite</a>
+            <a href="galerie_streich.html">Streichen</a>
+            <a href="galerie_lack.html">Lackieren</a>
+            <a href="galerie_tape.html">Tapezieren</a>
+            <a href="galerie_struk.html">Strukturen</a>
+            <a href="bewertungen.html">Bewertungen</a>
+            <a href="impressum.html">Impressum</a>
+            <a href="#datenschutz">Datenschutz</a>
+        </nav>
     </footer>
 
 </body>
