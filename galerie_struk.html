@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="streichmich24 – Malerfachbetrieb Grabau. Tapezieren, Lackieren, Streichen mit Handwerkstradition seit 2006. Kostenlose Beratung in Köln und Umgebung.">
-    <title>streichmich24 – Malerfachbereich Graz | Gallery</title>
+    <title>streichmich24 – Malerfachbetrieb Grabau | Gallery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -18,8 +18,16 @@
             --text: #f5f5f5;
             --text-muted: #9a9a9a;
             --white: #ffffff;
-            ```html
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
         }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -221,12 +229,13 @@
             }
             .header__brand { justify-content: center; }
             .header__logo { color: var(--white); text-shadow: 0 3px 20px rgba(0,0,0,0.8); }
-            .header__tagline { color: rgba(255,255,17), text-shadow: 0 2px 12px rgba(0,0,0,0.7); }
+            .header__tagline { color: rgba(255,255,255,0.75); text-shadow: 0 2px 12px rgba(0,0,0,0.7); }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header (Aus leer.html übernommen) -->
     <header class="header">
         <picture>
             <source media="(max-width: 768px)" srcset="images/handy.jpg">
@@ -234,10 +243,11 @@
         </picture>
         <div class="header__brand">
             <p class="header__logo">streichmich24</p>
-            <p class="header__tagline">Malerfachbetrieb · Grabau · Köln</p>
+            <p class="header__tagline">Malerfachbetrieb · Grabau · Köln & Umgebung</p>
         </div>
     </header>
 
+    <!-- Content aus gallerie_tape.html eingefügt -->
     <main class="gallery_section">
         <div class="title_wrapper">
             <h1 class="gallery_title">Strukturen</h1>
@@ -260,41 +270,41 @@
             <div class="mosaic_item"><img src="images/arbeiten/struktur/13.JPG" alt="Struktur 13"></div>
             <div class="mosaic_item"><img src="images/arbeiten/struktur/14.JPG" alt="Struktur 14"></div>
             <div class="mosaic_item"><img src="images/arbeiten/struktur/15.JPG" alt="Struktur 15"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/17.JPG" alt="Struktur 17"></div>
-            <div class="mosaic_item tall"><img src="images/arbeiten/struktur/18.JPG" alt="Struktur 18"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/19.JPG" alt="Struktur 19"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/20.JPG" alt="Struktur 20"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/21.JPG" alt="Struktur 21"></div>
-            <div class="mosaic_item wide"><img src="images/arbeiten/struktur/22.JPG" alt="Struktur 22"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/23.JPG" alt="Struktur 23"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/24.JPG" alt="Struktur 24"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/25.JPG" alt="Struktur 25"></div>
-            <div class="mosaic_item tall"><img src="images/arbeiten/struktur/26.JPG" alt="Struktur 26"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/27.JPG" alt="Struktur 27"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/17.JPG" alt="Sturktur 17"></div>
+            <div class="mosaic_item tall"><img src="images/arbeiten/struktur/18.JPG" alt="Sturktur 18"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/19.JPG" alt="Sturktur 19"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/20.JPG" alt="Sturktur 20"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/21.JPG" alt="Sturktur 21"></div>
+            <div class="mosaic_item wide"><img src="images/arbeiten/struktur/22.JPG" alt="Sturktur 22"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/23.JPG" alt="Sturktur 23"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/24.JPG" alt="Sturktur 24"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/25.JPG" alt="Sturktur 25"></div>
+            <div class="mosaic_item tall"><img src="images/arbeiten/struktur/26.JPG" alt="Sturktur 26"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/27.JPG" alt="Sturktur 27"></div>
             <div class="mosaic_item"><img src="images/arbeiten/struktur/28.JPG" alt="Sturktur 28"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/29.JPG" alt="Struktur 29"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/29.JPG" alt="Sturktur 29"></div>
             <div class="mosaic_item wide"><img src="images/arbeiten/struktur/30.JPG" alt="Sturktur 30"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/31.JPG" alt="Struktur 31"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/32.JPG" alt="Struktur 32"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/33.JPG" alt="Struktur 33"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/34.JPG" alt="Struktur 34"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/31.JPG" alt="Sturktur 31"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/32.JPG" alt="Sturktur 32"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/33.JPG" alt="Sturktur 33"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/34.JPG" alt="Sturktur 34"></div>
         </div>
-    </main>
+   </main>
 
     <!-- Footer (Inklusive Details aus gallerie_tape.html) -->
     <footer class="footer">
         <p class="footer__brand">streichmich24 · Malerfachbetrieb Grabau</p>
-        <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: <a href="tel:+491748608596" style="text-decoration: none; color: #c5a059;">0174 - 860 859 6</a></p>
-        <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
-        <nav class="footer__links">
-            <a href="index.html">Startseite</a>
-            <a href="galerie_streich.html">Streichen</a>
-            <a href="galerie_lack.html">Lackieren</a>
-            <a href="galerie_tape.html">Tapezieren</a>
-            <a href="galerie_struk.html">Struktur</a>
-            <a href="impressum.html">Impressum</a>
-            <a href="datenschutz.html">Datenschutz</a>
-        </nav>
+                <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: <a href="tel:+491748608596" style="text-decoration: none; color: #c5a059;">0174 - 860 859 6</a></p>
+                <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
+                <nav class="footer__links">
+                    <a href="index.html">Startseite</a>
+                    <a href="galerie_streich.html">Streichen</a>
+                    <a href="galerie_lack.html">Lackieren</a>
+                    <a href="galerie_tape.html">Tapezieren</a>
+                    <a href="galerie_struk.html">Struktur</a>
+                    <a href="impressum.html">Impressum</a>
+                    <a href="datenschutz.html">Datenschutz</a>
+                </nav>
     </footer>
 
     <!-- Lightbox Modal -->
