@@ -7,258 +7,102 @@
     <title>streichmich24 – Malerfachbetrieb Grabau | Gallery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel=" stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        @font-face {
-            font-family: 'Cormorant Garamond';
-            src: url('fonts/CormorantGaramond-Regular.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'Cormorant Garamond';
-            src: url('fonts/CormorantGaramond-Bold.ttf') format('truetype');
-            font-weight: bold;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'Cormorant Garamond';
-            src: url('fonts/CormorantGaramond-Italic.ttf') format('truetype');
-            font-weight: normal;
-            font-style: italic;
-        }
-        @font-face {
-            font-family: 'Inter';
-            src: url('fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
-            font-weight: 100 900;
-            font-style: normal;
-        }
-    
+        /* Basis Styles */
         :root {
             --bg: #0c0d0e;
-            --bg-soft: #141618;
-            --bg-card: #1a1c1f;
             --gold: #c5a059;
-            --gold-light: #d4b87a;
             --text: #f5f5f5;
             --text-muted: #9a9a9a;
             --white: #ffffff;
-            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+            --transition: 2s ease-in-out;
         }
 
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; }
         img { display: block; max-width: 100%; }
 
-        /* --- HEADER / SKYLINE --- */
-        .header {
-            position: relative;
-            background: var(--white);
-        }
+        /* --- Header --- */
+        .header { position: relative; background: var(--white); }
+        .header__skyline { width: 100%; height: auto; }
+        .header__brand { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 1.25rem; pointer-events: none; }
+        .header__logo { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.95rem, 7.15vw, 3.64rem); font-weight: 700; letter-spacing: 0.12em; color: #1a1a1a; text-shadow: 0 1px 12px rgba(255,255,255,0.85); line-height: 1.25; }
+        .header__tagline { font-size: clamp(0.65rem, 2.2vw, 0.85rem); letter-spacing: 0.35em; text-transform: uppercase; color: #444; margin-top: 0.4rem; text-shadow: 0 1px 8px rgba(255,255,255,0.8); }
 
-        .header__skyline {
-            width: 100%;
-            height: auto;
-        }
+        /* --- Main Content --- */
+        .gallery_section { padding: 4rem 1.5rem; }
+        .title_wrapper { text-align: center; margin-bottom: 4rem; max-width: 900px; margin: 0 auto 4rem auto; }
+        .gallery_title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 8vw, 3.5rem); color: var(--gold); margin-bottom: 1rem; }
+        .gallery_subtitle { color: var(--white); font-size: 1.2rem; font-weight: 400; max-width: 800px; margin: 0 auto; }
+        .gallery_subtitle_sub { color: var(--text-muted); font-size: 1rem; margin-top: 0.5rem; }
+        .social_icons { display: flex; justify-content: center; gap: 15px; margin-top: 15px; }
 
-        .header__brand {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 1.25rem;
-            pointer-events: none;
-        }
-
-        .header__logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.95rem, 7.15vw, 3.64rem);
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            color: #1a1a1a;
-            text-shadow: 0 1px 12px rgba(255,255,255,0.85);
-            line-height: 1.25;
-        }
-
-        .header__tagline {
-            font-size: clamp(0.65rem, 2.2vw, 0.85rem);
-            letter-spacing: 0.35em;
-            text-transform: uppercase;
-            color: #444;
-            margin-top: 0.4rem;
-            text-shadow: 0 1px 8px rgba(255,255,255,0.8);
-        }
-
-        /* --- GALLERY STYLES --- */
-        .gallery_section {
-            padding: 4rem 1.5rem;
-        }
-
-        .title_wrapper {
-            text-align: center;
-            margin-bottom: 4rem;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .gallery_title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2.5rem, 8vw, 3.5rem);
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-
-        .gallery_subtitle {
-            color: var(--white);
-            font-size: 1.2rem;
-            font-weight: 400;
+        /* Review Area (Single Column Focus) */
+        .review_container {
             max-width: 800px;
             margin: 0 auto;
-        }
-
-        /* Mosaic Grid */
-        .mosaic_grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            grid-auto-rows: 300px;
-            gap: 15px;
-            padding: 10px;
-        }
-
-        .mosaic_item {
             position: relative;
-            overflow: hidden;
-            border-radius: 4px;
-            border: 1px solid rgba(255,255,255,0.05);
-            cursor: pointer;
-            transition: transform 0.6s var(--ease), border-color 0.4s var(--ease);
-        }
-
-        .mosaic_item:hover {
-            transform: scale(1.02);
-            border-color: var(--gold);
-            z-index: 2;
-        }
-
-        .mosaic_item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s var(--ease);
-        }
-
-        .mosaic_item:hover img {
-            transform: scale(1.05);
-        }
-
-        .mosaic_item.tall { grid-row: span 2; }
-        .mosaic_item.wide { grid-column: span 2; }
-
-        /* Lightbox */
-        #lightbox {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.95);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-            cursor: zoom-out;
-        }
-
-        #lightbox.active {
+            height: 400px;
             display: flex;
-        }
-
-        #lightbox img {
-            max-width: 95vw;
-            max-height: 90vh;
-            box-shadow: 0 0 40px rgba(197,160,89,0.2);
-        }
-
-        /* Footer Design */
-        footer {
-            padding: 2.5rem 1.5rem;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            background: #080809;
-            border-top: 1px solid rgba(255,255,255,0.04);
         }
-
-        .footer__brand {
+        .review_item {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transition: opacity var(--transition);
+            padding: 20px;
+            text-align: center;
+        }
+        .review_item.active { opacity: 1; }
+        .review_text {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            color: var(--gold);
-            margin-bottom: 0.5rem;
+            font-style: italic;
+            font-size: clamp(1.8rem, 5vw, 2.4rem);
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
         }
-
-        .footer_contact {
+        .review_meta {
             color: var(--gold);
             font-family: 'Inter', sans-serif;
-            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
         }
 
-        .footer__copy {
-            font-size: 0.8rem;
+        .legal_note {
+            margin-top: 80px;
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-size: 0.85rem;
             color: var(--text-muted);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            line-height: 1.8;
         }
 
-        .footer__links {
-            margin-top: 1rem;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .footer__links a {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            text-decoration: none;
-            letter-spacing: 0.04em;
-        }
-
+        /* Footer */
+        footer { padding: 2.5rem 1.5rem; text-align: center; background: #080809; border-top: 1px solid rgba(255,255,255,0.04); }
+        .footer__brand { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 0.5rem; }
+        .footer_contact { color: var(--gold); font-family: 'Inter', sans-serif; margin-bottom: 0.5rem; }
+        .footer__copy { font-size: 0.8rem; color: var(--text-muted); }
+        .footer__links { margin-top: 1rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+        .footer__links a { font-size: 0.78rem; color: var(--text-muted); text-decoration: none; letter-spacing: 0.04em; }
         .footer__links a:hover { color: var(--gold); }
 
         @media (max-width: 768px) {
-            .mosaic_item.wide { grid-column: span 1; }
-            .mosaic_grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+            .review_text { font-size: 1.6rem; }
+            .review_container { height: 350px; }
         }
 
         @media (min-width: 769px) {
-            .header {
-                height: 35vh;
-                min-height: 220px;
-                max-height: 340px;
-                overflow: hidden;
-                background: linear-gradient(to bottom, rgba(12,13,14,0.3), var(--bg));
-            }
-            .header__skyline {
-                position: absolute;
-                inset: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center 70%;
-                filter: brightness(0.55);
-            }
+            .header { height: 35vh; min-height: 220px; max-height: 340px; overflow: hidden; background: linear-gradient(to bottom, rgba(12,13,14,0.3), var(--bg)); }
+            .header__skyline { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 70%; filter: brightness(0.55); }
             .header__brand { justify-content: center; }
             .header__logo { color: var(--white); text-shadow: 0 3px 20px rgba(0,0,0,0.8); }
             .header__tagline { color: rgba(255,255,255,0.75); text-shadow: 0 2px 12px rgba(0,0,0,0.7); }
@@ -267,7 +111,6 @@
 </head>
 <body>
 
-    <!-- Header (Aus leer.html übernommen) -->
     <header class="header">
         <picture>
             <source media="(max-width: 768px)" srcset="images/handy.jpg">
@@ -275,67 +118,103 @@
         </picture>
         <div class="header__brand">
             <p class="header__logo">streichmich24</p>
-            <p class="header__tagline">Malerfachbetrieb · Grabau · Köln & Umgebung</p>
+            <p class="header__tagline">Malerfachbetrieb · Grabau · Köln &amp; Umgebung</p>
         </div>
     </header>
 
-    <!-- Content aus gallerie_tape.html eingefügt -->
     <main class="gallery_section">
         <div class="title_wrapper">
             <h1 class="gallery_title">Bewertungen</h1>
-                        <p class="gallery_subtitle">Hier haben Sie die Möglichkeit Erfahrungen unserer Kunden einzusehen und selbst zu hinterlassen.</p>
-<p class="gallery_subtitle_sub">Hier ein kleiner Auszug von ehemals 165 Bewertungen.</p>
-<div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px;">
-    <img src="images/google.png" alt="Google" style="height: 75px; width: auto;">
-    <img src="images/Facebook.png" alt="Facebook" style="height: 75px; width: auto;">
-    <img src="images/instagramm.png" alt="Instagram" style="height: 75px; width: auto;">
-</div>
+            <p class="gallery_subtitle">Hier haben Sie die Möglichkeit Erfahrungen unserer Kunden einzusehen und selbst zu hinterlassen.</p>
+            <p class="gallery_subtitle_sub">Hier ein kleiner Auszug von ehemals 165 Bewertungen.</p>
+            <div class="social_icons">
+                <img src="images/google.png" alt="Google" style="height: 75px; width: auto;">
+                <img src="images/Facebook.png" alt="Facebook" style="height: 75px; width: auto;">
+                <img src="images/instagramm.png" alt="Instagram" style="height: 75px; width: auto;">
+            </div>
         </div>
 
-        <div class="review_images" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 20px 0;">
-            <img src="images/5.jpg" alt="Bewertung" class="review_img" style="max-width: 100%; height: auto;">
-            <img src="images/6.jpg" alt="Bewertung" class="review_img" style="max-width: 100%; height: auto;">
-            <img src="images/7.jpg" alt="Bewertung" class="review_img" style="max-width: 100%; height: auto;">
+        <div class="review_container" id="review_container">
+            <!-- Dynamisch befüllt durch JS -->
+        </div>
+
+        <div class="legal_note">
+            „Hinweis zur Echtheit unserer Bewertungen: Diese Meinungen wurden ursprünglich von Kunden auf einem externen Dienstleistungsportal verfasst. Um die Echtheit zu garantieren, gleichen wir jede Bewertung intern mit den originalen Einträgen des Handwerkerportals ab. Aus datenschutz- und urheberrechtlichen Gründen dürfen wir diese Quell-Screenshots hier jedoch nicht öffentlich zeigen.“
         </div>
     </main>
 
-    <!-- Footer (Inklusive Details aus gallerie_tape.html) -->
     <footer class="footer">
         <p class="footer__brand">streichmich24 · Malerfachbetrieb Grabau</p>
-                <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: <a href="tel:+491748608596" style="text-decoration: none; color: #c5a059;">0174 - 860 859 6</a></p>
-                <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
-                <nav class="footer__links">
-                    <a href="index.html">Startseite</a>
-                    <a href="galerie_streich.html">Streichen</a>
-                    <a href="galerie_lack.html">Lackieren</a>
-                    <a href="galerie_tape.html">Tapezieren</a>
-                    <a href="galerie_struk.html">Strukturen</a>
-                                        <a href="bewertungen.html">Bewertungen</a>
-                                        <a href="impressum.html">Impressum</a>
-                    <a href="datenschutz.html">Datenschutz</a>
-                </nav>
+        <p class="footer_contact">Mobil: <a href="tel:+49148608596" style="text-decoration: none; color: #c5a059;">0174 - 860 859 6</a></p>
+        <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
+        <nav class="footer__links">
+            <a href="index.html">Startseite</a>
+            <a href="galerie_streich.html">Streichen</a>
+            <a href="galerie_lack.html">Lackieren</a>
+            <a href="galerie_tape.html">Tapezieren</a>
+            <a href="galerie_struk.html">Strukturen</a>
+            <a href="bewertungen.html">Bewertungen</a>
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+        </nav>
     </footer>
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox">
-        <img src="" alt="Vergrößertes Bild">
-    </div>
-
     <script>
-        const items = document.querySelectorAll('.mosaic_item img');
-        const lightbox = document.getElementById('lightbox');
-        const lbImg = lightbox.querySelector('img');
+        const reviewData = [
+            { q: "Zuverlässige Termine, fachmännische Beratung und fachgerechte Ausführung. Flexible und prompte Nacharbeit = perfektes Ergebnis! Bei der nächsten Wohnung gerne wieder!", m: "Stefan R. aus Köln" },
+            { q: "Nettes und sehr zuverlässiges Team. Es wurde eine sehr, sehr gute Arbeit abgeliefert! Immer wieder gerne!:-)", m: "Kunde „Style“ aus Meerbusch" },
+            { q: "Sehr gute Arbeit, schnell und zuverlässig ausgeführt. Wenn mal wieder etwas zu streichen ist, dann nur mit diesem Team!;-)", m: "Sören aus Baesweiler" },
+            { q: "Sehr freundlich, zuverlässig und alles tadellos.", m: "Kunde C. aus Köln" },
+            { q: "Termingerecht, freundlich und gut.", m: "Firma G. aus Bergisch Gladbach" },
+            { q: "Einwandfreie Arbeit und professionelle Beratung. Jederzeit wieder und noch einmal herzlichen Danke.", m: "Firma T. aus Köln" },
+            { q: "Das nenne ich Dienstleistung. Perfekt und nett!!", m: "R. Scheffler aus Köln" },
+            { q: "Sehr gute Ausführung. Von der Auftragsannahme bis zur Vollendung sehr professionell. Jederzeit wieder, danke!", m: "J. K. aus Düsseldorf" },
+            { q: "Sehr schnell war alles zur vollsten Zufriedenheit erledigt. Danke.", m: "Alexandra aus Bergisch Gladbach" },
+            { q: "Alles sehr professionell gelaufen, sehr nett und zuverlässig. Danke.", m: "Max aus Essen" },
+            { q: "Einfach toll. Danke für die tolle Arbeit.", m: "Kunde C. aus Köln" }
+        ];
 
-        items.forEach(img => {
-            img.addEventListener('click', () => {
-                lbImg.src = img.src;
-                lightbox.classList.add('active');
+        function initReviews() {
+            const container = document.getElementById('review_container');
+            const elements = container.querySelectorAll('.review_item');
+            let current = 0;
+
+            function rotate() {
+                elements.forEach(el => el.classList.remove('active'));
+                elements[current].classList.add('active');
+                current = (current + 1) % elements.length;
+            }
+
+            // Initial Start
+            rotate();
+            // Interval
+            setInterval(rotate, 5000);
+        }
+
+        window.onload = function() {
+            const container = document.getElementById('review_container');
+            reviewData.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'review_item';
+                div.innerHTML = `<p class="review_text">„${item.q}“</p><p class="review_meta">${item.m}</p>`;
+                container.appendChild(div);
             });
-        });
+            initReviews();
+        };
 
-        lightbox.addEventListener('click', () => {
-            lightbox.classList.remove('active');
-        });
+        // Optional: Lightbox support (if needed by other pages/scripts)
+        const lboxItems = document.querySelectorAll('.mosaic_item img');
+        const lb = document.getElementById('lightbox');
+        if(lb) {
+            const lbI = lb.querySelector('img');
+            lboxItems.forEach(i => {
+                i.addEventListener('click', () => {
+                    lbI.src = i.src;
+                    lb.classList.add('active');
+                });
+            });
+            lb.addEventListener('click', () => lb.classList.remove('active'));
+        }
     </script>
 </body>
 </html>
