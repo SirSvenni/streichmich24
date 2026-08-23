@@ -263,12 +263,10 @@
             margin-bottom: 0.75rem;
         }
 
-        .service__name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.45rem;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 0.5rem;
+        .service__link {
+            color: inherit;
+            text-decoration: none;
+            display: block;
         }
 
         .service__desc {
@@ -499,14 +497,37 @@
     <section class="hero">
         <img src="images/hero-blumen.jpg" alt="Meisterhafte Malerarbeiten – Galerie-Qualität" class="hero__photo">
         <div class="hero__overlay">
-            <h1 class="hero__title">Handwerk,<br>das Räume berührt.</h1>
-            <p class="hero__subtitle">Tapezieren, Lackieren und Streichen – mit der Erfahrung von streichmich24 und dem Anspruch an absolute Perfektion.</p>
-        </div>
-        <div class="hero__cta">
-            <a href="#kontakt" class="btn">Kostenlose Beratung anfragen</a>
-        </div>
-    </section>
+            <h1 class="hero__title" id="hero-title">Handwerk,<br>das Räume berührt.</h1>
+                        <p class="hero__subtitle">Tapezieren, Lackieren und Streichen – mit der Erfahrung von streichmich24 und dem Anspruch an absolute Perfektion.</p>
+                    </div>
+                    <div class="hero__cta">
+                        <a href="#kontakt" class="btn">Kostenlose Beratung anfragen</a>
+                    </div>
+                </section>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const titleElement = document.getElementById('hero-title');
+                        const texts = [
+                            "Handwerk,<br>das Räume berührt.",
+                            "Dein Zuhause verdient<br>mehr als nur Farbe."
+                        ];
+                        let currentIdx = 0;
 
+                        if (titleElement) {
+                            titleElement.style.transition = 'opacity 4s ease-in-out';
+                            titleElement.style.opacity = 1;
+
+                            setInterval(function() {
+                                titleElement.style.opacity = 0;
+                                setTimeout(function() {
+                                    titleElement.innerHTML = texts[currentIdx];
+                                    titleElement.style.opacity = 1;
+                                    currentIdx = (currentIdx + 1) % texts.length;
+                                }, 1000);
+                            }, 4000);
+                        }
+                    });
+                </script>
     <!-- Vertrauen -->
     <div class="trust">
         <div class="trust__item">
@@ -530,19 +551,25 @@
             <p class="section__lead">Vom klassischen Anstrich bis zur anspruchsvollen Wandgestaltung – präzise, sauber und termingerecht.</p>
             <div class="services">
                 <article class="service">
-                    <div class="service__icon">🎨</div>
-                    <h3 class="service__name">Streichen &amp; Anstreichen</h3>
-                    <p class="service__desc">Innen- und Außenanstriche mit hochwertigen Materialien. Saubere Kanten, gleichmäßige Oberflächen und langlebige Ergebnisse für Ihr Zuhause.</p>
+                    <a href="galerie_streich.html" class="service__link">
+                        <div class="service__icon">🎨</div>
+                        <h3 class="service__name">Streichen</h3>
+                        <p class="service__desc">Innen- und Außenanstriche mit hochwertigen Materialien. Saubere Kanten, gleichmäßige Oberflächen und langlebige Ergebnisse für Ihr Zuhause.</p>
+                    </a>
                 </article>
                 <article class="service">
-                    <div class="service__icon">✨</div>
-                    <h3 class="service__name">Lackieren</h3>
-                    <p class="service__desc">Türen, Fenster, Heizkörper und Holzarbeiten – professionell lackiert mit der Sorgfalt, die jedes Detail verdient.</p>
+                    <a href="galerie_lack.html" class="service__link">
+                        <div class="service__icon">✨</div>
+                        <h3 class="service__name">Lackieren</h3>
+                        <p class="service__desc">Türen, Fenster, Heizkörper und Holzarbeiten – professionell lackiert mit der Sorgfalt, die jedes Detail verdient.</p>
+                    </a>
                 </article>
                 <article class="service">
-                    <div class="service__icon">📐</div>
-                    <h3 class="service__name">Tapezieren</h3>
-                    <p class="service__desc">Vliestapeten, Mustertapeten und Raufaser – fachgerecht tapeziert, passgenau geschnitten und nahtlos verarbeitet.</p>
+                    <a href="galerie_tape.html" class="service__link">
+                        <div class="service__icon">📐</div>
+                        <h3 class="service__name">Tapezieren</h3>
+                        <p class="service__desc">Vliestapeten, Mustertapeten und Raufaser – fachgerecht tapeziert, passgenau geschnitten und nahtlos verarbeitet.</p>
+                    </a>
                 </article>
             </div>
         </div>
@@ -586,7 +613,7 @@
                     <label for="service">Gewünschte Leistung</label>
                     <select id="service" name="service" data-fs-field>
                         <option value="">Bitte wählen …</option>
-                        <option>Streichen &amp; Anstreichen</option>
+                        <option>Streichen</option>
                         <option>Lackieren</option>
                         <option>Tapezieren</option>
                         <option>Beratung / Sonstiges</option>
