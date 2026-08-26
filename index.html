@@ -497,38 +497,14 @@
         <img src="images/hero-blumen.jpg" alt="Meisterhafte Malerarbeiten – Galerie-Qualität" class="hero__photo">
         <div class="hero__overlay">
             <h1 class="hero__title" id="hero-title">Handwerk,<br>das Räume berührt.</h1>
-                        <p class="hero__subtitle">Tapezieren, Lackieren und Streichen – mit der Erfahrung von streichmich24 und dem Anspruch an absolute Perfektion.</p>
+                        <p class="hero__subtitle"></p>
                     </div>
-                    <div class="hero__cta">
-                        <a href="#kontakt" class="btn">Kostenlose Beratung anfragen</a>
-                    </div>
-                </section>
-                <script>
-                    document.addEventListener('DOMContentLoaded', function() {
-                        const titleElement = document.getElementById('hero-title');
-                        const texts = [
-                            "Handwerk,<br>das Räume berührt.",
-                            "Dein Zuhause verdient<br>mehr als nur Farbe."
-                        ];
-                        let currentIdx = 0;
-
-                        if (titleElement) {
-                            titleElement.style.transition = 'opacity 4s ease-in-out';
-                            titleElement.style.opacity = 1;
-
-                            setInterval(function() {
-                                titleElement.style.opacity = 0;
-                                setTimeout(function() {
-                                    titleElement.innerHTML = texts[currentIdx];
-                                    titleElement.style.opacity = 1;
-                                    currentIdx = (currentIdx + 1) % texts.length;
-                                }, 1000);
-                            }, 4000);
-                        }
-                    });
-                </script>
-    <!-- Vertrauen -->
-    <div class="trust">
+                   <div class="hero__cta">
+                       <a href="#kontakt" class="btn">Kostenlose Beratung anfragen</a>
+                   </div>
+               </section>
+   <!-- Vertrauen -->
+   <div class="trust">
         <div class="trust__item">
             <div class="trust__number">2006</div>
             <div class="trust__label">Gründung</div>
@@ -547,7 +523,7 @@
     <section id="leistungen" class="section section--dark">
         <div class="section__inner">
             <h2 class="section__title">Unsere Leistungen</h2>
-            <p class="section__lead">Vom klassischen Anstrich bis zur anspruchsvollen Wandgestaltung – präzise, sauber und termingerecht.</p>
+            <p class="section__lead">"Dein Zuhause verdient mehr als nur Farbe"</p>
             <div class="services">
                             <article class="service">
                                 <a href="galerie_streich.html" class="service__link">
