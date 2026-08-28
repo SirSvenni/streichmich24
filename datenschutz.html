@@ -9,19 +9,19 @@
     <style>
         @font-face {
             font-family: 'Cormorant Garamond';
-            src: url('../fonts/CormorantGaramond-Regular.ttf') format('truetype');
+            src: url('fonts/CormorantGaramond-Regular.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
         @font-face {
             font-family: 'Cormorant Garamond';
-            src: url('../fonts/CormorantGaramond-Bold.ttf') format('truetype');
+            src: url('fonts/CormorantGaramond-Bold.ttf') format('truetype');
             font-weight: bold;
             font-style: normal;
         }
         @font-face {
             font-family: 'Cormorant Garamond';
-            src: url('../fonts/CormorantGaramond-Italic.ttf') format('truetype');
+            src: url('fonts/CormorantGaramond-Italic.ttf') format('truetype');
             font-weight: normal;
             font-style: italic;
         }
@@ -100,14 +100,15 @@
             font-size: clamp(0.65rem, 2.2vw, 0.85rem);
             letter-spacing: 0.35em;
             text-transform: uppercase;
-            color: #1a1a1a;
+            color: #444;
             margin-top: 0.4rem;
-            text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+            text-shadow: 0 1px 8px rgba(255,255,255,0.8);
         }
 
         /* --- Content Area --- */
-        .section {
-            padding: 8rem 1.5rem;
+
+            padding: 4rem 1.5rem;
+        }
         }
 
         .section--dark { background: var(--bg); }
@@ -199,6 +200,10 @@
                 filter: brightness(0.55);
             }
             .header__logo { color: var(--white); text-shadow: 0 3px 20px rgba(0,0,0,0.8); }
+            .header__tagline {
+                color: rgba(255,255,255,0.75);
+                text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+            }
         }
     </style>
 </head>
