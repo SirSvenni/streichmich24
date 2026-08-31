@@ -3,212 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Datenschutzerklärung - streichmich24 Malerfachbereich Grabau">
-    <title>Datenschutz | streichmich24 – Malerfachbereich Grabau</title>
+    <meta name="description" content="Datenschutzerklärung - streichmich24 Malerfachbetrieb Grabau">
+    <title>Datenschutz | streichmich24 – Malerfachbetrieb Grabau</title>
 
-    <style>
-        @font-face {
-            font-family: 'Cormorant Garamond';
-            src: url('fonts/CormorantGaramond-Regular.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'Cormorant Garamond';
-            src: url('fonts/CormorantGaramond-Bold.ttf') format('truetype');
-            font-weight: bold;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'Cormorant Garamond';
-            src: url('fonts/CormorantGaramond-Italic.ttf') format('truetype');
-            font-weight: normal;
-            font-style: italic;
-        }
-        @font-face {
-            font-family: 'Inter';
-            src: url('../fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
-            font-weight: 100 900;
-            font-style: normal;
-        }
-    
-        :root {
-            --bg: #0c0d0e;
-            --bg-soft: #141618;
-            --bg-card: #1a1c1f;
-            --gold: #c5a059;
-            --gold-light: #d4b87a;
-            --text: #f5f5f5;
-            --text-muted: #9a9a9a;
-            --white: #ffffff;
-            --ease: cubic-bezier(0.16, 1, 0.3, 1);
-        }
-    ...
-
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        img { display: block; max-width: 100%; }
-
-        /* --- Header --- */
-        .header {
-            position: relative;
-            background: var(--white);
-        }
-
-        .header__skyline {
-            width: 100%;
-            height: auto;
-        }
-
-        .header__brand {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 1.25rem;
-            pointer-events: none;
-        }
-
-        .header__logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.95rem, 7.15vw, 3.64rem);
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            color: #1a1a1a;
-            text-shadow: 0 1px 12px rgba(255,255,255,0.85);
-            line-height: 1.25;
-        }
-
-        .header__tagline {
-            font-size: clamp(0.65rem, 2.2vw, 0.85rem);
-            letter-spacing: 0.35em;
-            text-transform: uppercase;
-            color: #444;
-            margin-top: 0.4rem;
-            text-shadow: 0 1px 8px rgba(255,255,255,0.8);
-        }
-
-        /* --- Content Area --- */
-
-            padding: 4rem 1.5rem;
-        }
-        }
-
-        .section--dark { background: var(--bg); }
-
-        .section__inner {
-            max-width: 68rem;
-            margin: 0 auto;
-        }
-
-        .section__title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.8rem, 5.5vw, 2.8rem);
-            font-weight: 700;
-            color: var(--gold);
-            text-align: center;
-            margin-bottom: 0.75rem;
-        }
-
-        .section__lead {
-            text-align: center;
-            color: var(--text-muted);
-            max-width: 36rem;
-            margin: 0 auto 2.5rem;
-            font-size: clamp(0.9rem, 2.5vw, 1.05rem);
-        }
-
-        p {
-            margin-bottom: 1.25rem;
-        }
-
-        h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
-            color: var(--white);
-            margin: 3rem 0 1.5rem;
-            text-align: center;
-        }
-
-        .muted {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* --- Footer Area --- */
-        .footer {
-            padding: 2.5rem 1.5rem 6rem;
-            text-align: center;
-            background: #080809;
-            border-top: 1px solid rgba(255,255,255,0.04);
-        }
-
-        .footer__brand {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            color: var(--gold);
-            margin-bottom: 0.5rem;
-        }
-
-        .footer__copy {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .footer__links {
-            margin-top: 1rem;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .footer__links a {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            text-decoration: none;
-        }
-
-        @media (min-width: 769px) {
-            .header {
-                height: 35vh;
-                background: linear-gradient(to bottom, rgba(12,13,14,0.3), var(--bg));
-            }
-            .header__skyline {
-                position: absolute;
-                inset: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                filter: brightness(0.55);
-            }
-            .header__logo { color: var(--white); text-shadow: 0 3px 20px rgba(0,0,0,0.8); }
-            .header__tagline {
-                color: rgba(255,255,255,0.75);
-                text-shadow: 0 2px 12px rgba(0,0,0,0.7);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Skyline Header -->
     <header class="header">
         <picture>
             <source media="(max-width: 768px)" srcset="images/handy.jpg">
@@ -220,6 +22,56 @@
         </div>
     </header>
 
+    <!-- Navigation (wie index.html) -->
+    <nav class="main-navigation">
+        <!-- Desktop Navigation (steht auf der Browser-Ansicht) -->
+        <ul class="desk-nav" aria-label="Hauptnavigation">
+            <li><a href="index.html">Startseite</a></li>
+            <li class="nav-group">
+                <button class="group-btn" aria-expanded="false" role="menuitem">
+                    Galerie ▾
+                </button>
+                <ul class="dropdown">
+                    <li><a href="galerie_streich.html">Streichen</a></li>
+                    <li><a href="galerie_tape.html">Tapezieren</a></li>
+                    <li><a href="galerie_lack.html">Lackieren</a></li>
+                    <li><a href="galerie_struk.html">Strukturen</a></li>
+                </ul>
+            </li>
+            <li><a href="bewertungen.html">Bewertungen</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+            <li class="active"><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+
+   <!-- Mobile Navigation Toggle -->
+   <button class="mobile-nav-toggle" id="mobileNavToggle">
+       <h3>Menü</h3>
+       <span></span>
+   </button>
+
+   <!-- Mobile Menu Overlay (steht auf der Mobil-Ansicht) -->
+   <div class="mobile-nav-overlay" id="mobileNavOverlay">
+       <nav>
+           <ul class="mobile-nav-list">
+               <li class="mobile-nav-item"><a href="index.html">Startseite</a></li>
+               <li class="mobile-nav-item group-btn-wrapper">
+                   <button class="group-btn" id="mobileGroupToggle" aria-expanded="false">Galerie ▾</button>
+                   <ul class="dropdown" style="position: static; background: var(--bg-soft); padding-left: 1.5rem; display: none;">
+                       <li><a href="galerie_streich.html">Streichen</a></li>
+                       <li><a href="galerie_tape.html">Tapezieren</a></li>
+                       <li><a href="galerie_lack.html">Lackieren</a></li>
+                       <li><a href="galerie_struk.html">Strukturen</a></li>
+                   </ul>
+               </li>
+               <li class="mobile-nav-item"><a href="bewertungen.html">Bewertungen</a></li>
+               <li class="mobile-nav-item"><a href="#kontakt">Kontakt</a></li>
+               <li class="mobile-nav-item"><a href="datenschutz.html">Datenschutz</a></li>
+               <li class="mobile-nav-item"><a href="impressum.html">Impressum</a></li>
+           </ul>
+       </nav>
+   </div>
+    </nav>
     <section class="section section--dark">
         <div class="section__inner">
             <h1 class="section__title">Datenschutzerklärung</h1>
@@ -266,21 +118,65 @@
         </div>
     </section>
 
+    <!-- Footer (wie impressum.html) -->
     <footer class="footer">
         <p class="footer__brand">streichmich24 · Malerfachbetrieb Grabau</p>
         <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: <a href="tel:+491748608596" style="text-decoration: none; color: #c5a059;">0174 - 860 859 6</a></p>
         <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
+
         <nav class="footer__links">
-            <a href="index.html">Startseite</a>
-            <a href="galerie_streich.html">Streichen</a>
-            <a href="galerie_lack.html">Lackieren</a>
-            <a href="galerie_tape.html">Tapezieren</a>
-            <a href="galerie_struk.html">Strukturen</a>
-            <a href="bewertungen.html">Bewertungen</a>
+            <a href="datenschutz.html" class="active">Datenschutz</a>
             <a href="impressum.html">Impressum</a>
-            <a href="#datenschutz">Datenschutz</a>
         </nav>
     </footer>
+
+    <script>
+        // Navigation Interaktion (Desktop + Mobile)
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileNavToggle = document.getElementById('mobileNavToggle');
+            const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+            const desktopDropdownBtn = document.querySelector('.group-btn:not(#mobileGroupToggle)');
+            const desktopDropdown = document.querySelector('.main-navigation .dropdown');
+            const mobileGroupToggle = document.getElementById('mobileGroupToggle');
+            const mobileDropdown = document.querySelector('.mobile-nav-item:nth-child(2) > ul');
+
+            // Hamburger Menü Toggle (Mobile)
+            if (mobileNavToggle && mobileNavOverlay) {
+                mobileNavToggle.addEventListener('click', () => {
+                    mobileNavToggle.classList.toggle('active');
+                    mobileNavOverlay.classList.toggle('active');
+                    document.body.style.overflow = mobileNavOverlay.classList.contains('active') ? '' : 'hidden';
+                });
+
+                // Menü schließen bei Klick außerhalb (Mobile)
+                document.addEventListener('click', (e) => {
+                    if (!mobileNavToggle.contains(e.target) && !mobileNavOverlay.contains(e.target)) {
+                        mobileNavToggle.classList.remove('active');
+                        mobileNavOverlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+
+            // Desktop Dropdown Toggle
+            if (desktopDropdownBtn && desktopDropdown) {
+                desktopDropdownBtn.addEventListener('click', () => {
+                    const isExpanded = desktopDropdownBtn.getAttribute('aria-expanded') === 'true';
+                    desktopDropdownBtn.setAttribute('aria-expanded', !isExpanded);
+                    desktopDropdown.style.display = isExpanded ? 'none' : 'block';
+                });
+            }
+
+            // Mobile Dropdown Toggle
+            if (mobileGroupToggle && mobileDropdown) {
+                mobileGroupToggle.addEventListener('click', () => {
+                    const isExpanded = mobileGroupToggle.getAttribute('aria-expanded') === 'true';
+                    mobileGroupToggle.setAttribute('aria-expanded', !isExpanded);
+                    mobileDropdown.style.display = isExpanded ? 'none' : 'block';
+                });
+            }
+        });
+    </script>
 
 </body>
 </html>

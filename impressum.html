@@ -6,426 +6,7 @@
     <meta name="description" content="streichmich24 – Malerfachbetrieb Grabau. Tapezieren, Lackieren, Streichen mit Handwerkstradition seit 2006. Kostenlose Beratung in Köln und Umgebung.">
     <title>streichmich24 – Malerfachbetrieb Grabau | Köln</title>
 
-    <style>
-        @font-face {
-            font-family: 'Cormorant Garamond';
-            src: url('fonts/CormorantGaramond-Regular.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'Cormorant Garamond';
-            src: url('fonts/CormorantGaramond-Bold.ttf') format('truetype');
-            font-weight: bold;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'Cormorant Garamond';
-            src: url('fonts/CormorantGaramond-Italic.ttf') format('truetype');
-            font-weight: normal;
-            font-style: italic;
-        }
-        @font-face {
-            font-family: 'Inter';
-            src: url('fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
-            font-weight: 100 900;
-            font-style: normal;
-        }
-    
-        :root {
-            --bg: #0c0d0e;
-            --bg-soft: #141618;
-            --bg-card: #1a1c1f;
-            --gold: #c5a059;
-            --gold-light: #d4b87a;
-            --text: #f5f5f5;
-            --text-muted: #9a9a9a;
-            --white: #ffffff;
-            --ease: cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        img { display: block; max-width: 100%; }
-
-        /* ── HEADER / SKYLINE ── */
-        .header {
-            position: relative;
-            background: var(--white);
-        }
-
-        .header__skyline {
-            width: 100%;
-            height: auto;
-        }
-
-        .header__brand {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 1.25rem;
-            pointer-events: none;
-        }
-
-        .header__logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.95rem, 7.15vw, 3.64rem);
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            color: #1a1a1a;
-            text-shadow: 0 1px 12px rgba(255,255,255,0.85);
-            line-height: 1.25;
-        }
-
-        .header__tagline {
-            font-size: clamp(0.65rem, 2.2vw, 0.85rem);
-            letter-spacing: 0.35em;
-            text-transform: uppercase;
-            color: #444;
-            margin-top: 0.4rem;
-            text-shadow: 0 1px 8px rgba(255,255,255,0.8);
-        }
-
-        /* ── HERO ── */
-        .hero {
-            position: relative;
-        }
-
-        .hero__photo {
-            width: 100%;
-            height: auto;
-            filter: brightness(0.42) contrast(1.15) saturate(0.9);
-        }
-
-        .hero__overlay {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 1.5rem 1.5rem 3rem;
-            background: linear-gradient(
-                to bottom,
-                rgba(12,13,14,0.15) 0%,
-                rgba(12,13,14,0.55) 60%,
-                rgba(12,13,14,0.75) 100%
-            );
-        }
-
-        .hero__title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.46rem, 6.68vw, 3.02rem);
-            font-weight: 700;
-            line-height: 1.15;
-            color: var(--white);
-            text-shadow: 0 4px 30px rgba(0,0,0,0.7);
-            margin-bottom: 1rem;
-            animation: fadeUp 6s var(--ease) forwards;
-            opacity: 0;
-        }
-
-        .hero__subtitle {
-            font-size: clamp(0.9rem, 3.2vw, 1.25rem);
-            font-weight: 300;
-            color: rgba(255,255,255,0.88);
-            max-width: 32rem;
-            text-shadow: 0 2px 16px rgba(0,0,0,0.6);
-            animation: fadeUp 1.2s 0.25s var(--ease) forwards;
-            opacity: 0;
-        }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero__cta {
-            position: absolute;
-            bottom: 1.75rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-            width: calc(100% - 2.5rem);
-            max-width: 22rem;
-        }
-
-        /* ── BUTTONS ── */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            background: var(--gold);
-            color: #111 !important;
-            font-weight: 700;
-            font-size: 0.95rem;
-            text-decoration: none;
-            border: none;
-            border-radius: 100px;
-            cursor: pointer;
-            transition: background 0.4s var(--ease), transform 0.3s var(--ease), box-shadow 0.4s var(--ease);
-            box-shadow: 0 8px 28px rgba(197,160,89,0.35);
-            width: 100%;
-        }
-
-        .btn:hover {
-            background: var(--gold-light);
-            transform: translateY(-2px);
-            box-shadow: 0 12px 36px rgba(197,160,89,0.45);
-        }
-
-        /* ── SECTIONS ── */
-        .section {
-            padding: 8rem 1.5rem;
-        }
-
-        .section--dark { background: var(--bg); }
-        .section--soft { background: var(--bg-soft); }
-
-        .section__inner {
-            max-width: 68rem;
-            margin: 0 auto;
-        }
-
-        .section__title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.8rem, 5.5vw, 2.8rem);
-            font-weight: 700;
-            color: var(--gold);
-            text-align: center;
-            margin-bottom: 0.75rem;
-            margin-top: 2rem;
-            text-shadow: none;
-        }
-
-        .section__lead {
-            text-align: center;
-            color: var(--text-muted);
-            max-width: 36rem;
-            margin: 0 auto 2.5rem;
-            font-size: clamp(0.9rem, 2.5vw, 1.05rem);
-        }
-
-        /* ── SERVICES ── */
-        .services {
-            display: grid;
-            gap: 1.25rem;
-        }
-
-        .service {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/sven.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            border: 1px solid rgba(255,255,255,0.04);
-            border-radius: 1rem;
-            padding: 1.75rem 1.5rem;
-            transition: border-color 0.4s var(--ease), transform 0.4s var(--ease);
-        }
-
-        .service:hover {
-            border-color: rgba(197,160,89,0.35);
-            transform: translateY(-3px);
-        }
-
-        .service__icon {
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .service__name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.45rem;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 0.5rem;
-        }
-
-        .service__desc {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            line-height: 1.65;
-        }
-
-        /* ── ABOUT ── */
-        .about {
-            display: grid;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .about__text p {
-            margin-bottom: 1rem;
-            color: rgba(245,245,2530,0.88);
-            font-size: clamp(0.92rem, 2.5vw, 1.05rem);
-        }
-
-        .about__text p:last-child { margin-bottom: 0; }
-
-        .about__highlight {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.8rem, 5vw, 3rem);
-            font-style: italic;
-            color: var(--gold);
-            border-left: 3px solid var(--gold);
-            padding-left: 1.25rem;
-            margin: 1.5rem 0;
-        }
-
-        .about__name {
-            font-weight: 700;
-            color: var(--white);
-        }
-
-        /* ── FOOTER ── */
-        .footer {
-            padding: 2.5rem 1.5rem 6rem;
-            text-align: center;
-            background: #080809;
-            border-top: 1px solid rgba(255,255,255,0.04);
-        }
-
-        .footer__brand {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            color: var(--gold);
-            margin-bottom: 0.5rem;
-        }
-
-        .footer__copy {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .footer__links {
-            margin-top: 1rem;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .footer__links a {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            text-decoration: none;
-            letter-spacing: 0.04em;
-        }
-
-        .footer__links a:hover { color: var(--gold); }
-
-        /* ── MOBILE STICKY CTA ── */
-        .sticky-cta {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            padding: 0.75rem 1rem;
-            background: rgba(12,13,14,0.92);
-            backdrop-filter: blur(12px);
-            border-top: 1px solid rgba(197,160,89,0.2);
-            transform: translateY(100%);
-            transition: transform 0.4s var(--ease);
-        }
-
-        .sticky-cta.visible { transform: translateY(0); }
-
-        .sticky-cta .btn {
-            padding: 0.85rem 1.5rem;
-            font-size: 0.88rem;
-        }
-
-        /* ── DESKTOP ── */
-        @media (min-width: 769px) {
-            .header {
-                height: 35vh;
-                min-height: 220px;
-                max-height: 340px;
-                overflow: hidden;
-                background: linear-gradient(to bottom, rgba(12,13,14,0.3), var(--bg));
-            }
-
-            .header__skyline {
-                position: absolute;
-                inset: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center 70%;
-                filter: brightness(0.55);
-            }
-
-            .header__brand { justify-content: center; }
-
-            .header__logo {
-                color: var(--white);
-                text-shadow: 0 3px 20px rgba(0,0,0,0.8);
-            }
-
-            .header__tagline {
-                color: rgba(255,255,255,0.75);
-                text-shadow: 0 2px 12px rgba(0,0,0,0.7);
-            }
-
-            .hero__photo {
-                max-height: 85vh;
-                object-fit: cover;
-                width: 100%;
-            }
-
-            .hero__overlay {
-                padding-bottom: 7rem;
-            }
-
-            .hero__cta {
-                bottom: 2.5rem;
-                width: auto;
-            }
-
-            .hero__cta .btn {
-                width: auto;
-                padding: 1.15rem 2.75rem;
-            }
-
-            .services {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1.5rem;
-            }
-
-            .about {
-                grid-template-columns: 1fr 1fr;
-                gap: 3rem;
-            }
-
-            .sticky-cta { display: none; }
-
-            .footer { padding-bottom: 2.5rem; }
-
-            .section { padding: 5.5rem 2rem; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -441,6 +22,58 @@
         </div>
     </header>
 
+    <!-- Navigation -->
+    <nav class="main-navigation">
+        <!-- Desktop Navigation (steht auf der Browser-Ansicht) -->
+        <ul class="desk-nav" aria-label="Hauptnavigation">
+            <li><a href="index.html">Startseite</a></li>
+            <li class="nav-group">
+                <button class="group-btn" aria-expanded="false" role="menuitem">
+                    Galerie ▾
+                </button>
+                <ul class="dropdown" style="display: none;">
+                    <li><a href="galerie_streich.html">Streichen</a></li>
+                    <li><a href="galerie_tape.html">Tapezieren</a></li>
+                    <li><a href="galerie_lack.html">Lackieren</a></li>
+                    <li><a href="galerie_struk.html">Strukturen</a></li>
+                </ul>
+            </li>
+            <li><a href="bewertungen.html">Bewertungen</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li class="active"><a href="impressum.html" aria-current="page">Impressum</a></li>
+        </ul>
+    </nav>
+
+   <!-- Mobile Navigation Toggle (für konsistente UI) -->
+   <button class="mobile-nav-toggle" id="mobileNavToggle">
+       <h3>Menü</h3>
+       <span></span>
+   </button>
+
+   <!-- Mobile Menu Overlay (für konsistente UI - standardmäßig ausgeblendet auf Desktop) -->
+   <div class="mobile-nav-overlay" id="mobileNavOverlay">
+       <nav>
+           <ul class="mobile-nav-list">
+               <li class="mobile-nav-item"><a href="index.html">Startseite</a></li>
+               <li class="mobile-nav-item group-btn-wrapper">
+                   <button class="group-btn" id="mobileGroupToggle" aria-expanded="false">Galerie ▾</button>
+                   <ul class="dropdown" style="position: static; background: var(--bg-soft); padding-left: 1.5rem; display: none;">
+                       <li><a href="galerie_streich.html">Streichen</a></li>
+                       <li><a href="galerie_tape.html">Tapezieren</a></li>
+                       <li><a href="galerie_lack.html">Lackieren</a></li>
+                       <li><a href="galerie_struk.html">Strukturen</a></li>
+                   </ul>
+               </li>
+               <li class="mobile-nav-item"><a href="bewertungen.html">Bewertungen</a></li>
+               <li class="mobile-nav-item"><a href="kontakt.html">Kontakt</a></li>
+               <li class="mobile-nav-item"><a href="datenschutz.html">Datenschutz</a></li>
+               <li class="mobile-nav-item"><a href="impressum.html">Impressum</a></li>
+           </ul>
+       </nav>
+   </div>
+
+  <!-- Impressum Content -->
     <section class="section section--dark">
         <div class="section__inner">
             
@@ -453,7 +86,7 @@
                     <div class="info-grid">
                         <div style="grid-column: span 2;">
                             <h3 class="section__title" style="font-size: 1.5rem; text-align: left; margin-bottom: 1.5rem;">Impressum Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</h3>
-                            <div class="info-value" style="color: var(--gold);">1. Betreiber der Website & Verantwortlicher:</div>
+                            <div class="info-value" style="color: var(--gold);">1. Betreiber der Website &amp; Verantwortlicher:</div>
                             <div class="info-value">Sven Grabau</div>
                             <div class="info-value">Malerfachbetrieb Grabau (Einzelunternehmer)</div>
                             <div class="info-value">Freimersdorfer Weg 4</div>
@@ -468,7 +101,7 @@
                             <div class="info-label" style="color: var(--gold);">3. Steuer-Informationen</div>
                             <div class="info-value">Steuernummer: <span style="color: var(--gold);">[Ihre Steuernummer hier eintragen] (Finanzamt Brühl)</span></div>
                             <div style="margin-bottom: 20px;"></div>
-                            <div class="info-label" style="color: var(--gold);">4. Zuständige Kammer & Aufsichtsbehörde</div>
+                            <div class="info-label" style="color: var(--gold);">4. Zuständige Kammer &amp; Aufsichtsbehörde</div>
                             <div class="info-value">Eingetragen in der Handwerksrolle der:</div>
                             <div class="info-value">Handwerkskammer zu Köln</div>
                             <div class="info-value">Heumarkt 12, 50667 Köln</div>
@@ -487,26 +120,14 @@
 
         </div>
     </section>
-
-
-
-    <!-- Footer (Präzise korrigiert) -->
+    <!-- Footer -->
     <footer class="footer">
         <p class="footer__brand">streichmich24 · Malerfachbetrieb Grabau</p>
-
-        <div class="info-value" style="color: #c5a059;">Mobil: <a href="tel:+491748608596" style="text-decoration: none; color: #c5a059;">0174 - 860 859 6</a></div>
-        <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
+        <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">© 2026 Sven Grabau · Köln &amp; Umgebung</p>
 
         <nav class="footer__links">
-            <a href="index.html">Startseite</a>
-            <a href="galerie_streich.html">Streichen</a>
-            <a href="galerie_lack.html">Lackieren</a>
-            <a href="galerie_tape.html">Tapezieren</a>
-            <a href="galerie_struk.html">Strukturen</a>
-            <a href="bewertungen.html">Bewertungen</a>
-            <a href="impressum.html">Impressum</a>
             <a href="datenschutz.html">Datenschutz</a>
-        </nav>
+            <a href="impressum.html" class="active">Impressum</a>
         </nav>
     </footer>
 
@@ -514,5 +135,66 @@
     <div class="sticky-cta" id="stickyCta">
         
     </div>
+
+    <!-- JavaScript für Navigation -->
+    <script>
+    // Formspree AJAX Integration
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q = []).push(arguments); };
+    formspree('initForm', { 
+        formElement: '#contactForm', 
+        formId: 'mqpzkqde' 
+    });
+
+    // Navigation Interaktion
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileNavToggle = document.getElementById('mobileNavToggle');
+        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+        const desktopDropdownBtn = document.querySelector('.group-btn');
+        const desktopDropdown = document.querySelector('.main-navigation .dropdown');
+        const mobileGroupToggle = document.getElementById('mobileGroupToggle');
+        const mobileDropdown = document.querySelector('.mobile-nav-list li:nth-child(2) .dropdown');
+
+        // Hamburger Menü Toggle (Mobile)
+        if (mobileNavToggle && mobileNavOverlay) {
+            mobileNavToggle.addEventListener('click', () => {
+                mobileNavToggle.classList.toggle('active');
+                mobileNavOverlay.classList.toggle('active');
+                document.body.style.overflow = mobileNavOverlay.classList.contains('active') ? '' : 'hidden';
+            });
+
+            // Menü schließen bei Klick außerhalb (Mobile)
+            document.addEventListener('click', (e) => {
+                if (!mobileNavToggle.contains(e.target) && !mobileNavOverlay.contains(e.target)) {
+                    mobileNavToggle.classList.remove('active');
+                    mobileNavOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+
+        // Desktop Dropdown Toggle (Galerie oben auf Desktop)
+        if (desktopDropdownBtn && desktopDropdown) {
+            desktopDropdownBtn.addEventListener('click', () => {
+                const isExpanded = desktopDropdownBtn.getAttribute('aria-expanded') === 'true';
+                desktopDropdownBtn.setAttribute('aria-expanded', !isExpanded);
+                desktopDropdown.style.display = isExpanded ? 'none' : 'block';
+            });
+        }
+
+        // Mobile Dropdown Toggle (Galerie im Overlay)
+        if (mobileGroupToggle && mobileDropdown) {
+            mobileGroupToggle.addEventListener('click', () => {
+                const isExpanded = mobileGroupToggle.getAttribute('aria-expanded') === 'true';
+                mobileGroupToggle.setAttribute('aria-expanded', !isExpanded);
+                mobileDropdown.style.display = isExpanded ? 'none' : 'block';
+            });
+        }
+    });
+    </script>
+
+
+    <!-- JavaScript (minimal und extern geladen) -->
+    <script src="script.js"><\/script>
+
 </body>
 </html>
