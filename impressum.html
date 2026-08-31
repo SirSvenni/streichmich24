@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="streichmich24 – Malerfachbetrieb Grabau. Tapezieren, Lackieren, Streichen mit Handwerkstradition seit 2006. Kostenlose Beratung in Köln und Umgebung.">
-    <title>streichmich24 – Malerfachbetrieb Grabau | Köln</title>
+    <meta name="description" content="Seite 5 - streichmich24 Malerfachbetrieb Grabau">
+    <title>Seite 5 | streichmich24 – Malerfachbetrieb Grabau</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -22,7 +22,7 @@
         </div>
     </header>
 
-    <!-- Navigation -->
+    <!-- Navigation (wie index.html) -->
     <nav class="main-navigation">
         <!-- Desktop Navigation (steht auf der Browser-Ansicht) -->
         <ul class="desk-nav" aria-label="Hauptnavigation">
@@ -31,7 +31,7 @@
                 <button class="group-btn" aria-expanded="false" role="menuitem">
                     Galerie ▾
                 </button>
-                <ul class="dropdown" style="display: none;">
+                <ul class="dropdown">
                     <li><a href="galerie_streich.html">Streichen</a></li>
                     <li><a href="galerie_tape.html">Tapezieren</a></li>
                     <li><a href="galerie_lack.html">Lackieren</a></li>
@@ -39,41 +39,41 @@
                 </ul>
             </li>
             <li><a href="bewertungen.html">Bewertungen</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
             <li><a href="datenschutz.html">Datenschutz</a></li>
-            <li class="active"><a href="impressum.html" aria-current="page">Impressum</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
         </ul>
+
+    <!-- Mobile Navigation Toggle -->
+    <button class="mobile-nav-toggle" id="mobileNavToggle">
+        <h3>Menü</h3>
+        <span></span>
+    </button>
+
+    <!-- Mobile Menu Overlay (steht auf der Mobil-Ansicht) -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay">
+        <nav>
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item"><a href="index.html">Startseite</a></li>
+                <li class="mobile-nav-item group-btn-wrapper">
+                    <button class="group-btn" id="mobileGroupToggle" aria-expanded="false">Galerie ▾</button>
+                    <ul class="dropdown" style="position: static; background: var(--bg-soft); padding-left: 1.5rem; display: none;">
+                        <li><a href="galerie_streich.html">Streichen</a></li>
+                        <li><a href="galerie_tape.html">Tapezieren</a></li>
+                        <li><a href="galerie_lack.html">Lackieren</a></li>
+                        <li><a href="galerie_struk.html">Strukturen</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-nav-item"><a href="bewertungen.html">Bewertungen</a></li>
+                <li class="mobile-nav-item"><a href="#kontakt">Kontakt</a></li>
+                <li class="mobile-nav-item"><a href="datenschutz.html">Datenschutz</a></li>
+                <li class="mobile-nav-item"><a href="impressum.html">Impressum</a></li>
+            </ul>
+        </nav>
+    </div>
     </nav>
 
-   <!-- Mobile Navigation Toggle (für konsistente UI) -->
-   <button class="mobile-nav-toggle" id="mobileNavToggle">
-       <h3>Menü</h3>
-       <span></span>
-   </button>
-
-   <!-- Mobile Menu Overlay (für konsistente UI - standardmäßig ausgeblendet auf Desktop) -->
-   <div class="mobile-nav-overlay" id="mobileNavOverlay">
-       <nav>
-           <ul class="mobile-nav-list">
-               <li class="mobile-nav-item"><a href="index.html">Startseite</a></li>
-               <li class="mobile-nav-item group-btn-wrapper">
-                   <button class="group-btn" id="mobileGroupToggle" aria-expanded="false">Galerie ▾</button>
-                   <ul class="dropdown" style="position: static; background: var(--bg-soft); padding-left: 1.5rem; display: none;">
-                       <li><a href="galerie_streich.html">Streichen</a></li>
-                       <li><a href="galerie_tape.html">Tapezieren</a></li>
-                       <li><a href="galerie_lack.html">Lackieren</a></li>
-                       <li><a href="galerie_struk.html">Strukturen</a></li>
-                   </ul>
-               </li>
-               <li class="mobile-nav-item"><a href="bewertungen.html">Bewertungen</a></li>
-               <li class="mobile-nav-item"><a href="kontakt.html">Kontakt</a></li>
-               <li class="mobile-nav-item"><a href="datenschutz.html">Datenschutz</a></li>
-               <li class="mobile-nav-item"><a href="impressum.html">Impressum</a></li>
-           </ul>
-       </nav>
-   </div>
-
-  <!-- Impressum Content -->
+   <!-- Impressum Content -->
     <section class="section section--dark">
         <div class="section__inner">
             
@@ -95,7 +95,7 @@
                         </div>
                         <div>
                             <div class="info-label" style="color: var(--gold);">2. Kontakt</div>
-                            <div class="info-value">Telefon: <a href="tel:+491748608596" style="color: var(--gold); text-decoration: none;">0174 - 860 859 6</a></div>
+                            <div class="info-value">Telefon: <a href="tel:+491****8596" style="color: var(--gold); text-decoration: none;">0174 - 860 859 6</a></div>
                             <div class="info-value">E-Mail: <a href="mailto:info@streichmich24.de" style="color: var(--gold); text-decoration: none;">info@streichmich24.de</a></div>
                             <div style="margin-bottom: 20px;"></div>
                             <div class="info-label" style="color: var(--gold);">3. Steuer-Informationen</div>
@@ -126,7 +126,7 @@
         <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">© 2026 Sven Grabau · Köln &amp; Umgebung</p>
 
         <nav class="footer__links">
-            <a href="datenschutz.html">Datenschutz</a>
+            <a href="datenschutz.html" class="active">Datenschutz</a>
             <a href="impressum.html" class="active">Impressum</a>
         </nav>
     </footer>
@@ -194,7 +194,7 @@
 
 
     <!-- JavaScript (minimal und extern geladen) -->
-    <script src="script.js"><\/script>
+    <script src="script.js"></script>
 
 </body>
 </html>

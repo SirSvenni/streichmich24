@@ -31,7 +31,7 @@
             font-weight: 100 900;
             font-style: normal;
         }
-    
+
         :root {
             --bg: #0c0d0e;
             --bg-soft: #141618;
@@ -254,11 +254,14 @@
             .header__logo { color: var(--white); text-shadow: 0 3px 20px rgba(0,0,0,0.8); }
             .header__tagline { color: rgba(255,255,255,0.75); text-shadow: 0 2px 12px rgba(0,0,0,0.7); }
         }
+
     </style>
+    <!-- Style wird extern geladen -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header (Aus leer.html übernommen) -->
+    <!-- Header (Aus galerie_tape.html übernommen) -->
     <header class="header">
         <picture>
             <source media="(max-width: 768px)" srcset="images/handy.jpg">
@@ -270,7 +273,58 @@
         </div>
     </header>
 
-    <!-- Content aus gallerie_tape.html eingefügt -->
+    <!-- Navigation (wie index.html) -->
+    <nav class="main-navigation">
+        <!-- Desktop Navigation (steht auf der Browser-Ansicht) -->
+        <ul class="desk-nav" aria-label="Hauptnavigation">
+            <li><a href="index.html">Startseite</a></li>
+            <li class="nav-group">
+                <button class="group-btn" aria-expanded="false" role="menuitem">
+                    Galerie ▾
+                </button>
+                <ul class="dropdown">
+                    <li><a href="galerie_streich.html">Streichen</a></li>
+                    <li><a href="galerie_tape.html">Tapezieren</a></li>
+                    <li><a href="galerie_lack.html">Lackieren</a></li>
+                    <li><a href="galerie_struk.html">Strukturen</a></li>
+                </ul>
+            </li>
+            <li><a href="bewertungen.html">Bewertungen</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+
+    <!-- Mobile Navigation Toggle -->
+    <button class="mobile-nav-toggle" id="mobileNavToggle">
+        <h3>Menü</h3>
+        <span></span>
+    </button>
+
+    <!-- Mobile Menu Overlay (steht auf der Mobil-Ansicht) -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay">
+        <nav>
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item"><a href="index.html">Startseite</a></li>
+                <li class="mobile-nav-item group-btn-wrapper">
+                    <button class="group-btn" id="mobileGroupToggle" aria-expanded="false">Galerie ▾</button>
+                    <ul class="dropdown" style="position: static; background: var(--bg-soft); padding-left: 1.5rem; display: none;">
+                        <li><a href="galerie_streich.html">Streichen</a></li>
+                        <li><a href="galerie_tape.html">Tapezieren</a></li>
+                        <li><a href="galerie_lack.html">Lackieren</a></li>
+                        <li><a href="galerie_struk.html">Strukturen</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-nav-item"><a href="bewertungen.html">Bewertungen</a></li>
+                <li class="mobile-nav-item"><a href="#kontakt">Kontakt</a></li>
+                <li class="mobile-nav-item"><a href="datenschutz.html">Datenschutz</a></li>
+                <li class="mobile-nav-item"><a href="impressum.html">Impressum</a></li>
+            </ul>
+        </nav>
+    </div>
+    </nav>
+
+    <!-- Galerie Section mit 24 Fotos aus galerie_tape.html -->
     <main class="gallery_section">
         <div class="title_wrapper">
             <h1 class="gallery_title">Tapezieren & Wandgestaltung</h1>
@@ -300,26 +354,19 @@
             <div class="mosaic_item"><img src="images/arbeiten/tapezieren/22.jpg" alt="Exklusive Oberflächen"></div>
             <div class="mosaic_item"><img src="images/arbeiten/tapezieren/23.jpg" alt="Handwerk"></div>
             <div class="mosaic_item"><img src="images/arbeiten/tapezieren/24.jpg" alt="Hochwertige Details"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/tapezieren/25.jpg" alt="Struktur-Fokus"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/tapezieren/26.jpg" alt="Fertigstellung"></div>
         </div>
     </main>
 
-    <!-- Footer (Inklusive Details aus gallerie_tape.html) -->
+    <!-- Footer (wie impressum.html) -->
     <footer class="footer">
         <p class="footer__brand">streichmich24 · Malerfachbetrieb Grabau</p>
-                <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: <a href="tel:+491748608596" style="text-decoration: none; color: #c5a059;">0174 - 860 859 6</a></p>
-                <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
-                <nav class="footer__links">
-                    <a href="index.html">Startseite</a>
-                    <a href="galerie_streich.html">Streichen</a>
-                    <a href="galerie_lack.html">Lackieren</a>
-                    <a href="galerie_tape.html">Tapezieren</a>
-                    <a href="galerie_struk.html">Strukturen</a>
-                                        <a href="bewertungen.html">Bewertungen</a>
-                                        <a href="impressum.html">Impressum</a>
-                    <a href="datenschutz.html">Datenschutz</a>
-                </nav>
+        <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: <a href="tel:+491****8596" style="text-decoration: none; color: #c5a059;">0174 - 860 859 6</a></p>
+        <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
+
+        <nav class="footer__links">
+            <a href="datenschutz.html" class="active">Datenschutz</a>
+            <a href="impressum.html">Impressum</a>
+        </nav>
     </footer>
 
     <!-- Lightbox Modal -->
@@ -341,6 +388,52 @@
 
         lightbox.addEventListener('click', () => {
             lightbox.classList.remove('active');
+        });
+
+        // Navigation Interaktion (Desktop + Mobile)
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileNavToggle = document.getElementById('mobileNavToggle');
+            const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+            const desktopDropdownBtn = document.querySelector('.group-btn:not(#mobileGroupToggle)');
+            const desktopDropdown = document.querySelector('.main-navigation .dropdown');
+            const mobileGroupToggle = document.getElementById('mobileGroupToggle');
+            const mobileDropdown = document.querySelector('.mobile-nav-item:nth-child(2) > ul');
+
+            // Hamburger Menü Toggle (Mobile)
+            if (mobileNavToggle && mobileNavOverlay) {
+                mobileNavToggle.addEventListener('click', () => {
+                    mobileNavToggle.classList.toggle('active');
+                    mobileNavOverlay.classList.toggle('active');
+                    document.body.style.overflow = mobileNavOverlay.classList.contains('active') ? '' : 'hidden';
+                });
+
+                // Menü schließen bei Klick außerhalb (Mobile)
+                document.addEventListener('click', (e) => {
+                    if (!mobileNavToggle.contains(e.target) && !mobileNavOverlay.contains(e.target)) {
+                        mobileNavToggle.classList.remove('active');
+                        mobileNavOverlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+
+            // Desktop Dropdown Toggle
+            if (desktopDropdownBtn && desktopDropdown) {
+                desktopDropdownBtn.addEventListener('click', () => {
+                    const isExpanded = desktopDropdownBtn.getAttribute('aria-expanded') === 'true';
+                    desktopDropdownBtn.setAttribute('aria-expanded', !isExpanded);
+                    desktopDropdown.style.display = isExpanded ? 'none' : 'block';
+                });
+            }
+
+            // Mobile Dropdown Toggle
+            if (mobileGroupToggle && mobileDropdown) {
+                mobileGroupToggle.addEventListener('click', () => {
+                    const isExpanded = mobileGroupToggle.getAttribute('aria-expanded') === 'true';
+                    mobileGroupToggle.setAttribute('aria-expanded', !isExpanded);
+                    mobileDropdown.style.display = isExpanded ? 'none' : 'block';
+                });
+            }
         });
     </script>
 </body>

@@ -3,237 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="streichmich24 – Malerfachbetrieb Grabau. Tapezieren, Lackieren, Streichen mit Handwerkstradition seit 2006. Kostenlose Beratung in Köln und Umgebung.">
-    <title>streichmich24 – Malerfachbetrieb Grabau | Gallery</title>
-
-    <style>
-        :root {
-            --bg: #0c0d0e;
-            --bg-soft: #141618;
-            --bg-card: #1a1c1f;
-            --gold: #c5a059;
-            --gold-light: #d4b87a;
-            --text: #f5f5f5;
-            --text-muted: #9a9a9a;
-            --white: #ffffff;
-            --ease: cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        img { display: block; max-width: 100%; }
-
-        /* --- HEADER / SKYLINE --- */
-        .header {
-            position: relative;
-            background: var(--white);
-        }
-
-        .header__skyline {
-            width: 100%;
-            height: auto;
-        }
-
-        .header__brand {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 1.25rem;
-            pointer-events: none;
-        }
-
-        .header__logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.95rem, 7.15vw, 3.64rem);
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            color: #1a1a1a;
-            text-shadow: 0 1px 12px rgba(255,255,255,0.85);
-            line-height: 1.25;
-        }
-
-        .header__tagline {
-            font-size: clamp(0.65rem, 2.2vw, 0.85rem);
-            letter-spacing: 0.35em;
-            text-transform: uppercase;
-            color: #444;
-            margin-top: 0.4rem;
-            text-shadow: 0 1px 8px rgba(255,255,255,0.8);
-        }
-
-        /* --- GALLERY STYLES --- */
-        .gallery_section {
-            padding: 4rem 1.5rem;
-        }
-
-        .title_wrapper {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .gallery_title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2.5rem, 8vw, 3.5rem);
-            color: var(--gold);
-        }
-
-        .gallery_subtitle {
-            color: var(--white);
-            font-size: 1.2rem;
-        }
-
-        /* Mosaic Grid */
-        .mosaic_grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            grid-auto-rows: 300px;
-            gap: 15px;
-            padding: 10px;
-        }
-
-        .mosaic_item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 4px;
-            border: 1px solid rgba(255,255,255,0.05);
-            cursor: pointer;
-            transition: transform 0.6s var(--ease), border-color 0.4s var(--ease);
-        }
-
-        .mosaic_item:hover {
-            transform: scale(1.02);
-            border-color: var(--gold);
-            z-index: 2;
-        }
-
-        .mosaic_item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s var(--ease);
-        }
-
-        .mosaic_item:hover img {
-            transform: scale(1.05);
-        }
-
-        .mosaic_item.tall { grid-row: span 2; }
-        .mosaic_item.wide { grid-column: span 2; }
-
-        /* Lightbox */
-        #lightbox {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.95);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-            cursor: zoom-out;
-        }
-
-        #lightbox.active {
-            display: flex;
-        }
-
-        #lightbox img {
-            max-width: 95vw;
-            max-height: 90vh;
-            box-shadow: 0 0 40px rgba(197,160,89,0.2);
-        }
-
-        /* Footer Design */
-        footer {
-            padding: 2.5rem 1.5rem;
-            text-align: center;
-            background: #080809;
-            border-top: 1px solid rgba(255,255,255,0.04);
-        }
-
-        .footer__brand {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            color: var(--gold);
-            margin-bottom: 0.5rem;
-        }
-
-        .footer_contact {
-            color: var(--gold);
-            font-family: 'Inter', sans-serif;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer__copy {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .footer__links {
-            margin-top: 1rem;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .footer__links a {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            text-decoration: none;
-            letter-spacing: 0.04em;
-        }
-
-        .footer__links a:hover { color: var(--gold); }
-
-        @media (max-width: 768px) {
-            .mosaic_item.wide { grid-column: span 1; }
-            .mosaic_grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
-        }
-
-        @media (min-width: 769px) {
-            .header {
-                height: 35vh;
-                min-height: 220px;
-                max-height: 340px;
-                overflow: hidden;
-                background: linear-gradient(to bottom, rgba(12,13,14,0.3), var(--bg));
-            }
-            .header__skyline {
-                position: absolute;
-                inset: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center 70%;
-                filter: brightness(0.55);
-            }
-            .header__brand { justify-content: center; }
-            .header__logo { color: var(--white); text-shadow: 0 3px 20px rgba(0,0,0,0.8); }
-            .header__tagline { color: rgba(255,255,255,0.75); text-shadow: 0 2px 12px rgba(0,0,0,0.7); }
-        }
-    </style>
+    <meta name="description" content="Strukturen - streichmich24 Malerfachbetrieb Grabau">
+    <title>Strukturen | streichmich24 – Malerfachbetrieb Grabau</title>
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header (Aus leer.html übernommen) -->
+    <!-- Skyline Header -->
     <header class="header">
         <picture>
             <source media="(max-width: 768px)" srcset="images/handy.jpg">
@@ -245,7 +22,57 @@
         </div>
     </header>
 
-    <!-- Content aus gallerie_tape.html eingefügt -->
+    <!-- Navigation (wie index.html) -->
+    <nav class="main-navigation">
+        <!-- Desktop Navigation (steht auf der Browser-Ansicht) -->
+        <ul class="desk-nav" aria-label="Hauptnavigation">
+            <li><a href="index.html">Startseite</a></li>
+            <li class="nav-group">
+                <button class="group-btn" aria-expanded="false" role="menuitem">
+                    Galerie ▾
+                </button>
+                <ul class="dropdown">
+                    <li><a href="galerie_streich.html">Streichen</a></li>
+                    <li><a href="galerie_tape.html">Tapezieren</a></li>
+                    <li><a href="galerie_lack.html">Lackieren</a></li>
+                    <li><a href="galerie_struk.html">Strukturen</a></li>
+                </ul>
+            </li>
+            <li><a href="bewertungen.html">Bewertungen</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+            <li class="active"><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+
+    <!-- Mobile Navigation Toggle -->
+    <button class="mobile-nav-toggle" id="mobileNavToggle">
+        <h3>Menü</h3>
+        <span></span>
+    </button>
+
+    <!-- Mobile Menu Overlay (steht auf der Mobil-Ansicht) -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay">
+        <nav>
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item"><a href="index.html">Startseite</a></li>
+                <li class="mobile-nav-item group-btn-wrapper">
+                    <button class="group-btn" id="mobileGroupToggle" aria-expanded="false">Galerie ▾</button>
+                    <ul class="dropdown" style="position: static; background: var(--bg-soft); padding-left: 1.5rem; display: none;">
+                        <li><a href="galerie_streich.html">Streichen</a></li>
+                        <li><a href="galerie_tape.html">Tapezieren</a></li>
+                        <li><a href="galerie_lack.html">Lackieren</a></li>
+                        <li><a href="galerie_struk.html">Strukturen</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-nav-item"><a href="bewertungen.html">Bewertungen</a></li>
+                <li class="mobile-nav-item"><a href="#kontakt">Kontakt</a></li>
+                <li class="mobile-nav-item"><a href="datenschutz.html">Datenschutz</a></li>
+                <li class="mobile-nav-item"><a href="impressum.html">Impressum</a></li>
+            </ul>
+        </nav>
+    </div>
+    </nav>
+
     <main class="gallery_section">
         <div class="title_wrapper">
             <h1 class="gallery_title">Strukturen</h1>
@@ -254,78 +81,119 @@
 
         <div class="mosaic_grid">
             <div class="mosaic_item tall"><img src="images/arbeiten/struktur/1.JPG" alt="Struktur 1"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/2.JPG" alt="Struktur 2"></div>
-            <div class="mosaic_item wide"><img src="images/arbeiten/struktur/3.JPG" alt="Struktur 3"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/4.JPG" alt="Struktur 4"></div>
-            <div class="mosaic_item tall"><img src="images/arbeiten/struktur/5.JPG" alt="Struktur 5"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/6.JPG" alt="Struktur 6"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/7.JPG" alt="Struktur 7"></div>
-            <div class="mosaic_item wide"><img src="images/arbeiten/struktur/8.JPG" alt="Struktur 8"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/9.JPG" alt="Struktur 9"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/10.JPG" alt="Struktur 10"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/2.JPG" alt="Sturktur 2"></div>
+            <div class="mosaic_item wide"><img src="images/arbeiten/struktur/3.JPG" alt="Sturktur 3"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/4.JPG" alt="Sturktur 4"></div>
+            <div class="mosaic_item tall"><img src="images/arbeiten/struktur/5.JPG" alt="Sturktur 5"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/6.JPG" alt="Sturktur 6"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/7.JPG" alt="Sturktur 7"></div>
+            <div class="mosaic_item wide"><img src="images/arbeiten/struktur/8.JPG" alt="Sturktur 8"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/9.JPG" alt="Sturktur 9"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/10.JPG" alt="Sturktur 10"></div>
             <div class="mosaic_item tall"><img src="images/arbeiten/struktur/11.JPG" alt="Struktur 11"></div>
             <div class="mosaic_item"><img src="images/arbeiten/struktur/12.JPG" alt="Struktur 12"></div>
             <div class="mosaic_item"><img src="images/arbeiten/struktur/13.JPG" alt="Struktur 13"></div>
             <div class="mosaic_item"><img src="images/arbeiten/struktur/14.JPG" alt="Struktur 14"></div>
             <div class="mosaic_item"><img src="images/arbeiten/struktur/15.JPG" alt="Struktur 15"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/17.JPG" alt="Sturktur 17"></div>
-            <div class="mosaic_item tall"><img src="images/arbeiten/struktur/18.JPG" alt="Sturktur 18"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/19.JPG" alt="Sturktur 19"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/20.JPG" alt="Sturktur 20"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/21.JPG" alt="Sturktur 21"></div>
-            <div class="mosaic_item wide"><img src="images/arbeiten/struktur/22.JPG" alt="Sturktur 22"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/23.JPG" alt="Sturktur 23"></div>
-            
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/25.JPG" alt="Sturktur 25"></div>
-            <div class="mosaic_item tall"><img src="images/arbeiten/struktur/26.JPG" alt="Sturktur 26"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/27.JPG" alt="Sturktur 27"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/28.JPG" alt="Sturktur 28"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/29.JPG" alt="Sturktur 29"></div>
-            <div class="mosaic_item wide"><img src="images/arbeiten/struktur/30.JPG" alt="Sturktur 30"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/31.JPG" alt="Sturktur 31"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/32.JPG" alt="Sturktur 32"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/33.JPG" alt="Sturktur 33"></div>
-            <div class="mosaic_item"><img src="images/arbeiten/struktur/34.JPG" alt="Sturktur 34"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/17.JPG" alt="Struktur 17"></div>
+            <div class="mosaic_item tall"><img src="images/arbeiten/struktur/18.JPG" alt="Struktur 18"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/19.JPG" alt="Struktur 19"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/20.JPG" alt="Struktur 20"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/21.JPG" alt="Struktur 21"></div>
+            <div class="mosaic_item wide"><img src="images/arbeiten/struktur/22.JPG" alt="Struktur 22"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/23.JPG" alt="Struktur 23"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/25.JPG" alt="Struktur 25"></div>
+            <div class="mosaic_item tall"><img src="images/arbeiten/struktur/26.JPG" alt="Struktur 26"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/27.JPG" alt="Struktur 27"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/28.JPG" alt="Struktur 28"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/29.JPG" alt="Struktur 29"></div>
+            <div class="mosaic_item wide"><img src="images/arbeiten/struktur/30.JPG" alt="Struktur 30"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/31.JPG" alt="Struktur 31"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/32.JPG" alt="Struktur 32"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/33.JPG" alt="Struktur 33"></div>
+            <div class="mosaic_item"><img src="images/arbeiten/struktur/34.JPG" alt="Struktur 34"></div>
         </div>
-   </main>
+    </main>
 
-    <!-- Footer (Inklusive Details aus gallerie_tape.html) -->
     <footer class="footer">
         <p class="footer__brand">streichmich24 · Malerfachbetrieb Grabau</p>
-                <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: <a href="tel:+491748608596" style="text-decoration: none; color: #c5a059;">0174 - 860 859 6</a></p>
-                <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
-                <nav class="footer__links">
-                    <a href="index.html">Startseite</a>
-                    <a href="galerie_streich.html">Streichen</a>
-                    <a href="galerie_lack.html">Lackieren</a>
-                    <a href="galerie_tape.html">Tapezieren</a>
-                    <a href="galerie_struk.html">Strukturen</a>
-                    <a href="bewertungen.html">Bewertungen</a>
-                    <a href="impressum.html">Impressum</a>
-                    <a href="datenschutz.html">Datenschutz</a>
+        <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: <a href="tel:+491****8596" style="text-decoration: none; color: #c5a059;">0174 - 860 859 6</a></p>
+        <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
 
+        <nav class="footer__links">
+            <a href="datenschutz.html" class="active">Datenschutz</a>
+            <a href="impressum.html">Impressum</a>
+        </nav>
     </footer>
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox">
-        <img src="" alt="Vergrößertes Bild">
+    <!-- Lightbox Overlay -->
+    <div id="lightbox-overlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:999;display:none;justify-content:center;align-items:center;">
+        <a class="lightbox" onclick="document.getElementById('lightbox-overlay').style.display='none'" style="cursor:pointer;text-decoration:none;"></a>
     </div>
 
-    <script>
-        const items = document.querySelectorAll('.mosaic_item img');
-        const lightbox = document.getElementById('lightbox');
-        const lbImg = lightbox.querySelector('img');
+    <script>// Navigation Interaktion (Desktop + Mobile) - exakt kopiert aus datenschutz.html
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileNavToggle = document.getElementById('mobileNavToggle');
+            const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+            const desktopDropdownBtn = document.querySelector('.group-btn:not(#mobileGroupToggle)');
+            const desktopDropdown = document.querySelector('.main-navigation .dropdown');
+            const mobileGroupToggle = document.getElementById('mobileGroupToggle');
+            const mobileDropdown = document.querySelector('.mobile-nav-item:nth-child(2) > ul');
 
-        items.forEach(img => {
-            img.addEventListener('click', () => {
-                lbImg.src = img.src;
-                lightbox.classList.add('active');
+            // Hamburger Menü Toggle (Mobile)
+            if (mobileNavToggle && mobileNavOverlay) {
+                mobileNavToggle.addEventListener('click', () => {
+                    mobileNavToggle.classList.toggle('active');
+                    mobileNavOverlay.classList.toggle('active');
+                    document.body.style.overflow = mobileNavOverlay.classList.contains('active') ? '' : 'hidden';
+                });
+
+                // Menü schließen bei Klick außerhalb (Mobile) - exakt wie datenschutz.html
+                document.addEventListener('click', (e) => {
+                    if (!mobileNavToggle.contains(e.target) && !mobileNavOverlay.contains(e.target)) {
+                        mobileNavToggle.classList.remove('active');
+                        mobileNavOverlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+
+            // Desktop Dropdown Toggle
+            if (desktopDropdownBtn && desktopDropdown) {
+                desktopDropdownBtn.addEventListener('click', () => {
+                    const isExpanded = desktopDropdownBtn.getAttribute('aria-expanded') === 'true';
+                    desktopDropdownBtn.setAttribute('aria-expanded', String(!isExpanded));
+                    desktopDropdown.style.display = isExpanded ? 'none' : 'block';
+                });
+            }
+
+            // Mobile Dropdown Toggle
+            if (mobileGroupToggle && mobileDropdown) {
+                mobileGroupToggle.addEventListener('click', () => {
+                    const isExpanded = mobileGroupToggle.getAttribute('aria-expanded') === 'true';
+                    mobileGroupToggle.setAttribute('aria-expanded', String(!isExpanded));
+                    mobileDropdown.style.display = isExpanded ? 'none' : 'block';
+                });
+            }
+        });
+
+        // Lightbox Funktion
+        const lightboxItems = document.querySelectorAll('.mosaic_item img');
+        const lightboxOverlay = document.getElementById('lightbox-overlay');
+        
+        if (lightboxItems.length > 0 && lightboxOverlay) {
+            lightboxItems.forEach(function(img) {
+                img.addEventListener('click', function() {
+                    const newImg = document.createElement('img');
+                    newImg.src = this.src;
+                    newImg.alt = this.alt;
+                    newImg.style.cssText = 'max-width:90%;max-height:90vh;object-fit:contain;border:3px solid var(--gold);';
+                    
+                    lightboxOverlay.querySelector('a').prepend(newImg);
+                    lightboxOverlay.style.display = 'flex';
+                });
             });
-        });
-
-        lightbox.addEventListener('click', () => {
-            lightbox.classList.remove('active');
-        });
+        }
     </script>
 </body>
 </html>
