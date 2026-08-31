@@ -156,7 +156,7 @@
 
         .hero__title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.46rem, 6.68vw, 3.02rem);
+            font-size: clamp(1.8rem, 7.5vw, 3.6rem);
             font-weight: 700;
             line-height: 1.15;
             color: var(--white);
@@ -189,6 +189,218 @@
             z-index: 2;
             width: calc(100% - 2.5rem);
             max-width: 22rem;
+        }
+
+        /* ── NAVIGATION ── */
+        .main-navigation {
+            padding: 0;
+            background: transparent;
+            border-bottom: none;
+        }
+
+        .desk-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.2rem;
+            list-style: none;
+            margin: 0 auto;
+            max-width: 76rem;
+            padding-top: 1.5rem;
+        }
+
+        .desk-nav > li > a {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease, opacity 0.3s ease;
+            padding: 0.4rem 0.6rem;
+        }
+
+        .desk-nav > li > a:hover,
+        .desk-nav > li > a.active {
+            color: var(--gold);
+            opacity: 1;
+        }
+
+        .nav-group {
+            position: relative;
+        }
+
+        .group-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 0.4rem 0.7rem;
+            cursor: pointer;
+            position: relative;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .group-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 24px;
+            height: 2px;
+            background: var(--gold);
+            transition: transform 0.3s ease;
+        }
+
+        .group-btn:hover,
+        .group-btn.active {
+            color: var(--text-muted);
+            opacity: 1;
+        }
+
+        .group-btn:hover::after,
+        .group-btn.active::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        .main-navigation .dropdown {
+            display: none;
+            position: absolute;
+            top: 1.4rem;
+            left: 0;
+            transform: none;
+            min-width: 16rem;
+            background: rgba(12, 13, 14, 0.98);
+            border: 1px solid rgba(197, 160, 89, 0.25);
+            border-radius: 6px;
+            padding: 0.6rem 0;
+            margin-top: 0.4rem;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(8px);
+            z-index: 10;
+        }
+
+        .main-navigation .dropdown li {
+            list-style: none;
+            display: block;
+        }
+
+        .main-navigation .dropdown li > a {
+            display: block;
+            padding: 0.5rem 1.2rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .main-navigation .dropdown li > a:hover {
+            background: rgba(197, 160, 89, 0.08);
+            color: var(--gold-light);
+            padding-left: 1.4rem;
+        }
+
+        /* Mobile: Hamburger Menu */
+        @media (max-width: 768px) {
+            .main-navigation {
+                padding: 0.5rem 1rem;
+                border-bottom: none;
+                display: block;
+            }
+
+            .desk-nav {
+                display: none;
+            }
+
+            .mobile-nav-overlay {
+                display: none !important; /* Standardmäßig verdeckt */
+            }
+
+            .mobile-nav-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                background: none;
+                border: none;
+                gap: 0.5rem;
+                padding: 0.25rem;
+                cursor: pointer;
+            }
+
+            .mobile-nav-toggle h3 {
+                font-family: 'Cormorant Garamond', serif;
+                font-size: 1.3rem;
+                color: var(--white);
+                text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+            }
+
+            .mobile-nav-toggle span {
+                width: 24px;
+                height: 2px;
+                background: var(--gold);
+                position: relative;
+            }
+
+            .mobile-nav-toggle span::before,
+            .mobile-nav-toggle span::after {
+                content: '';
+                position: absolute;
+                width: 24px;
+                height: 2px;
+                background: var(--gold);
+                left: 0;
+            }
+
+            .mobile-nav-toggle span::before { top: -7px; }
+            .mobile-nav-toggle span::after { bottom: -7px; }
+
+            .mobile-nav-overlay {
+                position: fixed;
+                inset: 0;
+                background: var(--bg);
+                display: none !important; /* Standardmäßig verborgen */
+                z-index: 100;
+                overflow-y: auto;
+                padding: 1rem;
+                box-shadow: inset 0 20px 40px rgba(0,0,0,0.3);
+            }
+
+            .mobile-nav-overlay.active {
+                display: block !important;
+            }
+
+            /* Mobile Nav Toggle Buttons */
+
+            .mobile-nav-list {
+                list-style: none;
+                margin: 0 auto;
+                max-width: 26rem;
+            }
+
+            .mobile-nav-item {
+                margin-bottom: 0.5rem;
+            }
+
+            .mobile-nav-item > a {
+                display: block;
+                font-family: 'Cormorant Garamond', serif;
+                font-size: 1.3rem;
+                color: var(--white);
+                text-decoration: none;
+                padding: 0.6rem 0;
+                transition: all 0.3s ease;
+            }
+
+            .mobile-nav-item > a:hover {
+                color: var(--gold);
+                padding-left: 1rem;
+            }
         }
 
         /* ── BUTTONS ── */
@@ -275,10 +487,10 @@
 
         .section__lead {
             text-align: center;
-            color: var(--text-muted);
-            max-width: 36rem;
+            color: var(--white);
             margin: 0 auto 2.5rem;
-            font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+            font-size: clamp(1.5rem, 5vw, 2.8rem);
+            font-family: 'Cormorant Garamond', serif;
         }
 
         /* ── SERVICES ── */
@@ -452,7 +664,7 @@
             font-size: 0.88rem;
         }
 
-        /* ── DESKTOP ── */
+        /* Desktop: >= 769px */
         @media (min-width: 769px) {
             .header {
                 height: 35vh;
@@ -513,12 +725,27 @@
                 grid-template-columns: 1fr 1fr;
                 gap: 3rem;
             }
+            
+            /* Desktop: Hide hamburger button */
+            .mobile-nav-toggle {
+                display: none !important;
+            }
+            
+            /* Desktop: Show desk nav normally */
+            .desk-nav {
+                display: flex !important;
+            }
 
             .sticky-cta { display: none; }
 
             .footer { padding-bottom: 2.5rem; }
 
             .section { padding: 5.5rem 2rem; }
+            
+            /* Desktop: Hide mobile menu overlay */
+            .mobile-nav-overlay {
+                display: none !important;
+            }
         }
     </style>
 </head>
@@ -538,34 +765,67 @@
         </div>
     </header>
 
-    <!-- Hero: Galerie-Foto -->
+    <!-- Navigation -->
+    <nav class="main-navigation">
+        <!-- Desktop Navigation (steht auf der Browser-Ansicht) -->
+        <ul class="desk-nav" aria-label="Hauptnavigation">
+            <li><a href="index.html">Startseite</a></li>
+            <li class="nav-group">
+                <button class="group-btn" aria-expanded="false" role="menuitem">
+                    Galerie ▾
+                </button>
+                <ul class="dropdown">
+                    <li><a href="galerie_streich.html">Streichen</a></li>
+                    <li><a href="galerie_tape.html">Tapezieren</a></li>
+                    <li><a href="galerie_lack.html">Lackieren</a></li>
+                    <li><a href="galerie_struk.html">Strukturen</a></li>
+                </ul>
+            </li>
+            <li><a href="bewertungen.html">Bewertungen</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+    </nav>
+
+   <!-- Mobile Navigation Toggle -->
+   <button class="mobile-nav-toggle" id="mobileNavToggle">
+       <h3>Galerie Menü</h3>
+       <span></span>
+   </button>
+
+   <!-- Mobile Menu Overlay (steht auf der Mobil-Ansicht) -->
+   <div class="mobile-nav-overlay" id="mobileNavOverlay">
+       <nav>
+           <ul class="mobile-nav-list">
+               <li class="mobile-nav-item"><a href="index.html">Startseite</a></li>
+               <li class="mobile-nav-item group-btn-wrapper">
+                   <button class="group-btn" id="mobileGroupToggle" aria-expanded="false">Galerie ▾</button>
+                   <ul class="dropdown" style="position: static; background: var(--bg-soft); padding-left: 1.5rem; display: none;">
+                       <li><a href="galerie_streich.html">Streichen</a></li>
+                       <li><a href="galerie_tape.html">Tapezieren</a></li>
+                       <li><a href="galerie_lack.html">Lackieren</a></li>
+                       <li><a href="galerie_struk.html">Strukturen</a></li>
+                   </ul>
+               </li>
+               <li class="mobile-nav-item"><a href="bewertungen.html">Bewertungen</a></li>
+               <li class="mobile-nav-item"><a href="kontakt.html">Kontakt</a></li>
+               <li class="mobile-nav-item"><a href="datenschutz.html">Datenschutz</a></li>
+               <li class="mobile-nav-item"><a href="impressum.html">Impressum</a></li>
+           </ul>
+       </nav>
+   </div>
+
+  <!-- Hero: Galerie-Foto -->
     <section class="hero">
         <img src="images/hero-blumen.jpg" alt="Meisterhafte Malerarbeiten – Galerie-Qualität" class="hero__photo">
         <div class="hero__overlay">
             <h1 class="hero__title" id="hero-title">Handwerk,<br>das Räume berührt.</h1>
                         <p class="hero__subtitle"></p>
                     </div>
-                   <div class="hero__cta">
-                       <a href="#kontakt" class="btn">Kostenlose Beratung anfragen</a>
-                   </div>
                </section>
-   <!-- Vertrauen -->
-   <div class="trust">
-        <div class="trust__item">
-            <div class="trust__number">2006</div>
-            <div class="trust__label">Gründung</div>
-        </div>
-        <div class="trust__item">
-            <div class="trust__number">20+</div>
-            <div class="trust__label">Jahre Erfahrung</div>
-        </div>
-        <div class="trust__item">
-            <div class="trust__number">2026</div>
-            <div class="trust__label">Umstrukturierung</div>
-        </div>
-    </div>
 
-    <!-- Leistungen -->
+               <!-- Leistungen -->
     <section id="leistungen" class="section section--dark">
         <div class="section__inner">
             <h2 class="section__title">Unsere Leistungen</h2>
@@ -573,21 +833,18 @@
             <div class="services">
                             <article class="service">
                                 <a href="galerie_streich.html" class="service__link">
-                                    <div class="service__icon">🎨</div>
                                     <h3 class="service__name">Streichen</h3>
                                     <p class="service__desc">Innen- und Außenanstriche mit hochwertigen Materialien. Saubere Kanten, gleichmäßige Oberflächen und langlebige Ergebnisse für Ihr Zuhause – egal, ob als gezielte Schadensbeseitigung (z.B. nach Wasserschäden) oder zum schnellen Auffrischen für die Übergabe.</p>
                                 </a>
                             </article>
                             <article class="service">
                                 <a href="galerie_lack.html" class="service__link">
-                                    <div class="service__icon">✨</div>
                                     <h3 class="service__name">Lackieren</h3>
                                     <p class="service__desc">Türen, Fenster, Heizkörper und Holzarbeiten – professionell lackiert mit der Sorgalt, die jedes Detail verdient.</p>
                                 </a>
                             </article>
                             <article class="service">
                                 <a href="galerie_tape.html" class="service__link">
-                                    <div class="service__icon">📐</div>
                                     <h3 class="service__name">Tapezieren</h3>
                                     <p class="service__desc">Vliestapeten, Mustertapeten und Raufaser – fachgerecht tapeziert, passgenau geschnitten und nahtlos verarbeitet.</p>
                                 </a>
@@ -607,8 +864,8 @@
             <div class="about">
                 <div class="about__text">
                     <p class="about__highlight">„Jede Wand erzählt eine eigene Geschichte – ich sorge durch handwerkliche Präzision und Liebe zum Detail dafür, dass sie perfekt wird.“</p>
-                    <p>Mein Name ist <span class="about__name">Sven Grabau</span>. Von 2006 bis 2020 war ich als Raumausstatter mit <strong>streichmich24</strong> selbstständig tätig und habe unzählige Wohn- und Geschäftsräume in Köln und Umgebung gestaltet.</p>
-                    <p>2026 starte ich als Malerfachbetrieb neu durch – mit dem gleichen Anspruch an Qualität, der streichmich24 über Jahre bekannt gemacht hat.</p>
+                    <p>Mein Name ist <span class="about__name">Sven Grabau</span>. Seit 2006 bin ich als Raumausstatter mit <strong>streichmich24</strong> selbstständig tätig und habe unzählige Wohn- und Geschäftsräume in Köln und Umgebung gestaltet.</p>
+                    <p>Jetzt – mit dem gleichen Anspruch an Qualität, der streichmich24 über Jahre bekannt gemacht hat, starten wir als Malerfachbetrieb neu durch.</p>
                     <p>Der Kölner Dom war schon immer mein Wiedererkennungszeichen. Er steht für Beständigkeit, Handwerk und Heimat – Werte, die ich in jedes Projekt einbringe.</p>
                 </div>
                 <div class="about__text">
@@ -623,36 +880,8 @@
     <!-- Kontakt -->
     <section id="kontakt" class="section section--dark">
         <div class="section__inner">
-            <h2 class="section__title">Jetzt unverbindlich anfragen</h2>
-            <p class="section__lead">Gerne berate ich Sie persönlich vor Ort. Schreiben Sie mir – ich melde mich zeitnah bei Ihnen.</p>
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <label for="name">Ihr Name</label>
-                    <input type="text" id="name" name="name" placeholder="Max Mustermann" required data-fs-field />
-                </div>
-                <div class="form-group">
-                    <label for="email">E-Mail</label>
-                    <input type="email" id="email" name="email" placeholder="ihre@email.de" required data-fs-field />
-                </div>
-                <div class="form-group">
-                    <label for="service">Gewünschte Leistung</label>
-                    <select id="service" name="service" data-fs-field>
-                        <option value="">Bitte wählen …</option>
-                        <option>Streichen</option>
-                        <option>Lackieren</option>
-                        <option>Tapezieren</option>
-                        <option>Beratung / Sonstiges</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Ihre Nachricht</label>
-                    <textarea id="message" name="message" placeholder="Beschreiben Sie kurz Ihr Projekt …" required data-fs-field></textarea>
-                </div>
-                <div data-fs-success>Vielen Dank! Wir haben Ihre Anfrage erhalten und melden uns in Kürze bei Ihnen.</div>
-
-
-                                        <div style="text-align: center; margin-top: 2rem;"><a href="images/streichmich.vcf" class="btn">Kontakt auf Handy speichern</a></div>
-                                    </form>
+        </div>
+    </section>
 
 
     </section>
@@ -663,20 +892,14 @@
         <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: <a href="tel:+491748608596" style="text-decoration: none; color: #c5a059;">0174 - 860 859 6</a></p>
         <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
         <nav class="footer__links">
-            <a href="index.html">Startseite</a>
-            <a href="galerie_streich.html">Streichen</a>
-            <a href="galerie_lack.html">Lackieren</a>
-            <a href="galerie_tape.html">Tapezieren</a>
-            <a href="galerie_struk.html">Strukturen</a>
-                        <a href="bewertungen.html">Bewertungen</a>
-                        <a href="impressum.html">Impressum</a>
+            <a href="impressum.html">Impressum</a>
             <a href="datenschutz.html">Datenschutz</a>
         </nav>
     </footer>
 
     <!-- Mobile Sticky Button -->
     <div class="sticky-cta" id="stickyCta">
-        <a href="#kontakt" class="btn">Beratung anfragen</a>
+        <a href="kontakt.html" class="btn">Beratung anfragen</a>
     </div>
 
     <script>
@@ -686,7 +909,53 @@
             formElement: '#contactForm', 
             formId: 'mqpzkqde' 
         });
+
+        // Navigation Interaktion
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileNavToggle = document.getElementById('mobileNavToggle');
+            const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+            const desktopDropdownBtn = document.querySelector('.group-btn');
+            const desktopDropdown = document.querySelector('.main-navigation .dropdown');
+            const mobileGroupToggle = document.getElementById('mobileGroupToggle');
+            const mobileDropdown = document.querySelector('.mobile-nav-list li:nth-child(2) .dropdown');
+
+            // Hamburger Menü Toggle
+            if (mobileNavToggle && mobileNavOverlay) {
+                mobileNavToggle.addEventListener('click', () => {
+                    mobileNavToggle.classList.toggle('active');
+                    mobileNavOverlay.classList.toggle('active');
+                    document.body.style.overflow = mobileNavOverlay.classList.contains('active') ? '' : 'hidden';
+                });
+
+                // Menü schließen bei Klick außerhalb
+                document.addEventListener('click', (e) => {
+                    if (!mobileNavToggle.contains(e.target) && !mobileNavOverlay.contains(e.target)) {
+                        mobileNavToggle.classList.remove('active');
+                        mobileNavOverlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+
+            // Desktop Dropdown Toggle
+            if (desktopDropdownBtn && desktopDropdown) {
+                desktopDropdownBtn.addEventListener('click', () => {
+                    const isExpanded = desktopDropdownBtn.getAttribute('aria-expanded') === 'true';
+                    desktopDropdownBtn.setAttribute('aria-expanded', !isExpanded);
+                    desktopDropdown.style.display = isExpanded ? 'none' : 'block';
+                });
+            }
+
+            // Mobile Dropdown Toggle
+            if (mobileGroupToggle && mobileDropdown) {
+                mobileGroupToggle.addEventListener('click', () => {
+                    const isExpanded = mobileGroupToggle.getAttribute('aria-expanded') === 'true';
+                    mobileGroupToggle.setAttribute('aria-expanded', !isExpanded);
+                    mobileDropdown.style.display = isExpanded ? 'none' : 'block';
+                });
+            }
+        });
     </script>
-    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
 </body>
 </html>
