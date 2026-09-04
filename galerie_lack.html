@@ -98,83 +98,33 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <p class="footer__brand">streichmich24 · Malerfachbetrieb Grabau</p>
-        <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: <a href="tel:+491****8596" style="text-decoration: none; color: #c5a059;">0174 - 860 859 6</a></p>
-        <p class="footer__copy">© 2026 Sven Grabau · Köln &amp; Umgebung</p>
+        <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: <a href="tel:+491748608596" style="text-decoration: none; color: #c5a059;" class="mobile-phone-link">0174 - 860 859 6</a></p>
+        <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
+
         <nav class="footer__links">
-            <a href="index.html">Startseite</a>
-            <a href="galerie_streich.html">Streichen</a>
-            <a href="galerie_lack.html">Lackieren</a>
-            <a href="galerie_tape.html">Tapezieren</a>
-            <a href="galerie_struk.html">Strukturen</a>
-            <a href="bewertungen.html">Bewertungen</a>
+            <a href="datenschutz.html" class="active">Datenschutz</a>
             <a href="impressum.html">Impressum</a>
-            <a href="datenschutz.html">Datenschutz</a>
         </nav>
     </footer>
 
-    <div id="lightbox">
-        <img src="" alt="Vergrößertes Bild">
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileNavToggle = document.getElementById('mobileNavToggle');
-            const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-            const desktopDropdownBtn = document.querySelector('.group-btn:not(#mobileGroupToggle)');
-            const desktopDropdown = document.querySelector('.main-navigation .dropdown');
-            const mobileGroupToggle = document.getElementById('mobileGroupToggle');
-            const mobileDropdown = document.querySelector('.mobile-nav-item:nth-child(2) > ul');
-
-            if (mobileNavToggle && mobileNavOverlay) {
-                mobileNavToggle.addEventListener('click', () => {
-                    mobileNavToggle.classList.toggle('active');
-                    mobileNavOverlay.classList.toggle('active');
-                    document.body.style.overflow = mobileNavOverlay.classList.contains('active') ? '' : 'hidden';
-                });
-
-                document.addEventListener('click', (e) => {
-                    if (!mobileNavToggle.contains(e.target) && !mobileNavOverlay.contains(e.target)) {
-                        mobileNavToggle.classList.remove('active');
-                        mobileNavOverlay.classList.remove('active');
-                        document.body.style.overflow = '';
-                    }
-                });
+    <!-- Mobile-Phone Link Styling -->
+    <style>
+        @media (max-width: 768px) {
+            .mobile-phone-link {
+                pointer-events: auto;
+                cursor: pointer;
             }
-
-            if (desktopDropdownBtn && desktopDropdown) {
-                desktopDropdownBtn.addEventListener('click', () => {
-                    const isExpanded = desktopDropdownBtn.getAttribute('aria-expanded') === 'true';
-                    desktopDropdownBtn.setAttribute('aria-expanded', !isExpanded);
-                    desktopDropdown.style.display = isExpanded ? 'none' : 'block';
-                });
+        }
+        @media (min-width: 769px) {
+            .mobile-phone-link {
+                pointer-events: none;
+                cursor: default;
             }
+        }
+    </style>
 
-            if (mobileGroupToggle && mobileDropdown) {
-                mobileGroupToggle.addEventListener('click', () => {
-                    const isExpanded = mobileGroupToggle.getAttribute('aria-expanded') === 'true';
-                    mobileGroupToggle.setAttribute('aria-expanded', !isExpanded);
-                    mobileDropdown.style.display = isExpanded ? 'none' : 'block';
-                });
-            }
-
-            // Lightbox Functionality
-            const items = document.querySelectorAll('.mosaic_item img');
-            const lightbox = document.getElementById('lightbox');
-            const lbImg = lightbox.querySelector('img');
-
-            items.forEach(img => {
-                img.addEventListener('click', () => {
-                    lbImg.src = img.src;
-                    lightbox.classList.add('active');
-                });
-            });
-
-            lightbox.addEventListener('click', () => {
-                lightbox.classList.remove('active');
-            });
-        });
-    </script>
 </body>
 </html>

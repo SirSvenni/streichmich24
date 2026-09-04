@@ -111,10 +111,11 @@
             <div class="mosaic_item"><img src="images/arbeiten/struktur/34.JPG" alt="Struktur 34"></div>
         </div>
     </main>
-
+    
+    <!-- Footer -->
     <footer class="footer">
         <p class="footer__brand">streichmich24 · Malerfachbetrieb Grabau</p>
-        <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: <a href="tel:+491****8596" style="text-decoration: none; color: #c5a059;">0174 - 860 859 6</a></p>
+        <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: <a href="tel:+491748608596" style="text-decoration: none; color: #c5a059;" class="mobile-phone-link">0174 - 860 859 6</a></p>
         <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
 
         <nav class="footer__links">
@@ -185,8 +186,25 @@
                     mobileGroupToggle.setAttribute('aria-expanded', !isExpanded);
                     mobileDropdown.style.display = isExpanded ? 'none' : 'block';
                 });
-            }
+            });
         });
     </script>
+    
+    <!-- Mobile-Phone Link Styling -->
+    <style>
+        @media (max-width: 768px) {
+            .mobile-phone-link {
+                pointer-events: auto;
+                cursor: pointer;
+            }
+        }
+        @media (min-width: 769px) {
+            .mobile-phone-link {
+                pointer-events: none;
+                cursor: default;
+            }
+        }
+    </style>
+
 </body>
 </html>
