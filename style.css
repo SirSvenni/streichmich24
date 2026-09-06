@@ -223,21 +223,35 @@ img { display: block; max-width: 100%; }
     transform: translateX(-50%) scaleX(1);
 }
 
-.main-navigation .dropdown {
+.galerie-dropdown {
     display: none;
     position: absolute;
-    top: 1.4rem;
-    left: 0;
-    transform: none;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
     min-width: 16rem;
     background: rgba(12, 13, 14, 0.98);
     border: 1px solid rgba(197, 160, 89, 0.25);
     border-radius: 6px;
     padding: 0.6rem 0;
-    margin-top: 0;
+    margin-top: 0.5rem;
     box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
     backdrop-filter: blur(8px);
-    z-index: 10;
+    z-index: 100;
+}
+
+.main-nav .group-btn {
+    position: relative;
+}
+
+/* Dropdown muss nur relativ zum Button erscheinen */
+.main-nav .group-btn + .galerie-dropdown,
+.main-nav .group-btn ~ .galerie-dropdown {
+    position: absolute;
+    top: 105%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0;
 }
 
 .main-navigation .dropdown li {
@@ -802,7 +816,107 @@ img { display: block; max-width: 100%; }
     .mobile-nav-toggle { display: none !important; }
 
     /* Desktop: Show desk nav normally */
-    .desk-nav { display: flex !important; }
+    .desk-nav {
+        display: flex !important;
+        justify-content: center;
+        align-items: baseline;
+        background: #0c0d0e;
+        padding: 1rem 2rem;
+        margin-top: 0;
+        gap: 1px;
+    }
+
+    .desk-nav > li {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        position: relative;
+    }
+
+    .desk-nav > li > a,
+    [role="button"],
+    .group-btn {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #a0a0a0;
+        text-decoration: none;
+        padding: 0.85rem 1.25rem;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        min-width: 9rem;
+    }
+
+    .desk-nav > li > a:hover,
+    [role="button"]:hover,
+    .group-btn:hover {
+        color: var(--gold);
+        text-decoration: none;
+        background: rgba(197, 160, 89, 0.1);
+    }
+
+    .group-btn::after {
+        content: '▾';
+        font-size: 0.55em;
+        opacity: 0.5;
+        transition: transform 0.3s ease;
+    }
+
+    .group-btn:hover::after,
+    [role="button"]:hover::after {
+        transform: translateY(-2px);
+    }
+
+    /* Dropdown: Standardmäßig verstecken */
+    .desk-nav .dropdown {
+        display: none !important;
+        position: absolute;
+        top: 1.25rem;
+        left: 0;
+        transform: none;
+        min-width: 14rem;
+        background: #0c0d0e;
+        border: 1px solid rgba(197, 160, 89, 0.25);
+        border-radius: 4px;
+        padding: 0.5rem 0;
+        margin-top: 0.75rem;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(6px);
+        z-index: 100;
+    }
+
+    .desk-nav .dropdown li {
+        list-style: none;
+    }
+
+    .desk-nav .dropdown li > a {
+        display: block;
+        padding: 0.55rem 1.35rem;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.78rem;
+        color: #b0b0b0;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+
+    .desk-nav .dropdown li > a:hover {
+        background: rgba(197, 160, 89, 0.1);
+        color: var(--gold);
+    }
+
+    /* Dropdown nur bei geöffnetem Button zeigen */
+    [aria-expanded="true"] ~ .dropdown {
+        display: block !important;
+        animation: slideDownMenu 0.25s ease-out;
+    }
+
+    @keyframes slideDownMenu {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 
     .sticky-cta { display: none; }
 
