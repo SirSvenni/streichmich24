@@ -182,7 +182,7 @@
             const desktopDropdownBtn = document.querySelector('.group-btn:not(#mobileGroupToggle)');
             const desktopDropdown = document.querySelector('.main-navigation .dropdown');
             const mobileGroupToggle = document.getElementById('mobileGroupToggle');
-            const mobileDropdownList = mobileGroupToggle ? mobileGroupToggle.parentElement.nextElementSibling?.querySelector('.dropdown') : null;
+            const mobileDropdownList = document.querySelector('#mobileGroupToggle ~ .dropdown');
             
             if (mobileNavToggle && mobileNavOverlay) {
                 mobileNavToggle.addEventListener('click', () => {
@@ -209,7 +209,8 @@
             }
 
             if (mobileGroupToggle && mobileDropdownList) {
-                mobileGroupToggle.addEventListener('click', () => {
+                mobileGroupToggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
                     const isExpanded = mobileGroupToggle.getAttribute('aria-expanded') === 'true';
                     mobileGroupToggle.setAttribute('aria-expanded', !isExpanded);
                     mobileDropdownList.style.display = isExpanded ? 'none' : 'block';
