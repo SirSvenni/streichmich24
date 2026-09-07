@@ -182,8 +182,9 @@
             const desktopDropdownBtn = document.querySelector('.group-btn:not(#mobileGroupToggle)');
             const desktopDropdown = document.querySelector('.main-navigation .dropdown');
             const mobileGroupToggle = document.getElementById('mobileGroupToggle');
-            const mobileDropdownList = document.querySelector('#mobileGroupToggle ~ .dropdown');
-            
+            // FIX: Robuster DOM-Traversal statt Fragiler ~-Selektor für iOS Safari GitHub
+            const mobileDropdown = mobileGroupToggle.parentElement?.querySelector('.dropdown') || null;
+
             if (mobileNavToggle && mobileNavOverlay) {
                 mobileNavToggle.addEventListener('click', () => {
                     mobileNavToggle.classList.toggle('active');
@@ -209,19 +210,13 @@
                 });
             }
 
-            if (mobileGroupToggle && mobileDropdownList) {
+            if (mobileDropdown) {
                 mobileGroupToggle.addEventListener('click', (e) => {
                     e.stopPropagation();
                     const isExpanded = mobileGroupToggle.getAttribute('aria-expanded') === 'true';
-                    // FIX: Finde Dropdown über Parent-Selector für iOS Safari Kompatibilität
-                    const parentLI = mobileGroupToggle.closest('.mobile-nav-item');
-                    const dropdownList = parentLI ? parentLI.querySelector('.dropdown') : null;
-                    
-                    if (dropdownList) {
-                        mobileGroupToggle.setAttribute('aria-expanded', !isExpanded);
-                        // Toggle display mit style.display für iOS Safari Kompatibilität
-                        dropdownList.style.display = isExpanded ? 'none' : 'block';
-                    }
+                    mobileGroupToggle.setAttribute('aria-expanded', !isExpanded);
+                    // Toggle display mit style.display für iOS Safari Kompatibilität
+                    mobileDropdown.style.display = !isExpanded ? 'block' : 'none';
                 });
             }
         });
