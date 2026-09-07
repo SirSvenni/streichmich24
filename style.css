@@ -240,11 +240,6 @@ img { display: block; max-width: 100%; }
     z-index: 100;
 }
 
-/* Desktop aria-expanded Hook */
-.group-btn[aria-expanded="true"] .dropdown {
-    display: block !important;
-}
-
 .main-nav .group-btn {
     position: relative;
 }

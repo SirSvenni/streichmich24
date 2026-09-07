@@ -6,6 +6,9 @@
     <meta name="description" content="Strukturen - streichmich24 Malerfachbetrieb Grabau">
     <title>Strukturen | streichmich24 – Malerfachbetrieb Grabau</title>
     
+    <!-- iOS Safari Cache Bumper (Streichmich24, v1.26) -->
+    <meta name="mobile-nav-version" content="v1.27-cachebust-structs">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -54,7 +57,7 @@
                     <li class="mobile-nav-item"><a href="index.html">Startseite</a></li>
                     <li class="mobile-nav-item group-btn-wrapper">
                         <button class="group-btn" id="mobileGroupToggle" aria-expanded="false">Galerie ▾</button>
-                        <ul class="dropdown">
+                        <ul class="dropdown" style="display: none;">
                             <li><a href="galerie_streich.html">Streichen</a></li>
                             <li><a href="galerie_tape.html">Tapezieren</a></li>
                             <li><a href="galerie_lack.html">Lackieren</a></li>
@@ -182,14 +185,8 @@
             const desktopDropdownBtn = document.querySelector('.group-btn:not(#mobileGroupToggle)');
             const desktopDropdown = document.querySelector('.main-navigation .dropdown');
             const mobileGroupToggle = document.getElementById('mobileGroupToggle');
-            // FIX: Robuster DOM-Traversal statt Fragiler ~-Selektor für iOS Safari GitHub
-            const mobileDropdown = document.querySelector('#mobileGroupToggle').parentElement.querySelector('.dropdown');
+            const mobileDropdownList = document.querySelector('#mobileGroupToggle ~ .dropdown');
             
-            // Fallback for specific structures if direct selection fails
-            if (!mobileDropdown) {
-                mobileDropdown = document.querySelector('.mobile-nav-list .dropdown');
-            }
-
             if (mobileNavToggle && mobileNavOverlay) {
                 mobileNavToggle.addEventListener('click', () => {
                     mobileNavToggle.classList.toggle('active');
@@ -209,56 +206,21 @@
             if (desktopDropdownBtn && desktopDropdown) {
                 desktopDropdownBtn.addEventListener('click', () => {
                     const isExpanded = desktopDropdownBtn.getAttribute('aria-expanded') === 'true';
-                    // Toggle aria-expanded + style.display für Desktop Kompatibilität
                     desktopDropdownBtn.setAttribute('aria-expanded', !isExpanded);
                     desktopDropdown.style.display = isExpanded ? 'none' : 'block';
                 });
             }
 
-            if (mobileDropdown) {
+            if (mobileGroupToggle && mobileDropdownList) {
                 mobileGroupToggle.addEventListener('click', (e) => {
                     e.stopPropagation();
                     const isExpanded = mobileGroupToggle.getAttribute('aria-expanded') === 'true';
                     mobileGroupToggle.setAttribute('aria-expanded', !isExpanded);
-                    // Toggle display mit style.display für iOS Safari Kompatibilität
-                    mobileDropdown.style.display = !isExpanded ? 'block' : 'none';
+                    mobileDropdownList.style.display = isExpanded ? 'none' : 'block';
                 });
             }
         });
-        };
-        </script>
-        <script>
-        document.addEventListener("DOMContentLoaded", function() {
-        // 1. Hamburger-Button für das mobile Hauptmenü
-        const mobileToggle = document.querySelector('.mobile-nav-toggle');
-        const mobileOverlay = document.querySelector('.mobile-nav-overlay');
-
-        if (mobileToggle && mobileOverlay) {
-            mobileToggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                mobileOverlay.classList.toggle('active');
-            });
-        }
-
-        // 2. Galerie-Dropdown innerhalb der mobilen Ansicht
-        const groupBtn = document.querySelector('.mobile-nav-list .group-btn, .mobile-nav-overlay .group-btn');
-        const dropdown = document.querySelector('.dropdown');
-
-        if (groupBtn) {
-            groupBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                // Schaltet das aria-Attribut um
-                const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                this.setAttribute('aria-expanded', !isExpanded);
-            
-                // Falls du es über ein "display: block" per JS steuerst:
-                if (dropdown) {
-                    dropdown.style.display = isExpanded ? 'none' : 'block';
-                }
-            });
-        }
-        });
-        </script>
+    </script>
 
 </body>
 </html>
