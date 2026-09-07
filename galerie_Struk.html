@@ -183,7 +183,7 @@
             const desktopDropdown = document.querySelector('.main-navigation .dropdown');
             const mobileGroupToggle = document.getElementById('mobileGroupToggle');
             // FIX: Robuster DOM-Traversal statt Fragiler ~-Selektor für iOS Safari GitHub
-            const mobileDropdown = mobileGroupToggle.parentElement?.querySelector('.dropdown') || null;
+            const mobileDropdown = document.querySelector('#mobileGroupToggle').parentElement.querySelector('.dropdown');
 
             if (mobileNavToggle && mobileNavOverlay) {
                 mobileNavToggle.addEventListener('click', () => {
