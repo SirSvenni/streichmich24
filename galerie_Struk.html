@@ -184,6 +184,11 @@
             const mobileGroupToggle = document.getElementById('mobileGroupToggle');
             // FIX: Robuster DOM-Traversal statt Fragiler ~-Selektor für iOS Safari GitHub
             const mobileDropdown = document.querySelector('#mobileGroupToggle').parentElement.querySelector('.dropdown');
+            
+            // Fallback for specific structures if direct selection fails
+            if (!mobileDropdown) {
+                mobileDropdown = document.querySelector('.mobile-nav-list .dropdown');
+            }
 
             if (mobileNavToggle && mobileNavOverlay) {
                 mobileNavToggle.addEventListener('click', () => {
@@ -220,7 +225,40 @@
                 });
             }
         });
-    </script>
+        };
+        </script>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        // 1. Hamburger-Button für das mobile Hauptmenü
+        const mobileToggle = document.querySelector('.mobile-nav-toggle');
+        const mobileOverlay = document.querySelector('.mobile-nav-overlay');
+
+        if (mobileToggle && mobileOverlay) {
+            mobileToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                mobileOverlay.classList.toggle('active');
+            });
+        }
+
+        // 2. Galerie-Dropdown innerhalb der mobilen Ansicht
+        const groupBtn = document.querySelector('.mobile-nav-list .group-btn, .mobile-nav-overlay .group-btn');
+        const dropdown = document.querySelector('.dropdown');
+
+        if (groupBtn) {
+            groupBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Schaltet das aria-Attribut um
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !isExpanded);
+            
+                // Falls du es über ein "display: block" per JS steuerst:
+                if (dropdown) {
+                    dropdown.style.display = isExpanded ? 'none' : 'block';
+                }
+            });
+        }
+        });
+        </script>
 
 </body>
 </html>
