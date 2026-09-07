@@ -203,6 +203,7 @@
             if (desktopDropdownBtn && desktopDropdown) {
                 desktopDropdownBtn.addEventListener('click', () => {
                     const isExpanded = desktopDropdownBtn.getAttribute('aria-expanded') === 'true';
+                    // Toggle aria-expanded + style.display für Desktop Kompatibilität
                     desktopDropdownBtn.setAttribute('aria-expanded', !isExpanded);
                     desktopDropdown.style.display = isExpanded ? 'none' : 'block';
                 });
@@ -212,8 +213,15 @@
                 mobileGroupToggle.addEventListener('click', (e) => {
                     e.stopPropagation();
                     const isExpanded = mobileGroupToggle.getAttribute('aria-expanded') === 'true';
-                    mobileGroupToggle.setAttribute('aria-expanded', !isExpanded);
-                    mobileDropdownList.style.display = isExpanded ? 'none' : 'block';
+                    // FIX: Finde Dropdown über Parent-Selector für iOS Safari Kompatibilität
+                    const parentLI = mobileGroupToggle.closest('.mobile-nav-item');
+                    const dropdownList = parentLI ? parentLI.querySelector('.dropdown') : null;
+                    
+                    if (dropdownList) {
+                        mobileGroupToggle.setAttribute('aria-expanded', !isExpanded);
+                        // Toggle display mit style.display für iOS Safari Kompatibilität
+                        dropdownList.style.display = isExpanded ? 'none' : 'block';
+                    }
                 });
             }
         });
