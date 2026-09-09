@@ -308,7 +308,7 @@
                 <li class="mobile-nav-item"><a href="index.html">Startseite</a></li>
                 <li class="mobile-nav-item group-btn-wrapper">
                     <button class="group-btn" id="mobileGroupToggle" aria-expanded="false">Galerie ▾</button>
-                    <ul class="dropdown" style="position: static; background: var(--bg-soft); padding-left: 1.5rem; display: block;">
+                    <ul class="dropdown" style="position: static; background: var(--bg-soft); padding-left: 1.5rem; display: none;">
                         <li><a href="galerie_streich.html">Streichen</a></li>
                         <li><a href="galerie_tape.html">Tapezieren</a></li>
                         <li><a href="galerie_lack.html">Lackieren</a></li>
@@ -423,7 +423,7 @@
             const mobileNavOverlay = document.getElementById('mobileNavOverlay');
             const desktopDropdownBtn = document.querySelector('.group-btn:not(#mobileGroupToggle)');
             const desktopDropdown = document.querySelector('.main-navigation .dropdown');
-            const mobileDropdownWrapper = document.querySelector('.mobile-nav-item:nth-child(2) > ul');
+            const mobileDropdownWrapper = document.querySelector('.group-btn-wrapper > ul');
 
             // Hamburger Menü Toggle (Mobile)
             if (mobileNavToggle && mobileNavOverlay) {
@@ -443,15 +443,23 @@
                 });
             }
 
-            // Desktop Dropdown Toggle
+            // Mobile Dropdown Toggle (für Galerie-Mobilmenü)
             if (desktopDropdownBtn && desktopDropdown) {
                 desktopDropdownBtn.addEventListener('click', () => {
                     const isExpanded = desktopDropdownBtn.getAttribute('aria-expanded') === 'true';
                     desktopDropdownBtn.setAttribute('aria-expanded', !isExpanded);
                     desktopDropdown.style.display = isExpanded ? 'none' : 'block';
                 });
-            }
 
+                // Mobile Dropdown Toggle (für Galerie-Mobilmenü)
+                if (mobileGroupToggle && mobileDropdownWrapper) {
+                    mobileGroupToggle.addEventListener('click', () => {
+                        const isExpanded = mobileGroupToggle.getAttribute('aria-expanded') === 'true';
+                        mobileGroupToggle.setAttribute('aria-expanded', !isExpanded);
+                        mobileDropdownWrapper.style.display = isExpanded ? 'none' : 'block';
+                    });
+                }
+            }
         });
     </script>
 </body>
