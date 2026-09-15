@@ -75,13 +75,6 @@ img { display: block; max-width: 100%; }
     margin-bottom: 0;
 }
 
-/* iOS Safari Workaround für Logo */
-@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
-    .header__logo {
-        font-family: 'BlinkMacSystemFont', '-apple-system', 'Helvetica Neue', sans-serif !important;
-    }
-}
-
 .header__tagline {
     font-size: clamp(0.65rem, 2.2vw, 0.85rem);
     letter-spacing: 0.35em;
