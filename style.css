@@ -16,16 +16,16 @@
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url('../fonts/cormorant-garamond-latin-700-normal.woff2') format('woff2'),
-         url('../fonts/CormorantGaramond-Bold.ttf') format('truetype');
+    src: url('./fonts/cormorant-garamond-latin-700-normal.woff2') format('woff2'),
+         url('./fonts/CormorantGaramond-Bold.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Cormorant Garamond';
     font-style: normal;
     font-weight: 400;
-    src: url('../fonts/cormorant-garamond-latin-400-normal.woff2') format('woff2'),
-         url('../fonts/CormorantGaramond-Regular.ttf') format('truetype');
+    src: url('./fonts/cormorant-garamond-latin-400-normal.woff2') format('woff2'),
+         url('./fonts/CormorantGaramond-Regular.ttf') format('truetype');
 }
 
 /* Inter Navigation */
