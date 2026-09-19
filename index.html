@@ -18,8 +18,11 @@
     <meta property="og:site_name" content="streichmich24 – Malerfachbetrieb Grabau">
     <meta property="og:title" content="streichmich24 – Malerfachbetrieb Grabau | Köln">
     <meta property="og:description" content="Handwerkliche Malerarbeiten in Köln und Umgebung: Frechen, Hürth, Bergheim, Kerpen. Streichen, Tapezieren, Lackieren mit Handwerkstradition seit 2006. Kostenlose Beratung!">
-    <meta property="og:image" content="https://streichmich24.de/images/hero-blumen.jpg">
+    <meta property="og:image" content="images/hero-blumen.jpg">
     <meta name="theme-color" content="#c5a059">
+    
+    <!-- Cormorant-Garamond Font (jsDelivr) -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@typeface-cormorant-garamond@latest/dist/cormorant-garamond.min.woff2" as="fetch" crossorigin>
 
     <!-- Schema.org Strukturierte Daten -->
     <script type="application/ld+json">
@@ -56,23 +59,7 @@
 </head>
 <body>
 
-    <!-- Inline Lightbox für mobile Gallery (WhatsApp iOS/Android Support) -->
-    <script>
-      // Inline Lightbox (keine externe Datei nötig - funktioniert auf iPhone!)
-      (function(){
-        const heroImg = document.querySelector('.hero__photo');
-        if(!heroImg)return;
-        heroImg.addEventListener('click',function(e){e.stopPropagation();
-          var lb=document.createElement("div");lb.id="lightbox-inline";
-          lb.style.cssText="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.9);z-index:9999;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s ease;"
-          lb.innerHTML="<img src='"+heroImg.src.replace(/\\\.jpg$/i,'.png')+"' style='max-width:100%;max-height:85vh;'";
-          document.body.appendChild(lb);
-          var io=document.createElement("div");io.id="lightbox-info-inline";
-          io.style.cssText="position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);background:#c5a059;color:white;padding:0.75rem 1.5rem;border-radius:0.5rem;font-family:'Cormorant Garamond',serif;text-align:center;max-width:90%;z-index:10000;"
-          io.innerHTML="<strong>[Vorschau senden]</strong><br><a href='https://wa.me/?text=Streich%20arbeit%20Vorschau' style='color:inherit;text-decoration:none;'>Auf WhatsApp öffnen</a>"
-          document.body.appendChild(io);lb.style.opacity="1";setTimeout(function(){if(lb.addEventListener)lb.addEventListener('click',function(e){if(e.target.id!=="lightbox-inline"){lb.style.opacity=0;setTimeout(function(){if(document.getElementById("lightbox-inline")){lb=document.getElementById("lightbox-inline");io=document.getElementById("lightbox-info-inline");lb&&lb.remove();io&&io.remove()}}}},{once:true})}});window.addEventListener('keydown',function(e){if(e.key==="Escape"){lb=document.getElementById("lightbox-inline");io=document.getElementById("lightbox-info-inline");lb&&(lb.style.opacity=0,setTimeout(function(){if(lb)lb.remove();if(io)io.remove()})},300));}}})();
-    </script>
-
+    <!-- Skyline Header -->
     <header class="header">
         <picture>
             <source media="(max-width: 768px)" srcset="images/handy.jpg">
