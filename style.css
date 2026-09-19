@@ -77,6 +77,12 @@ header .site-title {
     font-family: 'Cormorant Garamond', serif;
 }
 
+@media (max-width: 768px) {
+    header .site-title {
+        font-size: clamp(1.5rem, 4vw + 1rem, 2.5rem); /* Mobil-Ansicht +60% */
+    }
+}
+
 img { display: block; max-width: 100%; }
 
 /* ── HEADER / SKYLINE ── */
