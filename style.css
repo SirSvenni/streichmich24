@@ -11,9 +11,6 @@
 }
 
 /* ── LINK STYLE FORZING ── */
-
-/* Cormorant Garamond jetzt per <head preload> geladen, keine @import mehr */
-
 .desk-nav > li > a {
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem;
