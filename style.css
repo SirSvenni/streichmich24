@@ -10,6 +10,38 @@
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* ── LOKALE FONT-CSS (DSGVO, iOS-ready) ── */
+@font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../fonts/cormorant-garamond-latin-700-normal.woff2') format('woff2'),
+         url('../fonts/CormorantGaramond-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/cormorant-garamond-latin-400-normal.woff2') format('woff2'),
+         url('../fonts/CormorantGaramond-Regular.ttf') format('truetype');
+}
+
+/* Inter Navigation */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+}
 /* ── LINK STYLE FORZING ── */
 .desk-nav > li > a {
     font-family: 'Inter', sans-serif;
