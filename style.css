@@ -11,6 +11,10 @@
 }
 
 /* ── LINK STYLE FORZING ── */
+
+/* Cormorant Garamond via jsDelivr (iOS-Safari-kompatible Einbindung) */
+@import url('https://cdn.jsdelivr.net/npm/@typeface-cormorant-garamond@latest/dist/cormorant-garamond.min.css');
+
 .desk-nav > li > a {
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem;
