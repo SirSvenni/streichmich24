@@ -104,6 +104,14 @@
             text-shadow: 0 1px 8px rgba(255,255,255,0.8);
         }
 
+        /* --- MOBILE HEADER ENLARGEMENT (unified) --- */
+        @media (max-width: 768px) {
+            .header__logo,
+            .header__tagline {
+                font-size: clamp(1.95rem, 4vw + 0.9rem, 2.5rem) !important;
+            }
+        }
+
         /* --- GALLERY STYLES --- */
         .gallery_section {
             padding: 4rem 1.5rem;
