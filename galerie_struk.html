@@ -296,7 +296,7 @@
             <li><a href="impressum.html">Impressum</a></li>
         </ul>
 
-    <!-- Mobile Navigation Toggle -->
+    <!-- Mobile Navigation Toggle (desktop hidden via CSS) -->
     <button class="mobile-nav-toggle" id="mobileNavToggle">
         <h3>Menü</h3>
         <span></span>
@@ -309,13 +309,13 @@
                 <li class="mobile-nav-item"><a href="index.html">Startseite</a></li>
                 <li class="mobile-nav-item group-btn-wrapper">
                     <button class="group-btn" id="mobileGroupToggle" aria-expanded="false">Galerie ▾</button>
-                    <ul class="dropdown" style="position: static; background: var(--bg-soft); padding-left: 1.5rem; display: none;">
+                    <ul class="dropdown mobile-dropdown" style="position: static; background: var(--bg-soft); padding-left: 1.5rem; display: none;">
                         <li><a href="galerie_streich.html">Streichen</a></li>
                         <li><a href="galerie_tape.html">Tapezieren</a></li>
                         <li><a href="galerie_lack.html">Lackieren</a></li>
                         <li><a href="galerie_struk.html">Strukturen</a></li>
-                                            <li><a href="galerie_rauch.html">Raucherwohnung</a></li>
-                                                </ul>
+                                                <li><a href="galerie_rauch.html">Raucherwohnung</a></li>
+                                                    </ul>
                                         </li>
                                         <li class="mobile-nav-item"><a href="bewertungen.html">Bewertungen</a></li>
                 <li class="mobile-nav-item"><a href="kontakt.html">Kontakt</a></li>
@@ -325,6 +325,11 @@
         </nav>
     </div>
     </nav>
+
+<!-- Sticky CTA (mobile visible only) -->
+<div class="sticky-cta" aria-hidden="true">
+    <a href="tel:+491748608596" class="btn mobile-phone-link">Jetzt anfragen &rarr;</a>
+</div>
 
     <!-- Galerie Section -->
     <main class="gallery_section">
