@@ -66,7 +66,7 @@ button:focus-visible {
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation: none !important; transition: none !important; }
-    .hero__title { opacity: 1; }
+    .hero__line { opacity: 1; }
 }
 
 /* ── BUTTON ── */
@@ -204,13 +204,20 @@ button:focus-visible {
     line-height: 1.15;
     color: var(--white);
     text-shadow: 0 4px 30px rgba(0,0,0,0.7);
-    opacity: 0;
-    animation: fadeUp 1.2s var(--ease) forwards;
 }
 
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
+/* Zwei Zeilen gleiten nacheinander langsam ein */
+.hero__line {
+    display: block;
+    opacity: 0;
+    animation: heroReveal 2.6s var(--ease) 0.4s forwards;
+}
+
+.hero__line:nth-child(2) { animation-delay: 1.1s; }
+
+@keyframes heroReveal {
+    from { opacity: 0; transform: translateY(2.5rem); letter-spacing: 0.08em; filter: blur(4px); }
+    to   { opacity: 1; transform: translateY(0); letter-spacing: normal; filter: blur(0); }
 }
 
 /* ── SECTIONS ── */
