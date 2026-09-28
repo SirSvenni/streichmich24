@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Seite 1 - streichmich24 Malerfachbetrieb Grabau">
-    <title>Seite 1 | streichmich24 – Malerfachbetrieb Grabau</title>
-
+    <meta name="description" content="Streicharbeiten von streichmich24 – Malerfachbetrieb Grabau: Beispiele für Innen- und Außenanstriche in Köln und Umgebung.">
+    <title>Streichen | streichmich24 – Malerfachbetrieb Grabau</title>
     <link rel="stylesheet" href="style.css">
+    <script src="site.js" defer></script>
 </head>
 <body>
 
-    <!--_Header_ -->
     <header class="header">
         <picture>
             <source media="(max-width: 768px)" srcset="images/handy.jpg">
-            <img src="images/Sky.jpg" alt="Kölner Dom – Skyline Köln" class="header__skyline">
+            <img src="images/sky.jpg" alt="Kölner Dom – Skyline Köln" class="header__skyline">
         </picture>
         <div class="header__brand">
             <p class="header__logo">streichmich24</p>
@@ -22,15 +21,13 @@
         </div>
     </header>
 
-    <!-- Navigation -->
-    <nav class="main-navigation">
-        <ul class="desk-nav" aria-label="Hauptnavigation">
+    <nav class="main-navigation" aria-label="Hauptnavigation">
+        <!-- Desktop -->
+        <ul class="desk-nav">
             <li><a href="index.html">Startseite</a></li>
             <li class="nav-group">
-                <button class="group-btn" aria-expanded="false" role="menuitem">
-                    Galerie ▾
-                </button>
-                <ul class="dropdown">
+                <button type="button" class="group-btn" aria-expanded="false" aria-controls="galerieDropdown">Galerie</button>
+                <ul class="dropdown" id="galerieDropdown">
                     <li><a href="galerie_streich.html">Streichen</a></li>
                     <li><a href="galerie_tape.html">Tapezieren</a></li>
                     <li><a href="galerie_lack.html">Lackieren</a></li>
@@ -40,38 +37,34 @@
             </li>
             <li><a href="bewertungen.html">Bewertungen</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
-            <li><a href="datenschutz.html">Datenschutz</a></li>
-            <li><a href="impressum.html">Impressum</a></li>
         </ul>
 
-        <button class="mobile-nav-toggle" id="mobileNavToggle">
-            <h3>Menü</h3>
-            <span></span>
+        <!-- Mobil -->
+        <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNavOverlay">
+            <span class="mobile-nav-toggle__label">Menü</span>
+            <span class="mobile-nav-toggle__icon" aria-hidden="true"></span>
         </button>
 
         <div class="mobile-nav-overlay" id="mobileNavOverlay">
-            <nav>
-                <ul class="mobile-nav-list">
-                    <li class="mobile-nav-item"><a href="index.html">Startseite</a></li>
-                    <li class="mobile-nav-item group-btn-wrapper">
-                        <button class="group-btn" id="mobileGroupToggle" aria-expanded="false">Galerie ▾</button>
-                        <ul class="dropdown" style="position: static; background: var(--bg-soft); padding-left: 1.5rem; display: none;">
-                            <li><a href="galerie_streich.html">Streichen</a></li>
-                            <li><a href="galerie_tape.html">Tapezieren</a></li>
-                            <li><a href="galerie_lack.html">Lackieren</a></li>
-                            <li><a href="galerie_struk.html">Strukturen</a></li>
-                            <li><a href="galerie_rauch.html">Raucherwohnung</a></li>
-                        </ul>
-                    </li>
-                    <li class="mobile-nav-item"><a href="bewertungen.html">Bewertungen</a></li>
-                    <li class="mobile-nav-item"><a href="kontakt.html">Kontakt</a></li>
-                    <li class="mobile-nav-item"><a href="datenschutz.html">Datenschutz</a></li>
-                    <li class="mobile-nav-item"><a href="impressum.html">Impressum</a></li>
-                </ul>
-            </nav>
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item"><a href="index.html">Startseite</a></li>
+                <li class="mobile-nav-item">
+                    <button type="button" class="group-btn" aria-expanded="false" aria-controls="galerieDropdownMobile">Galerie</button>
+                    <ul class="dropdown" id="galerieDropdownMobile">
+                        <li><a href="galerie_streich.html">Streichen</a></li>
+                        <li><a href="galerie_tape.html">Tapezieren</a></li>
+                        <li><a href="galerie_lack.html">Lackieren</a></li>
+                        <li><a href="galerie_struk.html">Strukturen</a></li>
+                        <li><a href="galerie_rauch.html">Raucherwohnung</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-nav-item"><a href="bewertungen.html">Bewertungen</a></li>
+                <li class="mobile-nav-item"><a href="kontakt.html">Kontakt</a></li>
+            </ul>
         </div>
     </nav>
 
+    <main>
     <section class="section section--dark">
         <div class="section__inner">
             <div class="title_wrapper">
@@ -80,133 +73,57 @@
             </div>
 
             <div class="mosaic_grid">
-                <div class="mosaic_item tall"><img src="images/arbeiten/streicharbeiten/1.JPG" alt="Streicharbeit 1"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/2.JPG" alt="Streicharbeit 2"></div>
-                <div class="mosaic_item wide"><img src="images/arbeiten/streicharbeiten/3.JPG" alt="Streicharbeit 3"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/4.JPG" alt="Streicharbeit 4"></div>
-                <div class="mosaic_item tall"><img src="images/arbeiten/streicharbeiten/5.JPG" alt="Streicharbeit 5"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/6.JPG" alt="Streicharbeit 6"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/7.JPG" alt="Streicharbeit 7"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/8.JPG" alt="Streicharbeit 8"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/9.JPG" alt="Streicharbeit 9"></div>
-                <div class="mosaic_item tall"><img src="images/arbeiten/streicharbeiten/10.JPG" alt="Streicharbeit 10"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/11.JPG" alt="Streicharbeit 11"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/12.JPG" alt="Streicharbeit 12"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/13.JPG" alt="Streicharbeit 13"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/14.JPG" alt="Streicharbeit 14"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/15.JPG" alt="Streicharbeit 15"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/16.JPG" alt="Streicharbeit 16"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/17.JPG" alt="Streicharbeit 17"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/18.JPG" alt="Streicharbeit 18"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/19.JPG" alt="Streicharbeit 19"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/20.JPG" alt="Streicharbeit 20"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/24.jpg" alt="Streicharbeit 24"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/25.jpg" alt="Streicharbeit 25"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/26.jpg" alt="Streicharbeit 26"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/27.jpg" alt="Streicharbeit 27"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/28.jpg" alt="Streicharbeit 28"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/29.jpg" alt="Streicharbeit 29"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/30.jpg" alt="Streicharbeit 30"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/31.jpg" alt="Streicharbeit 31"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/32.jpg" alt="Streicharbeit 32"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/33.jpg" alt="Streicharbeit 33"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/34.JPG" alt="Streicharbeit 34"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/35.JPG" alt="Streicharbeit 35"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/36.JPG" alt="Streicharbeit 36"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/37.JPG" alt="Streicharbeit 37"></div>
+                <div class="mosaic_item tall"><img src="images/arbeiten/streicharbeiten/1.JPG" loading="lazy" decoding="async" alt="Streicharbeit 1"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/2.JPG" loading="lazy" decoding="async" alt="Streicharbeit 2"></div>
+                <div class="mosaic_item wide"><img src="images/arbeiten/streicharbeiten/3.JPG" loading="lazy" decoding="async" alt="Streicharbeit 3"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/4.JPG" loading="lazy" decoding="async" alt="Streicharbeit 4"></div>
+                <div class="mosaic_item tall"><img src="images/arbeiten/streicharbeiten/5.JPG" loading="lazy" decoding="async" alt="Streicharbeit 5"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/6.JPG" loading="lazy" decoding="async" alt="Streicharbeit 6"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/7.JPG" loading="lazy" decoding="async" alt="Streicharbeit 7"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/8.JPG" loading="lazy" decoding="async" alt="Streicharbeit 8"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/9.JPG" loading="lazy" decoding="async" alt="Streicharbeit 9"></div>
+                <div class="mosaic_item tall"><img src="images/arbeiten/streicharbeiten/10.JPG" loading="lazy" decoding="async" alt="Streicharbeit 10"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/11.JPG" loading="lazy" decoding="async" alt="Streicharbeit 11"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/12.JPG" loading="lazy" decoding="async" alt="Streicharbeit 12"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/13.JPG" loading="lazy" decoding="async" alt="Streicharbeit 13"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/14.JPG" loading="lazy" decoding="async" alt="Streicharbeit 14"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/15.JPG" loading="lazy" decoding="async" alt="Streicharbeit 15"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/16.JPG" loading="lazy" decoding="async" alt="Streicharbeit 16"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/17.JPG" loading="lazy" decoding="async" alt="Streicharbeit 17"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/18.JPG" loading="lazy" decoding="async" alt="Streicharbeit 18"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/19.JPG" loading="lazy" decoding="async" alt="Streicharbeit 19"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/20.JPG" loading="lazy" decoding="async" alt="Streicharbeit 20"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/24.jpg" loading="lazy" decoding="async" alt="Streicharbeit 24"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/25.jpg" loading="lazy" decoding="async" alt="Streicharbeit 25"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/26.jpg" loading="lazy" decoding="async" alt="Streicharbeit 26"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/27.jpg" loading="lazy" decoding="async" alt="Streicharbeit 27"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/28.jpg" loading="lazy" decoding="async" alt="Streicharbeit 28"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/29.jpg" loading="lazy" decoding="async" alt="Streicharbeit 29"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/30.jpg" loading="lazy" decoding="async" alt="Streicharbeit 30"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/31.jpg" loading="lazy" decoding="async" alt="Streicharbeit 31"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/32.jpg" loading="lazy" decoding="async" alt="Streicharbeit 32"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/33.jpg" loading="lazy" decoding="async" alt="Streicharbeit 33"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/34.JPG" loading="lazy" decoding="async" alt="Streicharbeit 34"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/35.JPG" loading="lazy" decoding="async" alt="Streicharbeit 35"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/36.JPG" loading="lazy" decoding="async" alt="Streicharbeit 36"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/streicharbeiten/37.JPG" loading="lazy" decoding="async" alt="Streicharbeit 37"></div>
             </div>
         </div>
     </section>
+    </main>
 
     <footer class="footer">
         <p class="footer__brand">streichmich24 · Malerfachbetrieb Grabau</p>
-        <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: <a href="tel:+491748608596" style="text-decoration: none; color: #c5a059;" class="mobile-phone-link">0174 - 860 859 6</a></p>
+        <p class="footer__phone">Mobil: <a href="tel:+491748608596">0174 - 860 859 6</a></p>
         <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
-
-        <nav class="footer__links">
-            <a href="datenschutz.html" class="active">Datenschutz</a>
+        <nav class="footer__links" aria-label="Rechtliches">
+            <a href="datenschutz.html">Datenschutz</a>
             <a href="impressum.html">Impressum</a>
         </nav>
     </footer>
 
-    <div id="lightbox">
-        <img src="" alt="Vergrößertes Bild">
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="Bildansicht">
+        <img alt="Vergrößertes Bild">
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileNavToggle = document.getElementById('mobileNavToggle');
-            const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-            const desktopDropdownBtn = document.querySelector('.group-btn:not(#mobileGroupToggle)');
-            const desktopDropdown = document.querySelector('.main-navigation .dropdown');
-            const mobileGroupToggle = document.getElementById('mobileGroupToggle');
-            const mobileDropdown = document.querySelector('.mobile-nav-item:nth-child(2) > ul');
-
-            if (mobileNavToggle && mobileNavOverlay) {
-                mobileNavToggle.addEventListener('click', () => {
-                    mobileNavToggle.classList.toggle('active');
-                    mobileNavOverlay.classList.toggle('active');
-                    document.body.style.overflow = mobileNavOverlay.classList.contains('active') ? '' : 'hidden';
-                });
-
-                document.addEventListener('click', (e) => {
-                    if (!mobileNavToggle.contains(e.target) && !mobileNavOverlay.contains(e.target)) {
-                        mobileNavToggle.classList.remove('active');
-                        mobileNavOverlay.classList.remove('active');
-                        document.body.style.overflow = '';
-                    }
-                });
-            }
-
-            if (desktopDropdownBtn && desktopDropdown) {
-                desktopDropdownBtn.addEventListener('click', () => {
-                    const isExpanded = desktopDropdownBtn.getAttribute('aria-expanded') === 'true';
-                    desktopDropdownBtn.setAttribute('aria-expanded', !isExpanded);
-                    desktopDropdown.style.display = isExpanded ? 'none' : 'block';
-                });
-            }
-
-            if (mobileGroupToggle && mobileDropdown) {
-                mobileGroupToggle.addEventListener('click', () => {
-                    const isExpanded = mobileGroupToggle.getAttribute('aria-expanded') === 'true';
-                    mobileGroupToggle.setAttribute('aria-expanded', !isExpanded);
-                    mobileDropdown.style.display = isExpanded ? 'none' : 'block';
-                });
-            }
-
-            // Lightbox Functionality
-            const items = document.querySelectorAll('.mosaic_item img');
-            const lightbox = document.getElementById('lightbox');
-            const lbImg = lightbox.querySelector('img');
-
-            items.forEach(img => {
-                img.addEventListener('click', () => {
-                    lbImg.src = img.src;
-                    lightbox.classList.add('active');
-                });
-            });
-
-            lightbox.addEventListener('click', () => {
-                lightbox.classList.remove('active');
-            });
-        });
-    </script>
-
-    <!-- Mobile-Phone Link Styling -->
-    <style>
-        @media (max-width: 768px) {
-            .mobile-phone-link {
-                pointer-events: auto;
-                cursor: pointer;
-            }
-        }
-        @media (min-width: 769px) {
-            .mobile-phone-link {
-                pointer-events: none;
-                cursor: default;
-            }
-        }
-    </style>
-
 </body>
 </html>

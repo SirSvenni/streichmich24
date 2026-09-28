@@ -3,63 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="streichmich24 – Malerfachbetrieb Grabau. Tapezieren, Lackieren, Streichen mit Handwerkstradition seit 2006. Kostenlose Beratung in Köln und Umgebung.">
-    <title>Bewertungen - streichmich24 | Malerfachbetrieb Grabau | Köln</title>
-
-    <style>
-        :root {
-            --transition: 2s ease-in-out;
-        }
-
-        .review_container {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .review_item {
-            position: absolute;
-            width: 100%;
-            opacity: 0;
-            transition: opacity var(--transition);
-            padding: 20px;
-            text-align: center;
-        }
-
-        .review_item.active { opacity: 1; }
-
-        .review_text {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: clamp(1.8rem, 5vw, 2.4rem);
-            color: var(--white);
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-        }
-
-        .review_meta {
-            color: var(--gold);
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-        }
-    </style>
+    <meta name="description" content="Kundenbewertungen zu streichmich24 – Malerfachbetrieb Grabau in Köln und Umgebung.">
+    <title>Bewertungen | streichmich24 – Malerfachbetrieb Grabau</title>
     <link rel="stylesheet" href="style.css">
-
+    <script src="site.js" defer></script>
 </head>
 <body>
 
-    <!-- Skyline Header -->
     <header class="header">
         <picture>
             <source media="(max-width: 768px)" srcset="images/handy.jpg">
-            <img src="images/Sky.jpg" alt="Kölner Dom – Skyline Köln" class="header__skyline">
+            <img src="images/sky.jpg" alt="Kölner Dom – Skyline Köln" class="header__skyline">
         </picture>
         <div class="header__brand">
             <p class="header__logo">streichmich24</p>
@@ -67,16 +21,13 @@
         </div>
     </header>
 
-    <!-- Navigation -->
-    <nav class="main-navigation">
-        <!-- Desktop Navigation (steht auf der Browser-Ansicht) -->
-        <ul class="desk-nav" aria-label="Hauptnavigation">
+    <nav class="main-navigation" aria-label="Hauptnavigation">
+        <!-- Desktop -->
+        <ul class="desk-nav">
             <li><a href="index.html">Startseite</a></li>
             <li class="nav-group">
-                <button class="group-btn" aria-expanded="false" role="menuitem">
-                    Galerie ▾
-                </button>
-                <ul class="dropdown">
+                <button type="button" class="group-btn" aria-expanded="false" aria-controls="galerieDropdown">Galerie</button>
+                <ul class="dropdown" id="galerieDropdown">
                     <li><a href="galerie_streich.html">Streichen</a></li>
                     <li><a href="galerie_tape.html">Tapezieren</a></li>
                     <li><a href="galerie_lack.html">Lackieren</a></li>
@@ -84,91 +35,65 @@
                     <li><a href="galerie_rauch.html">Raucherwohnung</a></li>
                 </ul>
             </li>
-            <li class="active"><a href="bewertungen.html">Bewertungen</a></li>
+            <li><a href="bewertungen.html">Bewertungen</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
-            <li><a href="datenschutz.html">Datenschutz</a></li>
-            <li><a href="impressum.html">Impressum</a></li>
         </ul>
 
-   <!-- Mobile Navigation Toggle -->
-   <button class="mobile-nav-toggle" id="mobileNavToggle">
-       <h3>Menü</h3>
-       <span></span>
-   </button>
+        <!-- Mobil -->
+        <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNavOverlay">
+            <span class="mobile-nav-toggle__label">Menü</span>
+            <span class="mobile-nav-toggle__icon" aria-hidden="true"></span>
+        </button>
 
-   <!-- Mobile Menu Overlay (exakt wie datenschutz.html) -->
-   <div class="mobile-nav-overlay" id="mobileNavOverlay">
-       <ul class="mobile-nav-list">
-           <li class="mobile-nav-item"><a href="index.html">Startseite</a></li>
-           <li class="mobile-nav-item group-btn-wrapper">
-               <button class="group-btn" id="mobileGroupToggle" aria-expanded="false">Galerie ▾</button>
-               <ul class="dropdown" style="position: static; background: var(--bg-soft); padding-left: 1.5rem; display: none;">
-                   <li><a href="galerie_streich.html">Streichen</a></li>
-                   <li><a href="galerie_tape.html">Tapezieren</a></li>
-                   <li><a href="galerie_lack.html">Lackieren</a></li>
-                   <li><a href="galerie_struk.html">Strukturen</a></li>
-                   <li><a href="galerie_rauch.html">Raucherwohnung</a></li>
-               </ul>
-           </li>
-           <li class="mobile-nav-item"><a href="bewertungen.html" aria-current="page">Bewertungen</a></li>
-           <li class="mobile-nav-item"><a href="kontakt.html">Kontakt</a></li>
-           <li class="mobile-nav-item"><a href="datenschutz.html">Datenschutz</a></li>
-           <li class="mobile-nav-item"><a href="impressum.html">Impressum</a></li>
-       </ul>
-   </div>
+        <div class="mobile-nav-overlay" id="mobileNavOverlay">
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item"><a href="index.html">Startseite</a></li>
+                <li class="mobile-nav-item">
+                    <button type="button" class="group-btn" aria-expanded="false" aria-controls="galerieDropdownMobile">Galerie</button>
+                    <ul class="dropdown" id="galerieDropdownMobile">
+                        <li><a href="galerie_streich.html">Streichen</a></li>
+                        <li><a href="galerie_tape.html">Tapezieren</a></li>
+                        <li><a href="galerie_lack.html">Lackieren</a></li>
+                        <li><a href="galerie_struk.html">Strukturen</a></li>
+                        <li><a href="galerie_rauch.html">Raucherwohnung</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-nav-item"><a href="bewertungen.html">Bewertungen</a></li>
+                <li class="mobile-nav-item"><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </div>
     </nav>
 
-  <!-- Bewertungen Content -->
+    <main>
     <section class="section section--dark">
-        <div class="reviews_section">
+        <div class="section__inner">
             <h2 class="section__title">Bewertungen</h2>
             
-            <p style="font-size: clamp(0.9rem, 2.5vw, 1rem); text-align: center; margin-bottom: 0.5rem; color: var(--text-muted);">Hier haben Sie die Möglichkeit Erfahrungen unserer Kunden einzusehen und selbst zu hinterlassen.</p>
-            <p style="font-size: clamp(0.85rem, 2vw, 0.95rem); text-align: center; margin-bottom: 2rem; color: var(--text-muted); max-width: 700px; margin-left: auto; margin-right: auto;">Hier ein kleiner Auszug von ehemals 165 Bewertungen. Wir laden alle Neu- und auch Altkunden herzlich dazu ein Ihre Erfahrungen zukünftig auf unserem Google-Profil zu hinterlassen. Ihre Bewertungen bringen uns zum nächsten Kunden - Vielen Dank!
-            <img src="images/google.png" alt="Google" style="display: block; margin: 1.5rem auto; width: 80%; max-width: 320px;"><p style="display: none;">Google</p>
+            <p class="reviews-intro">Hier haben Sie die Möglichkeit Erfahrungen unserer Kunden einzusehen und selbst zu hinterlassen.</p>
+            <p class="reviews-intro reviews-intro--small">Hier ein kleiner Auszug von ehemals 165 Bewertungen. Wir laden alle Neu- und auch Altkunden herzlich dazu ein Ihre Erfahrungen zukünftig auf unserem Google-Profil zu hinterlassen. Ihre Bewertungen bringen uns zum nächsten Kunden - Vielen Dank!</p>
+            <img src="images/google.png" alt="Google" class="reviews-logo">
             
             <div class="review_container" id="review_content">
                 <!-- Wird dynamisch befüllt durch JavaScript -->
             </div>
             
-            <div style="margin-top: 3rem; padding: 2.5rem 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); max-width: 780px; margin-left: auto; margin-right: auto; font-size: 0.8rem; color: var(--text-muted); text-align: center; line-height: 1.7;">
+            <div class="reviews-note">
                 <strong>💬 Hinweis zur Echtheit unserer Bewertungen:</strong> Diese Meinungen wurden ursprünglich von Kunden auf einem externen Dienstleistungsportal verfasst. Um die Echtheit zu garantieren, gleichen wir jede Bewertung intern mit den originalen Einträgen des Handwerkerportals ab. Aus datenschutz- und urheberrechtlichen Gründen dürfen wir diese Quell-Screenshots hier jedoch nicht öffentlich zeigen.
             </div>
             
         </div>
     </section>
+    </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <p class="footer__brand">streichmich24 · Malerfachbetrieb Grabau</p>
-        <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: <a href="tel:+491748608596" style="text-decoration: none; color: #c5a059;" class="mobile-phone-link">0174 - 860 859 6</a></p>
+        <p class="footer__phone">Mobil: <a href="tel:+491748608596">0174 - 860 859 6</a></p>
         <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
-
-        <nav class="footer__links">
-            <a href="datenschutz.html" class="active">Datenschutz</a>
+        <nav class="footer__links" aria-label="Rechtliches">
+            <a href="datenschutz.html">Datenschutz</a>
             <a href="impressum.html">Impressum</a>
         </nav>
     </footer>
-
-
-    <!-- Mobile-Phone Link Styling -->
-    <style>
-        @media (max-width: 768px) {
-            .mobile-phone-link {
-                pointer-events: auto;
-                cursor: pointer;
-            }
-        }
-        @media (min-width: 769px) {
-            .mobile-phone-link {
-                pointer-events: none;
-                cursor: default;
-            }
-        }
-    </style>
-
-    
-    <!-- Bewertungen: Daten & Animation -->
     <script>
         const reviewData = [
             { q: "Zuverlässige Termine, fachmännische Beratung und fachgerechte Ausführung. Flexible und prompte Nacharbeit = perfektes Ergebnis! Bei der nächsten Wohnung gerne wieder!", m: "Stefan R. aus Köln" },
@@ -177,88 +102,37 @@
             { q: "Sehr freundlich, zuverlässig und alles tadellos.", m: "Kunde C. aus Köln" },
             { q: "Termingerecht, freundlich und gut.", m: "Firma G. aus Bergisch Gladbach" },
             { q: "Einwandfreie Arbeit und professionelle Beratung. Jederzeit wieder und noch einmal herzlichen Danke.", m: "Firma T. aus Köln" },
-            { q: "Das nenne ich Dienstleistung. Perfekt und nett!!", m: "R. Scheffler aus Köln" },
+            { q: "Das nenne ich Dienstleistung. Perfekt und nett!!", m: "R. S. aus Köln" },
             { q: "Sehr gute Ausführung. Von der Auftragsannahme bis zur Vollendung sehr professionell. Jederzeit wieder, danke!", m: "J. K. aus Düsseldorf" },
             { q: "Sehr schnell war alles zur vollsten Zufriedenheit erledigt. Danke.", m: "Alexandra aus Bergisch Gladbach" },
             { q: "Alles sehr professionell gelaufen, sehr nett und zuverlässig. Danke.", m: "Max aus Essen" },
             { q: "Einfach toll. Danke für die tolle Arbeit.", m: "Kunde C. aus Köln" }
         ];
 
-        function initReviews() {
-            const container = document.getElementById('review_content');
-            const elements = container.querySelectorAll('.review_item');
-            let current = 0;
-
-            function rotate() {
-                if (elements.length === 0) return;
-                elements.forEach(el => el.classList.remove('active'));
-                elements[current].classList.add('active');
-                current = (current + 1) % elements.length;
-            }
-
-            if (elements.length > 0) {
-                setTimeout(() => rotate(), 500);
-                setInterval(rotate, 5000);
-            }
-        }
-
-        window.onload = function() {
+        document.addEventListener('DOMContentLoaded', () => {
             const container = document.getElementById('review_content');
             reviewData.forEach(item => {
                 const div = document.createElement('div');
                 div.className = 'review_item';
-                div.innerHTML = `<p class="review_text\">"${item.q}"</p><p class="review_meta">${item.m}</p>`;
+                const q = document.createElement('p');
+                q.className = 'review_text';
+                q.textContent = '„' + item.q + '“';
+                const m = document.createElement('p');
+                m.className = 'review_meta';
+                m.textContent = item.m;
+                div.append(q, m);
                 container.appendChild(div);
             });
-            initReviews();
-        };
-
-        // Navigation Interaktion
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileNavToggle = document.getElementById('mobileNavToggle');
-            const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-            const desktopDropdownBtn = document.querySelector('.group-btn:not(#mobileGroupToggle)');
-            const desktopDropdown = document.querySelector('.main-navigation .dropdown');
-            const mobileGroupToggle = document.getElementById('mobileGroupToggle');
-            const mobileDropdown = document.querySelector('#mobileNavOverlay ul.mobile-nav-list li:nth-child(2) > ul');
-
-            // Hamburger Menü Toggle
-            if (mobileNavToggle && mobileNavOverlay) {
-                mobileNavToggle.addEventListener('click', () => {
-                    mobileNavToggle.classList.toggle('active');
-                    mobileNavOverlay.classList.toggle('active');
-                    document.body.style.overflow = mobileNavOverlay.classList.contains('active') ? '' : 'hidden';
-                });
-
-                // Menü schließen bei Klick außerhalb
-                document.addEventListener('click', (e) => {
-                    if (!mobileNavToggle.contains(e.target) && !mobileNavOverlay.contains(e.target)) {
-                        mobileNavToggle.classList.remove('active');
-                        mobileNavOverlay.classList.remove('active');
-                        document.body.style.overflow = '';
-                    }
-                });
-            }
-
-            // Desktop Dropdown Toggle
-            if (desktopDropdownBtn && desktopDropdown) {
-                desktopDropdownBtn.addEventListener('click', () => {
-                    const isExpanded = desktopDropdownBtn.getAttribute('aria-expanded') === 'true';
-                    desktopDropdownBtn.setAttribute('aria-expanded', !isExpanded);
-                    desktopDropdown.style.display = isExpanded ? 'none' : 'block';
-                });
-            }
-
-            // Mobile Dropdown Toggle
-            if (mobileGroupToggle && mobileDropdown) {
-                mobileGroupToggle.addEventListener('click', () => {
-                    const isExpanded = mobileGroupToggle.getAttribute('aria-expanded') === 'true';
-                    mobileGroupToggle.setAttribute('aria-expanded', !isExpanded);
-                    mobileDropdown.style.display = isExpanded ? 'none' : 'block';
-                });
-            }
+            const items = container.querySelectorAll('.review_item');
+            let current = 0;
+            const rotate = () => {
+                items.forEach(el => el.classList.remove('active'));
+                items[current].classList.add('active');
+                current = (current + 1) % items.length;
+            };
+            setTimeout(rotate, 500);
+            setInterval(rotate, 5000);
         });
     </script>
-
 </body>
 </html>

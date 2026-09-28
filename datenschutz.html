@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Datenschutzerklärung - streichmich24 Malerfachbetrieb Grabau">
+    <meta name="description" content="Datenschutzerklärung – streichmich24 Malerfachbetrieb Grabau">
     <title>Datenschutz | streichmich24 – Malerfachbetrieb Grabau</title>
-
     <link rel="stylesheet" href="style.css">
+    <script src="site.js" defer></script>
 </head>
 <body>
 
-    <!-- Skyline Header -->
     <header class="header">
         <picture>
             <source media="(max-width: 768px)" srcset="images/handy.jpg">
-            <img src="images/Sky.jpg" alt="Kölner Dom – Skyline Köln" class="header__skyline">
+            <img src="images/sky.jpg" alt="Kölner Dom – Skyline Köln" class="header__skyline">
         </picture>
         <div class="header__brand">
             <p class="header__logo">streichmich24</p>
@@ -22,184 +21,105 @@
         </div>
     </header>
 
-    <!-- Navigation (wie index.html) -->
-    <nav class="main-navigation">
-        <!-- Desktop Navigation (steht auf der Browser-Ansicht) -->
-        <ul class="desk-nav" aria-label="Hauptnavigation">
+    <nav class="main-navigation" aria-label="Hauptnavigation">
+        <!-- Desktop -->
+        <ul class="desk-nav">
             <li><a href="index.html">Startseite</a></li>
             <li class="nav-group">
-                <button class="group-btn" aria-expanded="false" role="menuitem">
-                    Galerie ▾
-                </button>
-                <ul class="dropdown">
+                <button type="button" class="group-btn" aria-expanded="false" aria-controls="galerieDropdown">Galerie</button>
+                <ul class="dropdown" id="galerieDropdown">
                     <li><a href="galerie_streich.html">Streichen</a></li>
                     <li><a href="galerie_tape.html">Tapezieren</a></li>
                     <li><a href="galerie_lack.html">Lackieren</a></li>
                     <li><a href="galerie_struk.html">Strukturen</a></li>
-                                        <li><a href="galerie_rauch.html">Raucherwohnung</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="bewertungen.html">Bewertungen</a></li>
+                    <li><a href="galerie_rauch.html">Raucherwohnung</a></li>
+                </ul>
+            </li>
+            <li><a href="bewertungen.html">Bewertungen</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
-            <li class="active"><a href="datenschutz.html">Datenschutz</a></li>
-            <li><a href="impressum.html">Impressum</a></li>
         </ul>
 
-   <!-- Mobile Navigation Toggle -->
-   <button class="mobile-nav-toggle" id="mobileNavToggle">
-       <h3>Menü</h3>
-       <span></span>
-   </button>
+        <!-- Mobil -->
+        <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNavOverlay">
+            <span class="mobile-nav-toggle__label">Menü</span>
+            <span class="mobile-nav-toggle__icon" aria-hidden="true"></span>
+        </button>
 
-   <!-- Mobile Menu Overlay (steht auf der Mobil-Ansicht) -->
-   <div class="mobile-nav-overlay" id="mobileNavOverlay">
-       <nav>
-           <ul class="mobile-nav-list">
-               <li class="mobile-nav-item"><a href="index.html">Startseite</a></li>
-               <li class="mobile-nav-item group-btn-wrapper">
-                   <button class="group-btn" id="mobileGroupToggle" aria-expanded="false">Galerie ▾</button>
-                   <ul class="dropdown" style="position: static; background: var(--bg-soft); padding-left: 1.5rem; display: none;">
-                       <li><a href="galerie_streich.html">Streichen</a></li>
-                       <li><a href="galerie_tape.html">Tapezieren</a></li>
-                       <li><a href="galerie_lack.html">Lackieren</a></li>
-                       <li><a href="galerie_struk.html">Strukturen</a></li>
-                       <li><a href="galerie_rauch.html">Raucherwohnung</a></li>
-                                               </ul>
-               </li>
-               <li class="mobile-nav-item"><a href="bewertungen.html">Bewertungen</a></li>
-               <li class="mobile-nav-item"><a href="kontakt.html">Kontakt</a></li>
-               <li class="mobile-nav-item"><a href="datenschutz.html">Datenschutz</a></li>
-               <li class="mobile-nav-item"><a href="impressum.html">Impressum</a></li>
-           </ul>
-       </nav>
-   </div>
+        <div class="mobile-nav-overlay" id="mobileNavOverlay">
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item"><a href="index.html">Startseite</a></li>
+                <li class="mobile-nav-item">
+                    <button type="button" class="group-btn" aria-expanded="false" aria-controls="galerieDropdownMobile">Galerie</button>
+                    <ul class="dropdown" id="galerieDropdownMobile">
+                        <li><a href="galerie_streich.html">Streichen</a></li>
+                        <li><a href="galerie_tape.html">Tapezieren</a></li>
+                        <li><a href="galerie_lack.html">Lackieren</a></li>
+                        <li><a href="galerie_struk.html">Strukturen</a></li>
+                        <li><a href="galerie_rauch.html">Raucherwohnung</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-nav-item"><a href="bewertungen.html">Bewertungen</a></li>
+                <li class="mobile-nav-item"><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </div>
     </nav>
+
+    <main>
     <section class="section section--dark">
-        <div class="section__inner">
+        <div class="section__inner legal">
             <h1 class="section__title">Datenschutzerklärung</h1>
             <p class="section__lead">Wir schätzen Ihr Vertrauen. Diese Seite informiert Sie darüber, wie wir mit Ihren Daten umgehen und welche Maßnahmen wir zum Schutz Ihrer Privatsphäre ergreifen.</p>
 
-            <h2 style="text-align: center;">1. Verantwortlicher und Kontakt</h2>
+            <h2>1. Verantwortlicher und Kontakt</h2>
             <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
             <p>
                 <strong>streichmich24</strong><br>
                 Sven Grabau<br>
                 Freimersdorfer Weg 4<br>
                 50226 Frechen<br>
-                E-Mail: <a href="mailto:info@streichmich24.de" style="color: var(--gold); text-decoration: none;">info@streichmich24.de</a><br>
-                Telefon: <a class="mobile-phone-link" href="tel:+491748608596" style="color: var(--gold); text-decoration: none;">0174 - 860 859 6</a><br>
-                <a href="impressum.html" style="color: var(--gold); text-decoration: underline;">Link zum Impressum</a>
+                E-Mail: <a href="mailto:info@streichmich24.de">info@streichmich24.de</a><br>
+                Telefon: <a href="tel:+491748608596">0174 - 860 859 6</a><br>
+                <a href="impressum.html" class="link-underline">Link zum Impressum</a>
             </p>
 
-            <h2 style="text-align: center;">2. Ihre Betroffenenrechte</h2>
+            <h2>2. Ihre Betroffenenrechte</h2>
                         <p>Im Rahmen der DSGVO stehen Ihnen folgende Rechte zu:</p>
-                        <ul style="list-style: none; padding: 0; max-width: 50rem; margin: 0 auto; text-align: left; display: inline-block;">
-                            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--gold);">Auskunft:</strong> Sie können erfahren, welche Daten über Sie gespeichert werden (Art. 15 DSGVO).</li>
-                            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--gold);">Berichtigung:</strong> Sie können fehlerhafte Daten korrigieren lassen (Art. 16 DSGVO).</li>
-                            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--gold);">Löschung:</strong> Sie können die Löschung Ihrer Daten veranlassen (Art. 17 DSGVO).</li>
-                            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--gold);">Einschränkung:</strong> Sie können die Verarbeitung Ihrer Daten einschränken lassen (Art. 18 DSGVO).</li>
-                            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--gold);">Übertragbarkeit:</strong> Sie können Ihre Daten in einem gängigen Format erhalten (Art. 20 DSGVO).</li>
-                            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--gold);">Widerspruch:</strong> Sie können der Verarbeitung Ihrer Daten widersprechen (Art. 21 DSGVO).</li>
-                            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--gold);">Widerruf:</strong> Sie können erteilte Einwilligungen jederzeit mit Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3 DSGVO).</li>
+                        <ul class="rights-list">
+                            <li><strong>Auskunft:</strong> Sie können erfahren, welche Daten über Sie gespeichert werden (Art. 15 DSGVO).</li>
+                            <li><strong>Berichtigung:</strong> Sie können fehlerhafte Daten korrigieren lassen (Art. 16 DSGVO).</li>
+                            <li><strong>Löschung:</strong> Sie können die Löschung Ihrer Daten veranlassen (Art. 17 DSGVO).</li>
+                            <li><strong>Einschränkung:</strong> Sie können die Verarbeitung Ihrer Daten einschränken lassen (Art. 18 DSGVO).</li>
+                            <li><strong>Übertragbarkeit:</strong> Sie können Ihre Daten in einem gängigen Format erhalten (Art. 20 DSGVO).</li>
+                            <li><strong>Widerspruch:</strong> Sie können der Verarbeitung Ihrer Daten widersprechen (Art. 21 DSGVO).</li>
+                            <li><strong>Widerruf:</strong> Sie können erteilte Einwilligungen jederzeit mit Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3 DSGVO).</li>
                         </ul>
-                        <p class="muted" style="text-align: center; margin-top: 20px;">Sie haben zudem das Recht, eine Beschwerde bei der zuständigen Aufsichtsbehörde einzureichen:</p>
-                        <p class="muted" style="text-align: center;">Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW)<br>Kavalleriestr. 2-4, 40213 Düsseldorf<br>E-Mail: <a href="mailto:poststelle@ldi.nrw.de" style="color: var(--gold); text-decoration: none;">poststelle@ldi.nrw.de</a></p>
+                        <p class="legal-note legal-note--first">Sie haben zudem das Recht, eine Beschwerde bei der zuständigen Aufsichtsbehörde einzureichen:</p>
+                        <p class="legal-note">Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW)<br>Kavalleriestr. 2-4, 40213 Düsseldorf<br>E-Mail: <a href="mailto:poststelle@ldi.nrw.de">poststelle@ldi.nrw.de</a></p>
 
-            <h2 style="text-align: center;">3. Webhosting und Infrastruktur (GitHub &amp; Strato)</h2>
+            <h2>3. Webhosting und Infrastruktur (GitHub &amp; Strato)</h2>
                         <p>Unsere Website wird auf GitHub Pages gehostet, einem Dienst der GitHub Inc. (88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA). Wenn Sie unsere Website aufrufen, erhebt und speichert GitHub automatisch Informationen in sogenannten Server-Logfiles, die Ihr Browser an uns übermittelt (z. B. IP-Adresse, Datum und Uhrzeit des Abrufs, Browsertyp und Betriebssystem). Die Datenverarbeitung erfolgt auf Grundlage unseres berechtigten Interesses an einem sicheren, schnellen und zuverlässigen Betrieb unserer Website (Art. 6 Abs. 1 lit. f DSGVO). Da GitHub in den USA ansässig ist, werden Daten dorthin übertragen. GitHub Inc. ist unter dem EU-US Data Privacy Framework zertifiziert und bietet damit ein angemessenes Datenschutzniveau. Die Logfiles werden nach den Sicherheitsrichtlinien von GitHub verarbeitet und automatisch gelöscht. Für die Bereitstellung der Webadresse (Domain-Registrierung und DNS-Verwaltung) nutzen wir zudem Dienste der STRATO AG (Otto-Ostrowski-Straße 7, 10249 Berlin). Mit der Strato AG wurde ein Vertrag zur Auftragsverarbeitung (AVV) geschlossen.</p>
 
-            <h2 style="text-align: center;">4. Nutzung des Kontaktformulars</h2>
+            <h2>4. Nutzung des Kontaktformulars</h2>
                         <p>Wenn Sie uns über das Kontaktformular kontaktieren, verarbeiten wir Ihre Angaben (Name, E-Mail-Adresse, Inhalt der Nachricht), um Ihre Anfrage zu beantworten. Diese Verarbeitung erfolgt zur Durchführung vorvertraglicher Maßnahmen oder zur Vertragserfüllung im Rahmen unserer Maler- und Handwerksdienstleistungen (Art. 6 Abs. 1 lit. b DSGVO).</p>
                         <p>Technisch wird für die Weiterleitung das Portal Formspree genutzt (Formspree Inc., 21750 Hardy Oak Blvd, Ste 104, San Antonio, TX 78258, USA). Da Formspree in den USA ansässig ist, findet eine Datenübermittung in ein Drittland statt. Wir gewährleisten ein angemessenes Datenschutzniveau durch den Abschluss von EU-Standardvertragsklauseln sowie die Zertifizierung des Anbieters unter dem EU-US Data Privacy Framework. Ihre Daten werden gelöscht, sobald Ihre Anfrage abschließend beantwortet wurde und keine gesetzlichen Aufbewahrungspflichten (z. B. steuerrechtliche Aufbewahrung bei Aufträgen) entgegenstehen.</p>
 
-            <h2 style="text-align: center;">5. Schrifttypen (Fonts)</h2>
+            <h2>5. Schrifttypen (Fonts)</h2>
             <p>Wir verwenden für die Gestaltung der Website spezielle Schriftarten. Diese werden auf unserem Server bereitgestellt, um eine konsistente und hochwertige Darstellung zu gewährleisten. Da die Schriften lokal eingebunden sind, erfolgt keine Datenübermittlung an Drittanbieter für die Darstellung der Schriftarten.</p>
 
-            <h2 style="text-align: center;">6. Datensicherung &amp; Sicherheitsmaßnahmen</h2>
+            <h2>6. Datensicherung &amp; Sicherheitsmaßnahmen</h2>
             <p>Wir setzen angemessene technische und organisatorische Maßnahmen ein, um Ihre personenbezogenen Daten vor unbefugtem Zugriff zu schützen.</p>
         </div>
     </section>
+    </main>
 
-    <!-- Footer (wie index.html) -->
     <footer class="footer">
         <p class="footer__brand">streichmich24 · Malerfachbetrieb Grabau</p>
-        <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: <a href="tel:+491748608596" style="text-decoration: none; color: #c5a059;" class="mobile-phone-link">0174 - 860 859 6</a></p>
+        <p class="footer__phone">Mobil: <a href="tel:+491748608596">0174 - 860 859 6</a></p>
         <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
-
-        <nav class="footer__links">
-            <a href="datenschutz.html" class="active">Datenschutz</a>
+        <nav class="footer__links" aria-label="Rechtliches">
+            <a href="datenschutz.html">Datenschutz</a>
             <a href="impressum.html">Impressum</a>
         </nav>
     </footer>
-
-
-    <!-- Mobile-Phone Link Styling -->
-    <style>
-        @media (max-width: 768px) {
-            .mobile-phone-link {
-                pointer-events: auto;
-                cursor: pointer;
-            }
-        }
-        @media (min-width: 769px) {
-            /* Auf Desktop zeigt als reiner Text, nicht als Link */
-            .mobile-phone-link {
-                pointer-events: none;
-                color: inherit;
-                text-decoration: none;
-                cursor: default;
-            }
-        }
-    </style>
-
-
-    <script>
-        // Navigation Interaktion (Desktop + Mobile)
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileNavToggle = document.getElementById('mobileNavToggle');
-            const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-            const desktopDropdownBtn = document.querySelector('.group-btn:not(#mobileGroupToggle)');
-            const desktopDropdown = document.querySelector('.main-navigation .dropdown');
-            const mobileGroupToggle = document.getElementById('mobileGroupToggle');
-            const mobileDropdown = document.querySelector('.mobile-nav-item:nth-child(2) > ul');
-
-            // Hamburger Menü Toggle (Mobile)
-            if (mobileNavToggle && mobileNavOverlay) {
-                mobileNavToggle.addEventListener('click', () => {
-                    mobileNavToggle.classList.toggle('active');
-                    mobileNavOverlay.classList.toggle('active');
-                    document.body.style.overflow = mobileNavOverlay.classList.contains('active') ? '' : 'hidden';
-                });
-
-                // Menü schließen bei Klick außerhalb (Mobile)
-                document.addEventListener('click', (e) => {
-                    if (!mobileNavToggle.contains(e.target) && !mobileNavOverlay.contains(e.target)) {
-                        mobileNavToggle.classList.remove('active');
-                        mobileNavOverlay.classList.remove('active');
-                        document.body.style.overflow = '';
-                    }
-                });
-            }
-
-            // Desktop Dropdown Toggle
-            if (desktopDropdownBtn && desktopDropdown) {
-                desktopDropdownBtn.addEventListener('click', () => {
-                    const isExpanded = desktopDropdownBtn.getAttribute('aria-expanded') === 'true';
-                    desktopDropdownBtn.setAttribute('aria-expanded', !isExpanded);
-                    desktopDropdown.style.display = isExpanded ? 'none' : 'block';
-                });
-            }
-
-            // Mobile Dropdown Toggle
-            if (mobileGroupToggle && mobileDropdown) {
-                mobileGroupToggle.addEventListener('click', () => {
-                    const isExpanded = mobileGroupToggle.getAttribute('aria-expanded') === 'true';
-                    mobileGroupToggle.setAttribute('aria-expanded', !isExpanded);
-                    mobileDropdown.style.display = isExpanded ? 'none' : 'block';
-                });
-            }
-        });
-    </script>
-
 </body>
 </html>

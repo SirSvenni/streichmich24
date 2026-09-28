@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="streichmich24 – Malerfachbetrieb Grabau. Tapezieren, Lackieren, Streichen mit Handwerkstradition seit 2006. Kostenlose Beratung in Köln und Umgebung.">
-    <title>streichmich24 – Malerfachbetrieb Grabau | Köln</title>
-
+    <meta name="description" content="Kontakt zu streichmich24 – Malerfachbetrieb Grabau. Kostenlose Beratung in Köln und Umgebung.">
+    <title>Kontakt – streichmich24 | Malerfachbetrieb Grabau | Köln</title>
     <link rel="stylesheet" href="style.css">
+    <script src="site.js" defer></script>
 </head>
 <body>
 
-    <!-- Skyline Header -->
     <header class="header">
         <picture>
             <source media="(max-width: 768px)" srcset="images/handy.jpg">
-            <img src="images/Sky.jpg" alt="Kölner Dom – Skyline Köln" class="header__skyline">
+            <img src="images/sky.jpg" alt="Kölner Dom – Skyline Köln" class="header__skyline">
         </picture>
         <div class="header__brand">
             <p class="header__logo">streichmich24</p>
@@ -22,16 +21,13 @@
         </div>
     </header>
 
-    <!-- Navigation -->
-    <nav class="main-navigation">
-        <!-- Desktop Navigation (steht auf der Browser-Ansicht) -->
-        <ul class="desk-nav" aria-label="Hauptnavigation">
+    <nav class="main-navigation" aria-label="Hauptnavigation">
+        <!-- Desktop -->
+        <ul class="desk-nav">
             <li><a href="index.html">Startseite</a></li>
             <li class="nav-group">
-                <button class="group-btn" aria-expanded="false" role="menuitem">
-                    Galerie ▾
-                </button>
-                <ul class="dropdown">
+                <button type="button" class="group-btn" aria-expanded="false" aria-controls="galerieDropdown">Galerie</button>
+                <ul class="dropdown" id="galerieDropdown">
                     <li><a href="galerie_streich.html">Streichen</a></li>
                     <li><a href="galerie_tape.html">Tapezieren</a></li>
                     <li><a href="galerie_lack.html">Lackieren</a></li>
@@ -41,206 +37,85 @@
             </li>
             <li><a href="bewertungen.html">Bewertungen</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
-            <li><a href="datenschutz.html">Datenschutz</a></li>
-            <li class="active"><a href="impressum.html">Impressum</a></li>
         </ul>
 
-    <!-- Mobile Navigation Toggle -->
-    <button class="mobile-nav-toggle" id="mobileNavToggle">
-        <h3>Menü</h3>
-        <span></span>
-    </button>
+        <!-- Mobil -->
+        <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNavOverlay">
+            <span class="mobile-nav-toggle__label">Menü</span>
+            <span class="mobile-nav-toggle__icon" aria-hidden="true"></span>
+        </button>
 
-    <!-- Mobile Menu Overlay (steht auf der Mobil-Ansicht) -->
-    <div class="mobile-nav-overlay" id="mobileNavOverlay">
-        <ul class="mobile-nav-list">
-            <li class="mobile-nav-item"><a href="index.html">Startseite</a></li>
-            <li class="mobile-nav-item group-btn-wrapper">
-                <button class="group-btn" id="mobileGroupToggle" aria-expanded="false">Galerie ▾</button>
-                <ul class="dropdown" style="position: static; background: var(--bg-soft); padding-left: 1.5rem; display: none;">
-                    <li><a href="galerie_streich.html">Streichen</a></li>
-                    <li><a href="galerie_tape.html">Tapezieren</a></li>
-                    <li><a href="galerie_lack.html">Lackieren</a></li>
-                    <li><a href="galerie_struk.html">Strukturen</a></li>
-                    <li><a href="galerie_rauch.html">Raucherwohnung</a></li>
+        <div class="mobile-nav-overlay" id="mobileNavOverlay">
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item"><a href="index.html">Startseite</a></li>
+                <li class="mobile-nav-item">
+                    <button type="button" class="group-btn" aria-expanded="false" aria-controls="galerieDropdownMobile">Galerie</button>
+                    <ul class="dropdown" id="galerieDropdownMobile">
+                        <li><a href="galerie_streich.html">Streichen</a></li>
+                        <li><a href="galerie_tape.html">Tapezieren</a></li>
+                        <li><a href="galerie_lack.html">Lackieren</a></li>
+                        <li><a href="galerie_struk.html">Strukturen</a></li>
+                        <li><a href="galerie_rauch.html">Raucherwohnung</a></li>
                     </ul>
-                    </li>
-                    <li class="mobile-nav-item"><a href="bewertungen.html">Bewertungen</a></li>
-            <li class="mobile-nav-item"><a href="kontakt.html">Kontakt</a></li>
-            <li class="mobile-nav-item"><a href="datenschutz.html">Datenschutz</a></li>
-            <li class="mobile-nav-item"><a href="impressum.html">Impressum</a></li>
-        </ul>
-    </div>
+                </li>
+                <li class="mobile-nav-item"><a href="bewertungen.html">Bewertungen</a></li>
+                <li class="mobile-nav-item"><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <!-- Kontaktformular -->
-  <section id="kontakt" class="section section--dark">
-      <div class="section__inner">
-          <h2 class="section__title">Jetzt unverbindlich anfragen</h2>
-          <p class="section__lead">Gerne berate ich Sie persönlich vor Ort – schreiben Sie mir!</p>
-          <form class="contact-form" id="contactForm">
-              <div class="form-group">
-                  <label for="name">Ihr Name</label>
-                  <input type="text" id="name" name="name" placeholder="Max Mustermann" required data-fs-field />
-              </div>
-              <div class="form-group">
-                  <label for="email">E-Mail</label>
-                  <input type="email" id="email" name="email" placeholder="ihre@email.de" required data-fs-field />
-              </div>
-              <div class="form-group">
-                  <label for="service">Gewünschte Leistung</label>
-                  <select id="service" name="service" data-fs-field>
-                      <option value="">Bitte wählen …</option>
-                      <option>Streichen</option>
-                      <option>Lackieren</option>
-                      <option>Tapezieren</option>
-                      <option>Beratung / Sonstiges</option>
-                  </select>
-              </div>
-              <div class="form-group">
-                  <label for="message">Ihre Nachricht</label>
-                  <textarea id="message" name="message" placeholder="Beschreiben Sie kurz Ihr Projekt …" required data-fs-field></textarea>
-              </div>
-              <div data-fs-success>Vielen Dank! Wir haben Ihre Anfrage erhalten und melden uns in Kürze bei Ihnen.</div>
-              <div style="text-align: center; margin-top: 2rem;"><a href="images/streichmich.vcf" class="btn">Kontakt auf Handy speichern</a></div>
-          </form>
-      </div>
-  </section>
+    <main>
+        <section id="kontakt" class="section section--dark">
+            <div class="section__inner">
+                <h2 class="section__title">Jetzt unverbindlich anfragen</h2>
+                <p class="section__lead">Gerne berate ich Sie persönlich vor Ort – schreiben Sie mir!</p>
 
-  <!-- Style für Gold-Button -->
-  <style>
-    .contact-form {
-        max-width: 50rem;
-        margin-bottom: 4rem;
-    }
-    .btn {
-        display: inline-block;
-        background: linear-gradient(135deg, #c5a059 0%, #d4af37 50%, #c5a059 100%);
-        background-size: 200% auto;
-        color: #000;
-        font-weight: 600;
-        line-height: 1.25;
-        padding: .75em 1.5em;
-        text-align: center;
-        text-decoration: none !important;
-        border-radius: 99rem; /* Oval */
-        white-space: nowrap;
-        font-size: .875rem;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.2);
-        border: none;
-        transition: all 0.3s ease;
-        animation: shimmer 3s linear infinite;
-    }
-    
-    @keyframes shimmer {
-        0% { background-position: 100% 0; }
-        100% { background-position: -100% 0; }
-    }
-    
-    .btn:hover {
-        animation-play-state: paused;
-        box-shadow: 0 4px 8px rgba(197,160,89,0.4), inset 0 1px 0 rgba(255,255,255,0.3);
-        transform: translateY(-2px);
-    }
-    
-    @media (max-width: 45rem) {
-        .btn {
-            display: block;
-            padding: .8em 0 !important;
-            border-radius: 99rem; /* Oval auch im Mobile */
-        }
-    }
-  </style>
-      </div>
-  </section>
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/mqpzkqde" method="POST">
+                    <div class="form-group">
+                        <label for="name">Ihr Name</label>
+                        <input type="text" id="name" name="name" placeholder="Max Mustermann" autocomplete="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-Mail</label>
+                        <input type="email" id="email" name="email" placeholder="ihre@email.de" autocomplete="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Gewünschte Leistung</label>
+                        <select id="service" name="service">
+                            <option value="">Bitte wählen …</option>
+                            <option>Streichen</option>
+                            <option>Lackieren</option>
+                            <option>Tapezieren</option>
+                            <option>Beratung / Sonstiges</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Ihre Nachricht</label>
+                        <textarea id="message" name="message" placeholder="Beschreiben Sie kurz Ihr Projekt …" required></textarea>
+                    </div>
 
-    <!-- Footer -->
+                    <!-- Spam-Falle: für Menschen unsichtbar -->
+                    <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                    <p class="form-note">Informationen zur Verarbeitung Ihrer Angaben finden Sie in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn">Anfrage senden</button>
+                        <a href="images/streichmich.vcf" class="btn">Kontakt auf Handy speichern</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
     <footer class="footer">
         <p class="footer__brand">streichmich24 · Malerfachbetrieb Grabau</p>
-        <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: <a href="tel:+491748608596" style="text-decoration: none; color: #c5a059;" class="mobile-phone-link">0174 - 860 859 6</a></p>
+        <p class="footer__phone">Mobil: <a href="tel:+491748608596">0174 - 860 859 6</a></p>
         <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
-
-        <nav class="footer__links">
-            <a href="datenschutz.html" class="active">Datenschutz</a>
+        <nav class="footer__links" aria-label="Rechtliches">
+            <a href="datenschutz.html">Datenschutz</a>
             <a href="impressum.html">Impressum</a>
         </nav>
     </footer>
-
-
-    <!-- Mobile-Phone Link Styling -->
-    <style>
-        @media (max-width: 768px) {
-            .mobile-phone-link {
-                pointer-events: auto;
-                cursor: pointer;
-            }
-        }
-        @media (min-width: 769px) {
-            .mobile-phone-link {
-                pointer-events: none;
-                cursor: default;
-            }
-        }
-    </style>
-
-
-    <!-- Mobile Sticky Button -->
-    <div class="sticky-cta" id="stickyCta">
-        
-    </div>
-    <script>
-    // Formspree AJAX Integration
-    window.formspree = window.formspree || function () { (formspree.q = formspree.q = []).push(arguments); };
-    formspree('initForm', { 
-        formElement: '#contactForm', 
-        formId: 'mqpzkqde' 
-    });
-
-    // Navigation Interaktion
-    document.addEventListener('DOMContentLoaded', () => {
-        const mobileNavToggle = document.getElementById('mobileNavToggle');
-        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-        const desktopDropdownBtn = document.querySelector('.group-btn');
-        const desktopDropdown = document.querySelector('.main-navigation .dropdown');
-        const mobileGroupToggle = document.getElementById('mobileGroupToggle');
-        const mobileDropdown = document.querySelector('.mobile-nav-list li:nth-child(2) .dropdown');
-
-        // Hamburger Menü Toggle
-        if (mobileNavToggle && mobileNavOverlay) {
-            mobileNavToggle.addEventListener('click', () => {
-                mobileNavToggle.classList.toggle('active');
-                mobileNavOverlay.classList.toggle('active');
-                document.body.style.overflow = mobileNavOverlay.classList.contains('active') ? '' : 'hidden';
-            });
-
-            // Menü schließen bei Klick außerhalb
-            document.addEventListener('click', (e) => {
-                if (!mobileNavToggle.contains(e.target) && !mobileNavOverlay.contains(e.target)) {
-                    mobileNavToggle.classList.remove('active');
-                    mobileNavOverlay.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            });
-        }
-
-        // Desktop Dropdown Toggle
-        if (desktopDropdownBtn && desktopDropdown) {
-            desktopDropdownBtn.addEventListener('click', () => {
-                const isExpanded = desktopDropdownBtn.getAttribute('aria-expanded') === 'true';
-                desktopDropdownBtn.setAttribute('aria-expanded', !isExpanded);
-                desktopDropdown.style.display = isExpanded ? 'none' : 'block';
-            });
-        }
-
-        // Mobile Dropdown Toggle
-        if (mobileGroupToggle && mobileDropdown) {
-            mobileGroupToggle.addEventListener('click', () => {
-                const isExpanded = mobileGroupToggle.getAttribute('aria-expanded') === 'true';
-                mobileGroupToggle.setAttribute('aria-expanded', !isExpanded);
-                mobileDropdown.style.display = isExpanded ? 'none' : 'block';
-            });
-        }
-    });
-    </script>
-
 </body>
 </html>

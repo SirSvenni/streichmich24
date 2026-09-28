@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Lackierarbeiten - streichmich24 Malerfachbetrieb Grabau">
-    <title>Lackierbeiten | streichmich24 – Malerfachbetrieb Grabau</title>
-    
+    <meta name="description" content="Lackierarbeiten von streichmich24 – Malerfachbetrieb Grabau: Türen, Fenster, Heizkörper und Holzarbeiten in Köln und Umgebung.">
+    <title>Lackierarbeiten | streichmich24 – Malerfachbetrieb Grabau</title>
     <link rel="stylesheet" href="style.css">
+    <script src="site.js" defer></script>
 </head>
 <body>
 
-    <!-- Header -->
     <header class="header">
         <picture>
             <source media="(max-width: 768px)" srcset="images/handy.jpg">
-            <img src="images/Sky.jpg" alt="Kölner Dom – Skyline Köln" class="header__skyline">
+            <img src="images/sky.jpg" alt="Kölner Dom – Skyline Köln" class="header__skyline">
         </picture>
         <div class="header__brand">
             <p class="header__logo">streichmich24</p>
@@ -22,15 +21,13 @@
         </div>
     </header>
 
-    <!-- Navigation -->
-    <nav class="main-navigation">
-        <ul class="desk-nav" aria-label="Hauptnavigation">
+    <nav class="main-navigation" aria-label="Hauptnavigation">
+        <!-- Desktop -->
+        <ul class="desk-nav">
             <li><a href="index.html">Startseite</a></li>
             <li class="nav-group">
-                <button class="group-btn" aria-expanded="false" role="menuitem">
-                    Galerie ▾
-                </button>
-                <ul class="dropdown">
+                <button type="button" class="group-btn" aria-expanded="false" aria-controls="galerieDropdown">Galerie</button>
+                <ul class="dropdown" id="galerieDropdown">
                     <li><a href="galerie_streich.html">Streichen</a></li>
                     <li><a href="galerie_tape.html">Tapezieren</a></li>
                     <li><a href="galerie_lack.html">Lackieren</a></li>
@@ -40,38 +37,34 @@
             </li>
             <li><a href="bewertungen.html">Bewertungen</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
-            <li><a href="datenschutz.html">Datenschutz</a></li>
-            <li><a href="impressum.html">Impressum</a></li>
         </ul>
 
-        <button class="mobile-nav-toggle" id="mobileNavToggle">
-            <h3>Menü</h3>
-            <span></span>
+        <!-- Mobil -->
+        <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNavOverlay">
+            <span class="mobile-nav-toggle__label">Menü</span>
+            <span class="mobile-nav-toggle__icon" aria-hidden="true"></span>
         </button>
 
         <div class="mobile-nav-overlay" id="mobileNavOverlay">
-            <nav>
-                <ul class="mobile-nav-list">
-                    <li class="mobile-nav-item"><a href="index.html">Startseite</a></li>
-                    <li class="mobile-nav-item group-btn-wrapper">
-                        <button class="group-btn" id="mobileGroupToggle" aria-expanded="false">Galerie ▾</button>
-                        <ul class="dropdown" style="position: static; background: var(--bg-soft); padding-left: 1.5rem; display: none;">
-                            <li><a href="galerie_streich.html">Streichen</a></li>
-                            <li><a href="galerie_tape.html">Tapezieren</a></li>
-                            <li><a href="galerie_lack.html">Lackieren</a></li>
-                            <li><a href="galerie_struk.html">Strukturen</a></li>
-                                                <li><a href="galerie_rauch.html">Raucherwohnung</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="mobile-nav-item"><a href="bewertungen.html">Bewertungen</a></li>
-                    <li class="mobile-nav-item"><a href="kontakt.html">Kontakt</a></li>
-                    <li class="mobile-nav-item"><a href="datenschutz.html">Datenschutz</a></li>
-                    <li class="mobile-nav-item"><a href="impressum.html">Impressum</a></li>
-                </ul>
-            </nav>
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item"><a href="index.html">Startseite</a></li>
+                <li class="mobile-nav-item">
+                    <button type="button" class="group-btn" aria-expanded="false" aria-controls="galerieDropdownMobile">Galerie</button>
+                    <ul class="dropdown" id="galerieDropdownMobile">
+                        <li><a href="galerie_streich.html">Streichen</a></li>
+                        <li><a href="galerie_tape.html">Tapezieren</a></li>
+                        <li><a href="galerie_lack.html">Lackieren</a></li>
+                        <li><a href="galerie_struk.html">Strukturen</a></li>
+                        <li><a href="galerie_rauch.html">Raucherwohnung</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-nav-item"><a href="bewertungen.html">Bewertungen</a></li>
+                <li class="mobile-nav-item"><a href="kontakt.html">Kontakt</a></li>
+            </ul>
         </div>
     </nav>
 
+    <main>
     <section class="section section--dark">
         <div class="section__inner">
             <div class="title_wrapper">
@@ -80,122 +73,39 @@
             </div>
 
             <div class="mosaic_grid">
-                <div class="mosaic_item tall"><img src="images/arbeiten/lackieren/1.jpg" alt="Lackierarbeit"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/lackieren/2.jpg" alt="Detail lackiertes Holz"></div>
-                <div class="mosaic_item wide"><img src="images/arbeiten/lackieren/3.jpg" alt="Handwerkliche Lackierung"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/lackieren/4.jpg" alt="Lackierte Oberfläche"></div>
-                <div class="mosaic_item tall"><img src="images/arbeiten/lackieren/5.jpg" alt="Präzise Lackierung"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/lackieren/6.jpg" alt="Lackarbeit im Detail"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/lackieren/7.jpg" alt="Handwerkliche Ausführung"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/lackieren/8.jpg" alt="Oberflächenbehandlung"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/lackieren/9.jpg" alt="Lackierdetails"></div>
-                <div class="mosaic_item tall"><img src="images/arbeiten/lackieren/10.jpg" alt="Hochwertige Lackierung"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/lackieren/11.jpg" alt="Präzise Handarbeit"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/lackieren/12.jpg" alt="Lackierkunst"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/lackieren/13.jpg" alt="Langlebige Oberflächen"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/lackieren/14.jpg" alt="Lackierung im Detail"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/lackieren/15.jpg" alt="Traditionelles Handwerk"></div>
-                <div class="mosaic_item"><img src="images/arbeiten/lackieren/16.jpg" alt="Lackierte Details"></div>
+                <div class="mosaic_item tall"><img src="images/arbeiten/lackieren/1.jpg" loading="lazy" decoding="async" alt="Lackierarbeit"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/lackieren/2.jpg" loading="lazy" decoding="async" alt="Detail lackiertes Holz"></div>
+                <div class="mosaic_item wide"><img src="images/arbeiten/lackieren/3.jpg" loading="lazy" decoding="async" alt="Handwerkliche Lackierung"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/lackieren/4.jpg" loading="lazy" decoding="async" alt="Lackierte Oberfläche"></div>
+                <div class="mosaic_item tall"><img src="images/arbeiten/lackieren/5.jpg" loading="lazy" decoding="async" alt="Präzise Lackierung"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/lackieren/6.jpg" loading="lazy" decoding="async" alt="Lackarbeit im Detail"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/lackieren/7.jpg" loading="lazy" decoding="async" alt="Handwerkliche Ausführung"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/lackieren/8.jpg" loading="lazy" decoding="async" alt="Oberflächenbehandlung"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/lackieren/9.jpg" loading="lazy" decoding="async" alt="Lackierdetails"></div>
+                <div class="mosaic_item tall"><img src="images/arbeiten/lackieren/10.jpg" loading="lazy" decoding="async" alt="Hochwertige Lackierung"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/lackieren/11.jpg" loading="lazy" decoding="async" alt="Präzise Handarbeit"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/lackieren/12.jpg" loading="lazy" decoding="async" alt="Lackierkunst"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/lackieren/13.jpg" loading="lazy" decoding="async" alt="Langlebige Oberflächen"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/lackieren/14.jpg" loading="lazy" decoding="async" alt="Lackierung im Detail"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/lackieren/15.jpg" loading="lazy" decoding="async" alt="Traditionelles Handwerk"></div>
+                <div class="mosaic_item"><img src="images/arbeiten/lackieren/16.jpg" loading="lazy" decoding="async" alt="Lackierte Details"></div>
             </div>
         </div>
     </section>
+    </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <p class="footer__brand">streichmich24 · Malerfachbetrieb Grabau</p>
-        <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: <a href="tel:+491748608596" style="text-decoration: none; color: #c5a059;" class="mobile-phone-link">0174 - 860 859 6</a></p>
+        <p class="footer__phone">Mobil: <a href="tel:+491748608596">0174 - 860 859 6</a></p>
         <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
-
-        <nav class="footer__links">
-            <a href="datenschutz.html" class="active">Datenschutz</a>
+        <nav class="footer__links" aria-label="Rechtliches">
+            <a href="datenschutz.html">Datenschutz</a>
             <a href="impressum.html">Impressum</a>
         </nav>
     </footer>
 
-    <!-- Mobile-Phone Link Styling -->
-    <style>
-        @media (max-width: 768px) {
-            .mobile-phone-link {
-                pointer-events: auto;
-                cursor: pointer;
-            }
-        }
-        @media (min-width: 769px) {
-            .mobile-phone-link {
-                pointer-events: none;
-                cursor: default;
-            }
-        }
-    </style>
-
-    <!-- Lightbox -->
-    <div id="lightbox">
-        <img src="" alt="Vergrößertes Bild">
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="Bildansicht">
+        <img alt="Vergrößertes Bild">
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const items = document.querySelectorAll('.mosaic_item img');
-            const lightbox = document.getElementById('lightbox');
-            const lbImg = lightbox.querySelector('img');
-
-            items.forEach(img => {
-                img.addEventListener('click', () => {
-                    lbImg.src = img.src;
-                    lightbox.classList.add('active');
-                });
-            });
-
-            lightbox.addEventListener('click', () => {
-                lightbox.classList.remove('active');
-            });
-
-            // Navigation Interaktion
-            const mobileNavToggle = document.getElementById('mobileNavToggle');
-            const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-            const desktopDropdownBtn = document.querySelector('[role="menuitem"]');
-            const desktopDropdown = document.querySelector('.main-navigation .dropdown');
-            const mobileGroupToggle = document.getElementById('mobileGroupToggle');
-
-            if (mobileNavToggle && mobileNavOverlay) {
-                mobileNavToggle.addEventListener('click', () => {
-                    mobileNavToggle.classList.toggle('active');
-                    mobileNavOverlay.classList.toggle('active');
-                    document.body.style.overflow = mobileNavOverlay.classList.contains('active') ? '' : 'hidden';
-                });
-
-                document.addEventListener('click', (e) => {
-                    if (!mobileNavToggle.contains(e.target) && !mobileNavOverlay.contains(e.target)) {
-                        mobileNavToggle.classList.remove('active');
-                        mobileNavOverlay.classList.remove('active');
-                        document.body.style.overflow = '';
-                    }
-                });
-            }
-
-            if (desktopDropdownBtn && desktopDropdown) {
-                desktopDropdownBtn.addEventListener('click', () => {
-                    const isExpanded = desktopDropdownBtn.getAttribute('aria-expanded') === 'true';
-                    desktopDropdownBtn.setAttribute('aria-expanded', !isExpanded);
-                    desktopDropdown.style.display = isExpanded ? 'none' : 'block';
-                });
-            }
-
-            if (mobileGroupToggle) {
-                mobileGroupToggle.addEventListener('click', () => {
-                    const isExpanded = mobileGroupToggle.getAttribute('aria-expanded') === 'true';
-                    mobileGroupToggle.setAttribute('aria-expanded', !isExpanded);
-                
-                    // Finde das mobile Dropdown direkt über die nächste sibling-Klasse "group-btn-wrapper"
-                    const parentLI = mobileGroupToggle.closest('.mobile-nav-item');
-                    const mobileDropdownList = parentLI ? parentLI.querySelector('.dropdown') : null;
-                
-                    if (mobileDropdownList) {
-                        mobileDropdownList.style.display = isExpanded ? 'none' : 'block';
-                    }
-                });
-            }
-        });
-    </script>
-
-</body></html>
+</body>
+</html>

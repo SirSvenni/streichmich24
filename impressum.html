@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Seite 5 - streichmich24 Malerfachbetrieb Grabau">
-    <title>Seite 5 | streichmich24 – Malerfachbetrieb Grabau</title>
-
+    <meta name="description" content="Impressum von streichmich24 – Malerfachbetrieb Grabau, Sven Grabau, Frechen.">
+    <title>Impressum | streichmich24 – Malerfachbetrieb Grabau</title>
     <link rel="stylesheet" href="style.css">
+    <script src="site.js" defer></script>
 </head>
 <body>
 
-    <!-- Skyline Header -->
     <header class="header">
         <picture>
             <source media="(max-width: 768px)" srcset="images/handy.jpg">
-            <img src="images/Sky.jpg" alt="Kölner Dom – Skyline Köln" class="header__skyline">
+            <img src="images/sky.jpg" alt="Kölner Dom – Skyline Köln" class="header__skyline">
         </picture>
         <div class="header__brand">
             <p class="header__logo">streichmich24</p>
@@ -22,16 +21,13 @@
         </div>
     </header>
 
-    <!-- Navigation (wie index.html) -->
-    <nav class="main-navigation">
-        <!-- Desktop Navigation (steht auf der Browser-Ansicht) -->
-        <ul class="desk-nav" aria-label="Hauptnavigation">
+    <nav class="main-navigation" aria-label="Hauptnavigation">
+        <!-- Desktop -->
+        <ul class="desk-nav">
             <li><a href="index.html">Startseite</a></li>
             <li class="nav-group">
-                <button class="group-btn" aria-expanded="false" role="menuitem">
-                    Galerie ▾
-                </button>
-                <ul class="dropdown">
+                <button type="button" class="group-btn" aria-expanded="false" aria-controls="galerieDropdown">Galerie</button>
+                <ul class="dropdown" id="galerieDropdown">
                     <li><a href="galerie_streich.html">Streichen</a></li>
                     <li><a href="galerie_tape.html">Tapezieren</a></li>
                     <li><a href="galerie_lack.html">Lackieren</a></li>
@@ -41,24 +37,20 @@
             </li>
             <li><a href="bewertungen.html">Bewertungen</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
-            <li><a href="datenschutz.html">Datenschutz</a></li>
-            <li><a href="impressum.html">Impressum</a></li>
         </ul>
 
-    <!-- Mobile Navigation Toggle -->
-    <button class="mobile-nav-toggle" id="mobileNavToggle">
-        <h3>Menü</h3>
-        <span></span>
-    </button>
+        <!-- Mobil -->
+        <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNavOverlay">
+            <span class="mobile-nav-toggle__label">Menü</span>
+            <span class="mobile-nav-toggle__icon" aria-hidden="true"></span>
+        </button>
 
-    <!-- Mobile Menu Overlay (steht auf der Mobil-Ansicht) -->
-    <div class="mobile-nav-overlay" id="mobileNavOverlay">
-        <nav>
+        <div class="mobile-nav-overlay" id="mobileNavOverlay">
             <ul class="mobile-nav-list">
                 <li class="mobile-nav-item"><a href="index.html">Startseite</a></li>
-                <li class="mobile-nav-item group-btn-wrapper">
-                    <button class="group-btn" id="mobileGroupToggle" aria-expanded="false">Galerie ▾</button>
-                    <ul class="dropdown" style="position: static; background: var(--bg-soft); padding-left: 1.5rem; display: none;">
+                <li class="mobile-nav-item">
+                    <button type="button" class="group-btn" aria-expanded="false" aria-controls="galerieDropdownMobile">Galerie</button>
+                    <ul class="dropdown" id="galerieDropdownMobile">
                         <li><a href="galerie_streich.html">Streichen</a></li>
                         <li><a href="galerie_tape.html">Tapezieren</a></li>
                         <li><a href="galerie_lack.html">Lackieren</a></li>
@@ -68,53 +60,46 @@
                 </li>
                 <li class="mobile-nav-item"><a href="bewertungen.html">Bewertungen</a></li>
                 <li class="mobile-nav-item"><a href="kontakt.html">Kontakt</a></li>
-                <li class="mobile-nav-item"><a href="datenschutz.html">Datenschutz</a></li>
-                <li class="mobile-nav-item"><a href="impressum.html">Impressum</a></li>
             </ul>
-        </nav>
-    </div>
+        </div>
     </nav>
 
-   <!-- Impressum Content -->
+    <main>
     <section class="section section--dark">
-        <div class="section__inner">
+        <div class="section__inner legal">
             
             <h2 class="section__title">Impressum</h2>
-                <div class="content-block">
-                    <p style="text-align: center; margin-bottom: 4rem; color: var(--text-muted);">
+                <div>
+                    <p class="legal-intro">
                         Die folgenden Angaben sind gemäß den gesetzlichen Anforderungen für die Bereitstellung von Informationen über den Anbieter des Webauftritts aufgeführt.
                     </p>
 
-                    <div class="info-grid">
-                        <div style="grid-column: span 2;">
-                            <h3 class="section__title" style="font-size: 1.5rem; text-align: left; margin-bottom: 1.5rem;">Impressum Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</h3>
-                            <div class="info-value" style="color: var(--gold);">1. Betreiber der Website &amp; Verantwortlicher:</div>
+                    <div>
+                        <div>
+                            <h3 class="section__title section__title--left">Impressum Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</h3>
+                            <div class="info-label">1. Betreiber der Website &amp; Verantwortlicher:</div>
                             <div class="info-value">Sven Grabau</div>
                             <div class="info-value">Malerfachbetrieb Grabau (Einzelunternehmer)</div>
                             <div class="info-value">Freimersdorfer Weg 4</div>
                             <div class="info-value">50226 Frechen</div>
-                            <div style="margin-bottom: 20px;"></div>
+                            <div class="info-gap"></div>
                         </div>
                         <div>
-                            <div class="info-label" style="color: var(--gold);">2. Kontakt</div>
-                            <div class="info-value">Telefon: <a href="tel:+491748608596" class="mobile-phone-link" style="color: var(--gold); text-decoration: none;">0174 - 860 859 6</a></div>
-                            <div class="info-value">E-Mail: <a href="mailto:info@streichmich24.de" style="color: var(--gold); text-decoration: none;">info@streichmich24.de</a></div>
-                            <div style="margin-bottom: 20px;"></div>
-                            <div class="info-label" style="color: var(--gold);">3. Steuer-Informationen</div>
-                            <div class="info-value">Steuernummer: <span style="color: var(--gold);">[Ihre Steuernummer hier eintragen] (Finanzamt Brühl)</span></div>
-                            <div style="margin-bottom: 20px;"></div>
-                            <div class="info-label" style="color: var(--gold);">4. Zuständige Kammer &amp; Aufsichtsbehörde</div>
+                            <div class="info-label">2. Kontakt</div>
+                            <div class="info-value">Telefon: <a href="tel:+491748608596">0174 - 860 859 6</a></div>
+                            <div class="info-value">E-Mail: <a href="mailto:info@streichmich24.de">info@streichmich24.de</a></div>
+                            <div class="info-gap"></div>
+                            <div class="info-label">3. Steuer-Informationen</div>
+                            <div class="info-value">Steuernummer: <span class="accent">[Ihre Steuernummer hier eintragen] (Finanzamt Brühl)</span></div>
+                            <div class="info-gap"></div>
+                            <div class="info-label">4. Zuständige Kammer &amp; Aufsichtsbehörde</div>
                             <div class="info-value">Eingetragen in der Handwerksrolle der:</div>
                             <div class="info-value">Handwerkskammer zu Köln</div>
                             <div class="info-value">Heumarkt 12, 50667 Köln</div>
-                            Telefon: <span class="no-decorate" style="color: #c5a059 !important; font-weight: bold;"><a href="tel:+4922120220" style="text-decoration: none; color: #c5a059 !important;">0221 2022-0</a></span>
-                            <div class="info-value">E-Mail: <a href="mailto:info@hwk-koeln.de" style="color: var(--gold);">info@hwk-koeln.de</a></div>
-                            <div class="info-value">Web: <a href="https://www.hwk-koeln.de" style="color: var(--gold);">www.hwk-koeln.de</a></div>
-                            <div class="info-value">Berufsbezeichnung: <span style="color: var(--gold);">Maler und Lackierer (verliehen in der Bundesrepublik Deutschland)</span></div>
-                            <div style="margin-bottom: 20px;"></div>
-                            <div class="info-label" style="color: var(--gold);">5. Verbraucherstreitbeilegung / Universalschlichtungsstelle</div>
-                            <div class="info-value">Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: https://europa.eu.</div>
-                            <div class="info-value">Unsere E-Mail-Adresse finden Sie oben im Impressum. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</div>
+                            <div class="info-value">Telefon: <a href="tel:+4922120220">0221 2022-0</a></div>
+                            <div class="info-value">E-Mail: <a href="mailto:info@hwk-koeln.de">info@hwk-koeln.de</a></div>
+                            <div class="info-value">Web: <a href="https://www.hwk-koeln.de">www.hwk-koeln.de</a></div>
+                            <div class="info-value">Berufsbezeichnung: <span class="accent">Maler und Lackierer (verliehen in der Bundesrepublik Deutschland)</span></div>
                         </div>
                     </div>
                 </div>
@@ -122,79 +107,16 @@
 
         </div>
     </section>
+    </main>
+
     <footer class="footer">
         <p class="footer__brand">streichmich24 · Malerfachbetrieb Grabau</p>
-        <p style="color: #c5a059; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;">Mobil: <a href="tel:+491748608596" style="text-decoration: none; color: #c5a059;" class="mobile-phone-link">0174 - 860 859 6</a></p>
+        <p class="footer__phone">Mobil: <a href="tel:+491748608596">0174 - 860 859 6</a></p>
         <p class="footer__copy">&copy; 2026 Sven Grabau · Köln &amp; Umgebung</p>
-
-<nav class="footer__links">
-    <a href="datenschutz.html" class="active">Datenschutz</a>
-    <a href="impressum.html">Impressum</a>
-</nav>
-    <!-- Mobile Sticky Button -->
-    <div class="sticky-cta" id="stickyCta">
-        
-    </div>
-
-    <!-- JavaScript für Navigation -->
-    <script>
-    // Formspree AJAX Integration
-    window.formspree = window.formspree || function () { (formspree.q = formspree.q = []).push(arguments); };
-    formspree('initForm', { 
-        formElement: '#contactForm', 
-        formId: 'mqpzkqde' 
-    });
-
-    // Navigation Interaktion
-    document.addEventListener('DOMContentLoaded', () => {
-        const mobileNavToggle = document.getElementById('mobileNavToggle');
-        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-        const desktopDropdownBtn = document.querySelector('.group-btn');
-        const desktopDropdown = document.querySelector('.main-navigation .dropdown');
-        const mobileGroupToggle = document.getElementById('mobileGroupToggle');
-        const mobileDropdown = document.querySelector('.mobile-nav-list li:nth-child(2) .dropdown');
-
-        // Hamburger Menü Toggle (Mobile)
-        if (mobileNavToggle && mobileNavOverlay) {
-            mobileNavToggle.addEventListener('click', () => {
-                mobileNavToggle.classList.toggle('active');
-                mobileNavOverlay.classList.toggle('active');
-                document.body.style.overflow = mobileNavOverlay.classList.contains('active') ? '' : 'hidden';
-            });
-
-            // Menü schließen bei Klick außerhalb (Mobile)
-            document.addEventListener('click', (e) => {
-                if (!mobileNavToggle.contains(e.target) && !mobileNavOverlay.contains(e.target)) {
-                    mobileNavToggle.classList.remove('active');
-                    mobileNavOverlay.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            });
-        }
-
-        // Desktop Dropdown Toggle (Galerie oben auf Desktop)
-        if (desktopDropdownBtn && desktopDropdown) {
-            desktopDropdownBtn.addEventListener('click', () => {
-                const isExpanded = desktopDropdownBtn.getAttribute('aria-expanded') === 'true';
-                desktopDropdownBtn.setAttribute('aria-expanded', !isExpanded);
-                desktopDropdown.style.display = isExpanded ? 'none' : 'block';
-            });
-        }
-
-        // Mobile Dropdown Toggle (Galerie im Overlay)
-        if (mobileGroupToggle && mobileDropdown) {
-            mobileGroupToggle.addEventListener('click', () => {
-                const isExpanded = mobileGroupToggle.getAttribute('aria-expanded') === 'true';
-                mobileGroupToggle.setAttribute('aria-expanded', !isExpanded);
-                mobileDropdown.style.display = isExpanded ? 'none' : 'block';
-            });
-        }
-    });
-    </script>
-
-
-    <!-- JavaScript (minimal und extern geladen) -->
-    <script src="script.js"></script>
-
+        <nav class="footer__links" aria-label="Rechtliches">
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="impressum.html">Impressum</a>
+        </nav>
+    </footer>
 </body>
 </html>
