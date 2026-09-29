@@ -438,7 +438,24 @@ button:focus-visible {
     }
 }
 
-/* ── DESKTOP (≥ 769px) ── */
+/* ── KONTAKT-BUTTON MOBILE ONLY ── */
+.btn.save-contact-btn {
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .btn.save-contact-btn {
+        display: inline-block;
+    }
+}
+
+@media (min-width: 769px) {
+    .btn.save-contact-btn {
+        display: none;
+    }
+}
+
+/* ── MOBILE (≤ 768px) ── */
 @media (min-width: 769px) {
     .header {
         height: 35vh;
