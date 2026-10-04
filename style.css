@@ -297,7 +297,39 @@ button:focus-visible {
 .partner__list { margin: 1rem 0 0; padding-left: 1.25rem; }
 
 /* ── ÜBER MICH ── */
-.about { display: grid; gap: 2rem; align-items: center; }
+.about { display: grid; gap: 2.5rem; align-items: start; }
+
+.about__photo {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.about__photo-frame {
+    display: block;
+    padding: 0.6rem;
+    border: 1px solid rgba(197,160,89,0.55);
+    border-radius: 0.85rem;
+    background: var(--bg-card);
+    box-shadow: 0 1.25rem 2.5rem rgba(0,0,0,0.45);
+}
+
+.about__photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.55rem;
+    filter: grayscale(0.55) sepia(0.1) saturate(1.05) contrast(1.05) brightness(0.96);
+}
+
+.about__photo figcaption {
+    margin-top: 0.85rem;
+    text-align: center;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+}
 
 .about__text p {
     margin: 0 0 1rem;
@@ -308,8 +340,10 @@ button:focus-visible {
 .about__text p:last-child { margin-bottom: 0; }
 
 .about__highlight {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.05rem, 2.8vw, 1.3rem);
+    font-weight: 500;
+    line-height: 1.6;
     color: var(--gold) !important;
     border-left: 3px solid var(--gold);
     padding-left: 1.25rem;
@@ -482,7 +516,9 @@ button:focus-visible {
     .hero__overlay { padding-bottom: 5rem; }
 
     .services { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .about { grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .about { grid-template-columns: minmax(260px, 340px) 1fr; gap: 3rem; }
+    .about__photo { max-width: none; position: sticky; top: 2rem; align-self: start; }
+    .about__photo ~ .about__text { grid-column: 2; }
     .section { padding: 5.5rem 2rem; }
     .footer { padding-bottom: 2.5rem; }
 
