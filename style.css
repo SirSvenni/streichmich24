@@ -308,6 +308,10 @@ button:focus-visible {
 .service__arrow { display: inline-block; transition: transform 0.3s var(--ease); }
 .service:hover .service__arrow { transform: translateX(4px); }
 
+.partner__more { text-decoration: none; }
+.partner__more:hover .service__arrow,
+.partner__more:focus-visible .service__arrow { transform: translateX(4px); }
+
 .partner {
     margin-top: 3rem;
     padding: 1.5rem;
